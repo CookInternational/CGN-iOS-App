@@ -1,0 +1,1783 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Sports | CGN News</title>
+<meta name="description" content="CGN Sports Center covers Indianapolis, Chicagoland, and Indiana college sports including the Colts, Pacers, Indianapolis Indians, Chicago teams, Indiana, Purdue, Notre Dame, Butler, Ball State, Indiana State, Evansville, Valparaiso, IU Indianapolis, Purdue Fort Wayne, and Southern Indiana.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="CGN News">
+<link rel="canonical" href="https://ios.cgnnews.net/sports/">
+
+<link rel="icon" type="image/png" href="/CGNFavicon.png">
+<link rel="shortcut icon" type="image/png" href="/CGNFavicon.png">
+<link rel="apple-touch-icon" href="/CGNFavicon.png">
+<meta name="theme-color" content="#07111f">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CGN News">
+<meta property="og:title" content="Sports | CGN News">
+<meta property="og:description" content="CGN Sports Center covers Indianapolis, Chicagoland, and Indiana college sports including the Colts, Pacers, Indianapolis Indians, Chicago teams, and major Indiana college programs.">
+<meta property="og:url" content="https://ios.cgnnews.net/sports/">
+<meta property="og:image" content="https://www.cgnnews.net/CGNSportsCenterBanner01.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sports | CGN News">
+<meta name="twitter:description" content="CGN Sports Center covers Indianapolis, Chicagoland, and Indiana college sports including the Colts, Pacers, Indianapolis Indians, Chicago teams, and major Indiana college programs.">
+<meta name="twitter:image" content="https://www.cgnnews.net/CGNSportsCenterBanner01.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://ios.cgnnews.net/sports#webpage",
+      "url": "https://ios.cgnnews.net/sports",
+      "name": "Sports | CGN News",
+      "description": "CGN Sports Center covers Indianapolis, Chicagoland, and Indiana college sports including the Colts, Pacers, Indianapolis Indians, Chicago teams, and major Indiana college programs.",
+      "isPartOf": {
+        "@id": "https://www.cgnnews.net/#website"
+      },
+      "publisher": {
+        "@id": "https://www.cgnnews.net/#organization"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Sports news"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.cgnnews.net/#website",
+      "url": "https://www.cgnnews.net/",
+      "name": "CGN News",
+      "publisher": {
+        "@id": "https://www.cgnnews.net/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.cgnnews.net/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.cgnnews.net/#organization",
+      "name": "CGN News",
+      "legalName": "Cook Global News Network",
+      "url": "https://www.cgnnews.net/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.cgnnews.net/CGNNewsLogo01.png"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "151 N. Delaware Street, Suite 122",
+        "addressLocality": "Indianapolis",
+        "addressRegion": "IN",
+        "postalCode": "46204",
+        "addressCountry": "US"
+      },
+      "email": "tips@cgnnews.net",
+      "telephone": "+1-317-442-1437",
+      "sameAs": [
+        "https://instagram.com/cookglobalnews",
+        "https://x.com/CookGlobalNews",
+        "https://youtube.com/@CookGlobalNews"
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  background:#f6f7fb;
+  color:#111;
+}
+
+.sports-page {
+  max-width:1180px;
+  margin:34px auto;
+  padding:0 20px 40px;
+}
+
+.sports-hero {
+  position:relative;
+  overflow:hidden;
+  border:1px solid #111827;
+  background:#07111f;
+  color:#fff;
+  min-height:320px;
+  display:flex;
+  align-items:flex-end;
+  isolation:isolate;
+}
+
+.sports-hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, rgba(7,17,31,.96) 0%, rgba(7,17,31,.72) 42%, rgba(7,17,31,.18) 100%),
+    url("https://www.cgnnews.net/CGNSportsCenterBanner01.png") center/cover no-repeat;
+  z-index:0;
+}
+
+.sports-hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(255,255,255,.14), transparent 22%),
+    linear-gradient(135deg, rgba(196,0,0,.28), transparent 34%),
+    linear-gradient(315deg, rgba(255,198,0,.16), transparent 38%);
+  z-index:1;
+  pointer-events:none;
+}
+
+.sports-hero-content {
+  position:relative;
+  z-index:2;
+  max-width:820px;
+  padding:34px;
+}
+
+.sports-kicker {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:900;
+  color:#ff4242;
+  margin-bottom:10px;
+}
+
+.sports-kicker span {
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  background:#ff2424;
+  box-shadow:0 0 0 5px rgba(255,36,36,.18);
+}
+
+.sports-hero h1 {
+  margin:0;
+  font-size:48px;
+  line-height:1;
+  letter-spacing:-.03em;
+}
+
+.sports-hero p {
+  margin:12px 0 0;
+  color:#e8edf5;
+  font-size:16px;
+  line-height:1.55;
+}
+
+.sports-source-note {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.sports-source-note a,
+.sports-source-note button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  text-decoration:none;
+  font-weight:900;
+  font-size:12px;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+.sports-source-note a:hover,
+.sports-source-note button:hover {
+  background:#fff;
+  color:#07111f;
+  text-decoration:none;
+}
+
+.section-title {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:16px;
+  border-bottom:1px solid #d8dce4;
+  margin:28px 0 16px;
+  padding-bottom:10px;
+}
+
+.section-title h2 {
+  margin:0;
+  font-size:24px;
+}
+
+.section-title span {
+  color:#667085;
+  font-size:13px;
+}
+
+.sports-dashboard {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:16px;
+}
+
+.team-card {
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(17,24,39,.18);
+  background:#fff;
+  min-height:250px;
+  box-shadow:0 14px 30px rgba(7,17,31,.08);
+  isolation:isolate;
+}
+
+.team-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 84% 12%, var(--accent-soft), transparent 28%),
+    linear-gradient(135deg, var(--primary-soft), transparent 44%);
+  z-index:0;
+}
+
+.team-card.local-team {
+  border-top:5px solid var(--primary);
+  box-shadow:0 18px 36px rgba(7,17,31,.12);
+}
+
+.team-card-inner {
+  position:relative;
+  z-index:1;
+  padding:16px;
+}
+
+.team-top {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.team-badge {
+  width:64px;
+  height:64px;
+  border-radius:18px;
+  background:#fff;
+  color:var(--primary);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:.02em;
+  border:3px solid rgba(255,255,255,.85);
+  box-shadow:0 8px 18px rgba(0,0,0,.14);
+  overflow:hidden;
+  flex:0 0 auto;
+  text-align:center;
+}
+
+.team-badge img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#fff;
+  padding:6px;
+  box-sizing:border-box;
+  display:block;
+}
+
+.team-title h3 {
+  margin:0;
+  font-size:20px;
+  line-height:1.12;
+}
+
+.team-title span {
+  display:block;
+  margin-top:4px;
+  color:#667085;
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.team-status {
+  display:inline-flex;
+  margin:2px 0 12px;
+  padding:6px 8px;
+  background:var(--primary);
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.score-block {
+  display:grid;
+  gap:9px;
+}
+
+.score-row {
+  border:1px solid #e2e6ee;
+  background:rgba(255,255,255,.86);
+  padding:10px;
+}
+
+.score-row small {
+  display:block;
+  color:#667085;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+
+.score-row strong {
+  display:block;
+  font-size:15px;
+  line-height:1.35;
+}
+
+.score-row span {
+  display:block;
+  color:#475467;
+  font-size:12px;
+  line-height:1.4;
+  margin-top:3px;
+}
+
+.team-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+
+.team-links a {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 9px;
+  border:1px solid #111;
+  background:#111;
+  color:#fff;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.team-links a.secondary {
+  background:#fff;
+  color:#111;
+}
+
+.team-links a:hover {
+  opacity:.85;
+  text-decoration:none;
+}
+
+.sports-articles-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:16px;
+}
+
+.sports-article-card {
+  border:1px solid #d8dce4;
+  background:#fff;
+  text-decoration:none;
+  color:#111;
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  box-shadow:0 10px 20px rgba(7,17,31,.05);
+}
+
+.sports-article-card:hover h3 {
+  text-decoration:underline;
+}
+
+.sports-article-card img {
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  background:#eee;
+  display:block;
+}
+
+.sports-article-body {
+  padding:14px;
+}
+
+.sports-article-meta {
+  font-size:11px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:#667085;
+  font-weight:900;
+  margin-bottom:7px;
+}
+
+.sports-article-body h3 {
+  margin:0 0 8px;
+  font-size:18px;
+  line-height:1.25;
+}
+
+.sports-article-body p {
+  margin:0;
+  color:#555;
+  line-height:1.45;
+  font-size:13px;
+}
+
+.sports-empty {
+  border:1px solid #d8dce4;
+  padding:14px;
+  color:#555;
+  background:#fff;
+}
+
+.cgn-bottom-ad {
+  max-width:1180px;
+  margin:26px auto 34px;
+  padding:0 20px;
+}
+
+.cgn-bottom-ad-inner {
+  border-top:1px solid #d8dce4;
+  border-bottom:1px solid #d8dce4;
+  padding:18px 0;
+  text-align:center;
+  background:#fff;
+}
+
+.cgn-ad-label {
+  font-size:11px;
+  color:#777;
+  margin-bottom:10px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+@media(max-width:900px){
+  .sports-page {
+    margin:28px auto;
+    padding:0 16px 34px;
+  }
+
+  .sports-hero {
+    min-height:360px;
+  }
+
+  .sports-hero-content {
+    padding:24px 20px;
+  }
+
+  .sports-hero h1 {
+    font-size:38px;
+  }
+
+  .sports-dashboard {
+    display:flex;
+    gap:14px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:2px 2px 16px;
+    margin-left:-2px;
+    margin-right:-2px;
+  }
+
+  .sports-dashboard::-webkit-scrollbar {
+    height:8px;
+  }
+
+  .sports-dashboard::-webkit-scrollbar-thumb {
+    background:#9aa4b2;
+    border-radius:999px;
+  }
+
+  .sports-dashboard::-webkit-scrollbar-track {
+    background:#e5e7eb;
+    border-radius:999px;
+  }
+
+  .sports-dashboard .team-card {
+    flex:0 0 82vw;
+    max-width:360px;
+    min-width:280px;
+    scroll-snap-align:start;
+  }
+
+  .section-title {
+    align-items:flex-start;
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .cgn-bottom-ad {
+    padding:0 16px;
+    margin:22px auto 30px;
+  }
+}
+
+
+/* CGN Sports City Selector + Load More Articles */
+.sports-city-selector {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin:0 0 18px;
+  padding:14px 16px;
+  border:1px solid #d8dce4;
+  background:#fff;
+  box-shadow:0 10px 20px rgba(7,17,31,.05);
+}
+
+.sports-city-selector label {
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:900;
+  color:#344054;
+  white-space:nowrap;
+}
+
+.sports-city-selector select {
+  width:min(100%,360px);
+  border:1px solid #111827;
+  background:#fff;
+  color:#111;
+  padding:10px 12px;
+  font-size:14px;
+  font-weight:800;
+  border-radius:0;
+}
+
+.sports-city-selector select:focus {
+  outline:3px solid rgba(196,0,0,.18);
+  outline-offset:2px;
+}
+
+.sports-load-more-wrap {
+  display:flex;
+  justify-content:center;
+  margin:20px 0 0;
+}
+
+.sports-load-more-btn {
+  border:1px solid #111827;
+  background:#07111f;
+  color:#fff;
+  cursor:pointer;
+  padding:11px 16px;
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  border-radius:0;
+}
+
+.sports-load-more-btn:hover,
+.sports-load-more-btn:focus {
+  background:#c40000;
+  border-color:#c40000;
+}
+
+.sports-load-more-btn:disabled {
+  opacity:.55;
+  cursor:not-allowed;
+}
+
+@media(max-width:900px){
+  .sports-city-selector {
+    align-items:stretch;
+    flex-direction:column;
+  }
+  .sports-city-selector select {
+    width:100%;
+  }
+}
+
+</style>
+
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#07172f">
+
+
+<meta name="apple-mobile-web-app-title" content="CGN NOW">
+<meta name="application-name" content="CGN NOW">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link href="/assets/cgn-now.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="cgn-site-header"></div>
+
+<main class="sports-page">
+
+<section class="sports-hero" aria-label="CGN Sports Center">
+  <div class="sports-hero-content">
+    <div class="sports-kicker"><span aria-hidden="true"></span> CGN Sports Center</div>
+    <h1>Indianapolis & Chicagoland Sports</h1>
+    <p>Scores, schedules, and sports reporting for the Indianapolis Colts, Pacers, Indians, Chicagoland teams, and Indiana college programs including IU, Purdue, Notre Dame, Butler, Ball State, Indiana State, Evansville, Valparaiso, IU Indianapolis, Purdue Fort Wayne, and Southern Indiana.</p>
+    <div class="sports-source-note">
+      <button type="button" onclick="loadSportsDashboard()">Refresh Scores</button>
+      <a href="#sports-news">Sports News</a>
+      <a href="#sports-dashboard-title">Team Sources</a>
+    </div>
+  </div>
+</section>
+
+
+<div class="sports-city-selector" aria-label="Choose sports city">
+  <label for="sportsCitySelect">Choose City</label>
+  <select id="sportsCitySelect" onchange="changeSportsCity(this.value)" aria-label="Choose City">
+    <option value="https://ios.cgnnews.net/sports/" selected>Indy/Chicago</option>
+    <option value="https://ios.cgnnews.net/sports/st-louis/">St. Louis</option>
+    <option value="https://ios.cgnnews.net/sports/los-angeles/">Los Angeles</option>
+    <option value="https://ios.cgnnews.net/sports/new-york/">New York</option>
+    <option value="https://ios.cgnnews.net/sports/philadelphia/">Philadelphia</option>
+    <option value="https://ios.cgnnews.net/sports/baton-rouge/">Baton Rouge</option>
+    <option value="https://ios.cgnnews.net/sports/miami/">Miami</option>
+    <option value="https://ios.cgnnews.net/sports/london/">London</option>
+    <option value="https://ios.cgnnews.net/sports/sydney/">Sydney</option>
+    <option value="https://ios.cgnnews.net/sports/rio/">Rio de Janeiro</option>
+    <option value="https://ios.cgnnews.net/sports/hong-kong/">Hong Kong</option>
+    <option value="https://ios.cgnnews.net/sports/manila/">Manila</option>
+    <option value="https://ios.cgnnews.net/sports/mumbai/">Mumbai</option>
+  </select>
+</div>
+
+<section aria-labelledby="sports-dashboard-title">
+  <div class="section-title">
+    <h2 id="sports-dashboard-title">Scores & Schedules</h2>
+    <span id="sports-dashboard-status">Updating scores and schedules...</span>
+  </div>
+
+  <div id="sportsDashboard" class="sports-dashboard"></div>
+</section>
+
+<section id="sports-news" aria-labelledby="sports-articles-title">
+  <div class="section-title">
+    <h2 id="sports-articles-title">Sports News</h2>
+    <span>Latest CGN Sports reporting</span>
+  </div>
+
+  <div id="sportsArticles" class="sports-articles-grid">
+    <div class="sports-empty">Loading sports articles...</div>
+  </div>
+</section>
+
+</main>
+
+<div id="cgn-site-footer"></div>
+
+<script>
+
+const CGN_API_BASE = "https://script.google.com/macros/s/AKfycbx41mQg-Ine3XZ-VrMI_SaQn4_K6cDQHA0cBFyGPgupu_edNFoNRjSLv2hoSe_bOytt/exec";
+
+const ESPN_SCOREBOARDS = {
+  nfl: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard",
+  nba: "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
+  mlb: "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard",
+  nhl: "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard",
+  ncaaf: "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard",
+  ncaam: "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard",
+  ncaaw: "https://site.api.espn.com/apis/site/v2/sports/basketball/womens-college-basketball/scoreboard"
+};
+
+const SPORTS_TEAMS = [
+  {
+    id:"colts",
+    name:"Indianapolis Colts",
+    badge:"IND",
+    league:"NFL",
+    sport:"Football",
+    sportKey:"nfl",
+    espnTeamId:"11",
+    abbreviations:["IND"],
+    localTeam:true,
+    primary:"#002c5f",
+    accent:"#a2aaad",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/nfl/500/ind.png",
+    sourceUrl:"https://www.espn.com/nfl/team/_/name/ind/indianapolis-colts"
+  },
+  {
+    id:"pacers",
+    name:"Indiana Pacers",
+    badge:"PAC",
+    league:"NBA",
+    sport:"Basketball",
+    sportKey:"nba",
+    espnTeamId:"11",
+    abbreviations:["IND"],
+    localTeam:true,
+    primary:"#002d62",
+    accent:"#fdbb30",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+    sourceUrl:"https://www.espn.com/nba/team/_/name/ind/indiana-pacers"
+  },
+  {
+    id:"indians",
+    name:"Indianapolis Indians",
+    badge:"INDY",
+    league:"MiLB",
+    sport:"Baseball",
+    sportKey:"milb",
+    espnTeamId:"",
+    abbreviations:["IND"],
+    localTeam:true,
+    primary:"#d71920",
+    accent:"#002f6c",
+    logoUrl:"",
+    sourceUrl:"https://www.milb.com/indianapolis"
+  },
+  {
+    id:"bears",
+    name:"Chicago Bears",
+    badge:"CHI",
+    league:"NFL",
+    sport:"Football",
+    sportKey:"nfl",
+    espnTeamId:"3",
+    abbreviations:["CHI"],
+    localTeam:false,
+    primary:"#0b162a",
+    accent:"#c83803",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
+    sourceUrl:"https://www.espn.com/nfl/team/_/name/chi/chicago-bears"
+  },
+  {
+    id:"bulls",
+    name:"Chicago Bulls",
+    badge:"CHI",
+    league:"NBA",
+    sport:"Basketball",
+    sportKey:"nba",
+    espnTeamId:"4",
+    abbreviations:["CHI"],
+    localTeam:false,
+    primary:"#ce1141",
+    accent:"#111111",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
+    sourceUrl:"https://www.espn.com/nba/team/_/name/chi/chicago-bulls"
+  },
+  {
+    id:"cubs",
+    name:"Chicago Cubs",
+    badge:"CHC",
+    league:"MLB",
+    sport:"Baseball",
+    sportKey:"mlb",
+    espnTeamId:"16",
+    abbreviations:["CHC"],
+    localTeam:false,
+    primary:"#0e3386",
+    accent:"#cc3433",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/mlb/500/chc.png",
+    sourceUrl:"https://www.espn.com/mlb/team/_/name/chc/chicago-cubs"
+  },
+  {
+    id:"whitesox",
+    name:"Chicago White Sox",
+    badge:"CHW",
+    league:"MLB",
+    sport:"Baseball",
+    sportKey:"mlb",
+    espnTeamId:"4",
+    abbreviations:["CHW","CWS"],
+    localTeam:false,
+    primary:"#27251f",
+    accent:"#c4ced4",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/mlb/500/chw.png",
+    sourceUrl:"https://www.espn.com/mlb/team/_/name/chw/chicago-white-sox"
+  },
+  {
+    id:"blackhawks",
+    name:"Chicago Blackhawks",
+    badge:"CHI",
+    league:"NHL",
+    sport:"Hockey",
+    sportKey:"nhl",
+    espnTeamId:"4",
+    abbreviations:["CHI"],
+    localTeam:false,
+    primary:"#cf0a2c",
+    accent:"#111111",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/nhl/500/chi.png",
+    sourceUrl:"https://www.espn.com/nhl/team/_/name/chi/chicago-blackhawks"
+  },
+  {
+    id:"hoosiers",
+    name:"Indiana Hoosiers",
+    badge:"IU",
+    league:"NCAA",
+    sport:"College Sports",
+    sportKeys:["ncaaf","ncaam","ncaaw"],
+    espnTeamId:"84",
+    abbreviations:["IU","IND"],
+    localTeam:true,
+    primary:"#990000",
+    accent:"#eeeeee",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
+    sourceUrl:"https://www.espn.com/college-sports/team/_/id/84/indiana-hoosiers"
+  },
+  {
+    id:"purdue",
+    name:"Purdue Boilermakers",
+    badge:"PUR",
+    league:"NCAA",
+    sport:"College Sports",
+    sportKeys:["ncaaf","ncaam","ncaaw"],
+    espnTeamId:"2509",
+    abbreviations:["PUR"],
+    localTeam:true,
+    primary:"#111111",
+    accent:"#ceb888",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+    sourceUrl:"https://www.espn.com/college-sports/team/_/id/2509/purdue-boilermakers"
+  },
+  {
+    id:"notredame",
+    name:"Notre Dame Fighting Irish",
+    badge:"ND",
+    league:"NCAA",
+    sport:"College Sports",
+    sportKeys:["ncaaf","ncaam","ncaaw"],
+    espnTeamId:"87",
+    abbreviations:["ND"],
+    localTeam:true,
+    primary:"#0c2340",
+    accent:"#c99700",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
+    sourceUrl:"https://www.espn.com/college-sports/team/_/id/87/notre-dame-fighting-irish"
+  },
+  {
+    id:"butler",
+    name:"Butler Bulldogs",
+    badge:"BUT",
+    league:"NCAA",
+    sport:"College Sports",
+    sportKeys:["ncaam","ncaaw"],
+    espnTeamId:"2086",
+    abbreviations:["BUT"],
+    localTeam:true,
+    primary:"#13294b",
+    accent:"#9ea2a2",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/ncaa/500/2086.png",
+    sourceUrl:"https://www.espn.com/college-sports/team/_/id/2086/butler-bulldogs"
+  },
+  {
+    id:"ballstate",
+    name:"Ball State Cardinals",
+    badge:"BSU",
+    league:"NCAA",
+    sport:"College Sports",
+    sportKeys:["ncaaf","ncaam","ncaaw"],
+    espnTeamId:"2050",
+    abbreviations:["BALL","BALLST","BSU"],
+    localTeam:true,
+    primary:"#ba0c2f",
+    accent:"#ffffff",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/ncaa/500/2050.png",
+    sourceUrl:"https://www.espn.com/college-football/team/_/id/2050/ball-state-cardinals"
+  },
+  {
+    id:"indianastate",
+    name:"Indiana State Sycamores",
+    badge:"ISU",
+    league:"NCAA",
+    sport:"College Sports",
+    sportKeys:["ncaaf","ncaam","ncaaw"],
+    espnTeamId:"282",
+    abbreviations:["INST","ISU"],
+    localTeam:true,
+    primary:"#0142bc",
+    accent:"#ffffff",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/ncaa/500/282.png",
+    sourceUrl:"https://www.espn.com/college-football/team/_/id/282/indiana-state-sycamores"
+  },
+  {
+    id:"evansville",
+    name:"Evansville Purple Aces",
+    badge:"UE",
+    league:"NCAA",
+    sport:"College Sports",
+    sportKeys:["ncaam","ncaaw"],
+    espnTeamId:"339",
+    abbreviations:["EVAN","UE"],
+    localTeam:true,
+    primary:"#52237f",
+    accent:"#ff7f00",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/ncaa/500/339.png",
+    sourceUrl:"https://www.espn.com/mens-college-basketball/team/_/id/339/evansville-purple-aces"
+  },
+  {
+    id:"valparaiso",
+    name:"Valparaiso Beacons",
+    badge:"VALPO",
+    league:"NCAA",
+    sport:"College Sports",
+    sportKeys:["ncaam","ncaaw"],
+    espnTeamId:"2674",
+    abbreviations:["VAL","VALPO"],
+    localTeam:true,
+    primary:"#381e0e",
+    accent:"#ffcc00",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/ncaa/500/2674.png",
+    sourceUrl:"https://www.espn.com/mens-college-basketball/team/_/id/2674/valparaiso-beacons"
+  },
+  {
+    id:"iuindianapolis",
+    name:"IU Indianapolis Jaguars",
+    badge:"IU INDY",
+    league:"NCAA",
+    sport:"College Sports",
+    sportKeys:["ncaam","ncaaw"],
+    espnTeamId:"85",
+    abbreviations:["IUI","IUINDY","IUPUI"],
+    localTeam:true,
+    primary:"#990000",
+    accent:"#c0c0c0",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/ncaa/500/85.png",
+    sourceUrl:"https://www.espn.com/mens-college-basketball/team/_/id/85/iu-indianapolis-jaguars"
+  },
+  {
+    id:"purduefortwayne",
+    name:"Purdue Fort Wayne Mastodons",
+    badge:"PFW",
+    league:"NCAA",
+    sport:"College Sports",
+    sportKeys:["ncaam","ncaaw"],
+    espnTeamId:"2870",
+    abbreviations:["PFW","IPFW"],
+    localTeam:true,
+    primary:"#003e7e",
+    accent:"#f2a900",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/ncaa/500/2870.png",
+    sourceUrl:"https://www.espn.com/mens-college-basketball/team/_/id/2870/purdue-fort-wayne-mastodons"
+  },
+  {
+    id:"southernindiana",
+    name:"Southern Indiana Screaming Eagles",
+    badge:"USI",
+    league:"NCAA",
+    sport:"College Sports",
+    sportKeys:["ncaam","ncaaw"],
+    espnTeamId:"88",
+    abbreviations:["USI","SO IND"],
+    localTeam:true,
+    primary:"#002855",
+    accent:"#c8102e",
+    logoUrl:"https://a.espncdn.com/i/teamlogos/ncaa/500/88.png",
+    sourceUrl:"https://www.espn.com/mens-college-basketball/team/_/id/88/southern-indiana-screaming-eagles"
+  }
+];
+
+function safeText(value){
+  return String(value || "").replace(/[&<>"']/g, function(c){
+    return {
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[c];
+  });
+}
+
+function slugify(value){
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function normalizeValue(value){
+  return String(value || "")
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+async function fetchJson(url){
+  const res = await fetch(url);
+  if(!res.ok) throw new Error("Request failed: " + res.status);
+  return await res.json();
+}
+
+function getTeamKeys(team){
+  if(Array.isArray(team.sportKeys) && team.sportKeys.length) return team.sportKeys;
+  if(team.sportKey && ESPN_SCOREBOARDS[team.sportKey]) return [team.sportKey];
+  return [];
+}
+
+function teamBelongsToScoreboard(team, scoreboardKey){
+  return getTeamKeys(team).includes(scoreboardKey);
+}
+
+function competitorMatchesTeam(team, competitor){
+  if(!competitor || !competitor.team) return false;
+
+  const t = competitor.team;
+  const ids = [
+    t.id,
+    t.uid,
+    t.slug
+  ].filter(Boolean).map(String);
+
+  if(team.espnTeamId && ids.includes(String(team.espnTeamId))) return true;
+
+  const abbreviations = (team.abbreviations || []).map(function(v){ return normalizeValue(v); });
+  const espnAbbr = normalizeValue(t.abbreviation || "");
+  if(espnAbbr && abbreviations.includes(espnAbbr)) return true;
+
+  const names = [
+    t.displayName,
+    t.shortDisplayName,
+    t.name,
+    t.location + " " + t.name
+  ].filter(Boolean).map(normalizeValue);
+
+  const wanted = normalizeValue(team.name);
+
+  return names.some(function(name){
+    return name === wanted;
+  });
+}
+
+function findKnownTeamForCompetitor(competitor, scoreboardKey){
+  return SPORTS_TEAMS.find(function(team){
+    return teamBelongsToScoreboard(team, scoreboardKey) && competitorMatchesTeam(team, competitor);
+  }) || null;
+}
+
+function parseEspnStatus(event){
+  const type = event && event.status && event.status.type ? event.status.type : {};
+  const state = String(type.state || "").toLowerCase();
+  const name = String(type.name || "").toLowerCase();
+  const description = type.shortDetail || type.detail || type.description || "";
+
+  if(state === "in" || name.indexOf("in_progress") !== -1) return { label:"Live", detail:description || "Game in progress" };
+  if(state === "post" || name.indexOf("final") !== -1) return { label:"Final", detail:description || "Final" };
+  if(state === "pre") return { label:"Scheduled", detail:description || "Scheduled" };
+
+  return { label:"Updating", detail:description || "Scores and schedules update throughout the day." };
+}
+
+function eventDateText(event){
+  if(!event || !event.date) return "Date TBA";
+
+  const parsed = new Date(event.date);
+  if(isNaN(parsed.getTime())) return "Date TBA";
+
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone:"America/New_York",
+    weekday:"short",
+    month:"short",
+    day:"numeric",
+    hour:"numeric",
+    minute:"2-digit",
+    hour12:true
+  }).format(parsed);
+}
+
+function buildEventSummary(team, event, competitor, scoreboardKey){
+  if(!event || !competitor) return null;
+
+  const competition = event.competitions && event.competitions[0] ? event.competitions[0] : {};
+  const competitors = competition.competitors || [];
+  const opponent = competitors.find(function(c){ return c !== competitor; });
+  const opponentKnown = opponent ? findKnownTeamForCompetitor(opponent, scoreboardKey) : null;
+  const status = parseEspnStatus(event);
+
+  const teamName = team.name || (competitor.team && competitor.team.displayName) || "Team";
+  const opponentName = opponentKnown && opponentKnown.name
+    ? opponentKnown.name
+    : (opponent && opponent.team && opponent.team.displayName ? opponent.team.displayName : "Opponent TBA");
+
+  const teamScore = competitor.score;
+  const opponentScore = opponent ? opponent.score : "";
+  const scoreKnown = teamScore !== undefined && teamScore !== null && teamScore !== "" && opponentScore !== undefined && opponentScore !== null && opponentScore !== "";
+
+  let headline = "";
+  if(scoreKnown && (status.label === "Final" || status.label === "Live")){
+    headline = `${teamName} ${teamScore} — ${opponentName} ${opponentScore}`;
+  } else {
+    headline = `${teamName} vs. ${opponentName}`;
+  }
+
+  const homeAway = competitor.homeAway ? competitor.homeAway.charAt(0).toUpperCase() + competitor.homeAway.slice(1) : "";
+  const venue = competition.venue && competition.venue.fullName ? competition.venue.fullName : "";
+
+  return {
+    status: status.label,
+    statusDetail: status.detail,
+    headline: headline,
+    opponent: opponentName,
+    dateText: eventDateText(event),
+    venue: venue,
+    homeAway: homeAway,
+    rawDate: event.date || ""
+  };
+}
+
+function findTeamEvent(team, data, scoreboardKey){
+  if(!data || !Array.isArray(data.events)) return null;
+
+  for(let i = 0; i < data.events.length; i++){
+    const event = data.events[i];
+    const competition = event.competitions && event.competitions[0] ? event.competitions[0] : {};
+    const competitors = competition.competitors || [];
+
+    for(let j = 0; j < competitors.length; j++){
+      if(competitorMatchesTeam(team, competitors[j])){
+        return buildEventSummary(team, event, competitors[j], scoreboardKey);
+      }
+    }
+  }
+
+  return null;
+}
+
+async function loadScoreboards(){
+  const keys = Array.from(new Set(SPORTS_TEAMS.flatMap(getTeamKeys)));
+  const results = {};
+
+  await Promise.all(keys.map(async function(key){
+    try{
+      results[key] = await fetchJson(ESPN_SCOREBOARDS[key]);
+    } catch(err){
+      console.warn("Scoreboard unavailable:", key, err);
+      results[key] = null;
+    }
+  }));
+
+  return results;
+}
+
+function getTeamEventFromScoreboards(team, scoreboards){
+  const keys = getTeamKeys(team);
+
+  for(let i = 0; i < keys.length; i++){
+    const found = findTeamEvent(team, scoreboards[keys[i]], keys[i]);
+    if(found) return found;
+  }
+
+  return null;
+}
+
+function logoMarkup(team){
+  if(team.logoUrl){
+    return `<img src="${safeText(team.logoUrl)}" alt="${safeText(team.name)} logo" loading="lazy" onerror="this.style.display='none'; this.parentElement.textContent='${safeText(team.badge)}';">`;
+  }
+
+  return safeText(team.badge);
+}
+
+function renderTeamCard(team, eventSummary){
+  const status = eventSummary ? eventSummary.status : "Updating";
+  const gameHeadline = eventSummary ? eventSummary.headline : "Schedule updating";
+  const gameDetails = eventSummary
+    ? [eventSummary.dateText, eventSummary.venue].filter(Boolean).join(" • ")
+    : "Scores and schedules update throughout the day.";
+
+  const matchupText = eventSummary
+    ? `${eventSummary.homeAway ? eventSummary.homeAway + " game" : "Game"}${eventSummary.opponent ? " against " + eventSummary.opponent : ""}`
+    : "Upcoming schedule updating";
+
+  const teamPageText = eventSummary && eventSummary.statusDetail ? eventSummary.statusDetail : "Open Team Page";
+
+  return `
+    <article class="team-card ${team.localTeam ? "local-team" : ""}" style="--primary:${team.primary};--accent:${team.accent};--primary-soft:${hexToRgba(team.primary,.13)};--accent-soft:${hexToRgba(team.accent,.18)};">
+      <div class="team-card-inner">
+        <div class="team-top">
+          <div class="team-badge">${logoMarkup(team)}</div>
+          <div class="team-title">
+            <h3>${safeText(team.name)}</h3>
+            <span>${safeText(team.league)} • ${safeText(team.sport)}</span>
+          </div>
+        </div>
+
+        <div class="team-status">${safeText(status)}</div>
+
+        <div class="score-block">
+          <div class="score-row">
+            <small>Game Status</small>
+            <strong>${safeText(gameHeadline)}</strong>
+            <span>${safeText(teamPageText)}</span>
+          </div>
+
+          <div class="score-row">
+            <small>Matchup</small>
+            <strong>${safeText(matchupText)}</strong>
+            <span>${safeText(gameDetails)}</span>
+          </div>
+
+          <div class="score-row">
+            <small>Team Page</small>
+            <strong>${safeText(team.name)}</strong>
+            <span>Use the team page for official schedules, standings, and roster information.</span>
+          </div>
+        </div>
+
+        <div class="team-links">
+          <a href="${safeText(team.sourceUrl)}" target="_blank" rel="noopener">Open Team Page</a>
+          <a class="secondary" href="#sports-news">Sports Center</a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderLoadingCard(team){
+  return `
+    <article class="team-card ${team.localTeam ? "local-team" : ""}" style="--primary:${team.primary};--accent:${team.accent};--primary-soft:${hexToRgba(team.primary,.13)};--accent-soft:${hexToRgba(team.accent,.18)};">
+      <div class="team-card-inner">
+        <div class="team-top">
+          <div class="team-badge">${logoMarkup(team)}</div>
+          <div class="team-title">
+            <h3>${safeText(team.name)}</h3>
+            <span>${safeText(team.league)} • ${safeText(team.sport)}</span>
+          </div>
+        </div>
+        <div class="team-status">Updating</div>
+        <div class="score-block">
+          <div class="score-row">
+            <small>Sports Center</small>
+            <strong>Updating scores and schedules...</strong>
+            <span>Scores and schedules update throughout the day.</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function hexToRgba(hex, alpha){
+  const clean = String(hex || "#111111").replace("#","");
+  if(clean.length !== 6) return "rgba(17,17,17," + alpha + ")";
+  const r = parseInt(clean.slice(0,2),16);
+  const g = parseInt(clean.slice(2,4),16);
+  const b = parseInt(clean.slice(4,6),16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+async function loadSportsDashboard(){
+  const mount = document.getElementById("sportsDashboard");
+  const status = document.getElementById("sports-dashboard-status");
+
+  if(!mount) return;
+
+  mount.innerHTML = SPORTS_TEAMS.map(renderLoadingCard).join("");
+
+  if(status) status.innerText = "Updating scores and schedules...";
+
+  const scoreboards = await loadScoreboards();
+
+  const html = SPORTS_TEAMS.map(function(team){
+    const eventSummary = getTeamEventFromScoreboards(team, scoreboards);
+    return renderTeamCard(team, eventSummary);
+  }).join("");
+
+  mount.innerHTML = html;
+
+  if(status){
+    status.innerText = "Scores and schedules updated " + new Intl.DateTimeFormat("en-US", {
+      timeZone:"America/New_York",
+      month:"short",
+      day:"numeric",
+      hour:"numeric",
+      minute:"2-digit",
+      hour12:true,
+      timeZoneName:"short"
+    }).format(new Date());
+  }
+}
+
+function getArticleTime(article){
+  if(!article) return 0;
+
+  const directDate =
+    article.published_at ||
+    article.updated_at ||
+    article.date ||
+    article.created_at ||
+    "";
+
+  if(directDate){
+    const parsed = new Date(directDate).getTime();
+    if(!isNaN(parsed)) return parsed;
+  }
+
+  const year = String(article.year || "").trim();
+  const month = String(article.month || "").trim().padStart(2, "0");
+  const day = String(article.day || "").trim().padStart(2, "0");
+
+  if(year && month && day){
+    const parsedParts = new Date(`${year}-${month}-${day}T00:00:00Z`).getTime();
+    if(!isNaN(parsedParts)) return parsedParts;
+  }
+
+  return 0;
+}
+
+function buildSportsArticleUrl(article){
+  const existingUrl = String(article.url || article.canonical_url || "").trim();
+
+  if(existingUrl){
+    const pathOnly = existingUrl.replace(/^https?:\/\/[^/]+/i, "");
+    if(pathOnly.indexOf("/sports/") === 0) return pathOnly;
+    if(pathOnly.indexOf("/news/") === 0) return pathOnly.replace(/^\/news\//, "/sports/");
+  }
+
+  const slug = slugify(article.slug || article.title || "sports-story");
+  const time = getArticleTime(article);
+  const date = time ? new Date(time) : new Date();
+
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(date.getUTCDate()).padStart(2, "0");
+
+  return `/sports/${year}/${month}/${day}/${slug}`;
+}
+
+function formatArticleDate(article){
+  const time = getArticleTime(article);
+  if(!time) return "";
+
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone:"America/New_York",
+    day:"numeric",
+    month:"long",
+    year:"numeric",
+    hour:"numeric",
+    minute:"2-digit",
+    second:"2-digit",
+    hour12:true,
+    timeZoneName:"short"
+  }).formatToParts(new Date(time));
+
+  const map = {};
+  parts.forEach(function(p){ map[p.type] = p.value; });
+
+  return `${map.day} ${map.month} ${map.year} at ${map.hour}:${map.minute}:${map.second} ${map.dayPeriod} ${map.timeZoneName}`;
+}
+
+async function loadSportsArticles(){
+  const mount = document.getElementById("sportsArticles");
+  if(!mount) return;
+
+  try{
+    async function readArticlesFrom(url){
+      const response = await fetch(url, { cache: "no-store" });
+      const json = await response.json();
+
+      if(Array.isArray(json)) return json;
+      if(Array.isArray(json.articles)) return json.articles;
+      if(json && json.success && Array.isArray(json.data)) return json.data;
+      if(json && json.success && Array.isArray(json.items)) return json.items;
+
+      return [];
+    }
+
+    let articles = await readArticlesFrom(`${CGN_API_BASE}?action=sports_articles&limit=72`);
+
+    if(!articles.length){
+      articles = await readArticlesFrom(`${CGN_API_BASE}?action=articles&category=Sports`);
+    }
+
+    if(!articles.length){
+      const allArticles = await readArticlesFrom(`${CGN_API_BASE}?action=articles`);
+      articles = allArticles.filter(function(article){
+        return slugify(article.category || "") === "sports";
+      }).slice(0,12);
+    }
+
+    if(!articles.length){
+      mount.innerHTML = `<div class="sports-empty">No sports articles are available right now.</div>`;
+      return;
+    }
+
+    mount.innerHTML = "";
+
+    articles.forEach(function(article){
+      const title = safeText(article.title || "Sports Update");
+      const summary = safeText(article.summary || article.subtitle || "");
+      const image = safeText(article.hero_image_url || article.image || "/CGNFavicon.png");
+      const author = safeText(article.author || "CGN News");
+      const date = safeText(formatArticleDate(article));
+      const url = buildSportsArticleUrl(article);
+
+      mount.insertAdjacentHTML("beforeend", `
+        <a class="sports-article-card" href="${url}" aria-label="Read ${title}">
+          <img src="${image}" alt="${title}" loading="lazy">
+          <div class="sports-article-body">
+            <div class="sports-article-meta">Sports • ${author}${date ? " • " + date : ""}</div>
+            <h3>${title}</h3>
+            <p>${summary}</p>
+          </div>
+        </a>
+      `);
+    });
+
+  } catch(err){
+    console.error("SPORTS ARTICLES ERROR:", err);
+    mount.innerHTML = `<div class="sports-empty">Sports articles are temporarily unavailable.</div>`;
+  }
+}
+
+loadSportsDashboard();
+loadSportsArticles();
+
+</script>
+
+<script>
+/* CGN Sports Load More + City Selector v2 */
+(function(){
+  const SPORTS_ARTICLE_BATCH_SIZE = 12;
+  const SPORTS_ARTICLE_FETCH_LIMIT = 96;
+  let sportsArticlePool = [];
+  let sportsVisibleCount = SPORTS_ARTICLE_BATCH_SIZE;
+
+  function getSportsMount(){
+    return document.getElementById("sportsArticles") || document.getElementById("sports-articles");
+  }
+
+  function safeText(value){
+    return String(value || "").replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c];
+    });
+  }
+
+  function slugify(value){
+    return String(value || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  function getArticleTime(article){
+    if(!article) return 0;
+    const directDate = article.published_at || article.updated_at || article.date || article.created_at || "";
+    if(directDate){
+      const parsed = new Date(directDate).getTime();
+      if(!isNaN(parsed)) return parsed;
+    }
+    const year = String(article.year || "").trim();
+    const month = String(article.month || "").trim().padStart(2, "0");
+    const day = String(article.day || "").trim().padStart(2, "0");
+    if(year && month && day){
+      const parsedParts = new Date(`${year}-${month}-${day}T00:00:00Z`).getTime();
+      if(!isNaN(parsedParts)) return parsedParts;
+    }
+    return 0;
+  }
+
+  function formatArticleDate(article){
+    const time = getArticleTime(article);
+    if(!time) return "Latest";
+    try{
+      return new Intl.DateTimeFormat("en-US", {
+        timeZone:"America/New_York",
+        day:"numeric",
+        month:"long",
+        year:"numeric"
+      }).format(new Date(time));
+    }catch(err){
+      return new Date(time).toLocaleDateString("en-US");
+    }
+  }
+
+  function normalizeMainSportsUrl(url){
+    let clean = String(url || "").trim();
+    if(!clean) return "";
+    clean = clean.replace(/^https?:\/\/[^/]+/i, "");
+    if(clean.indexOf("/news/") === 0){
+      clean = clean.replace(/^\/news\//, "/sports/");
+    }
+    if(clean.indexOf("/sports/") !== 0){
+      return "";
+    }
+    if(!clean.endsWith("/")) clean += "/";
+    return clean;
+  }
+
+  function buildSportsArticleUrl(article){
+    const existingUrl = String((article && (article.url || article.canonical_url)) || "").trim();
+    if(existingUrl){
+      const normalized = normalizeMainSportsUrl(existingUrl);
+      if(normalized) return normalized;
+    }
+    const slug = slugify((article && (article.slug || article.title)) || "sports-story");
+    const time = getArticleTime(article);
+    const date = time ? new Date(time) : new Date();
+    const year = date.getUTCFullYear();
+    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+    const day = String(date.getUTCDate()).padStart(2, "0");
+    return `https://ios.cgnnews.net/sports/${year}/${month}/${day}/${slug}/`;
+  }
+
+  function readArticlesPayload(json){
+    if(Array.isArray(json)) return json;
+    if(json && Array.isArray(json.articles)) return json.articles;
+    if(json && Array.isArray(json.rows)) return json.rows;
+    if(json && Array.isArray(json.data)) return json.data;
+    if(json && Array.isArray(json.items)) return json.items;
+    if(json && json.success && Array.isArray(json.data)) return json.data;
+    if(json && json.success && Array.isArray(json.items)) return json.items;
+    return [];
+  }
+
+  async function fetchArticlesFrom(url){
+    const response = await fetch(url, { cache:"no-store" });
+    const json = await response.json();
+    return readArticlesPayload(json);
+  }
+
+  function articleKey(article){
+    return String(article.article_id || article.id || article.canonical_url || article.url || article.slug || article.title || "")
+      .trim()
+      .toLowerCase();
+  }
+
+  function dedupeArticles(articles){
+    const seen = new Set();
+    return (Array.isArray(articles) ? articles : []).filter(function(article){
+      const key = articleKey(article);
+      if(!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  function isPublishedSportsArticle(article){
+    const status = String((article && article.status) || "published").trim().toLowerCase();
+    const category = slugify((article && article.category) || "");
+    return (!status || status === "published") && (category === "sports" || category === "sport");
+  }
+
+  function getApiBase(){
+    const meta = document.querySelector('meta[name="cgn-api-base"]');
+    if(meta && meta.content) return meta.content.replace(/\?+$/, "");
+    if(typeof window.CGN_API_BASE === "string" && window.CGN_API_BASE) return window.CGN_API_BASE.replace(/\?+$/, "");
+    if(typeof CGN_API_BASE === "string" && CGN_API_BASE) return CGN_API_BASE.replace(/\?+$/, "");
+    return "https://script.google.com/macros/s/AKfycbx41mQg-Ine3XZ-VrMI_SaQn4_K6cDQHA0cBFyGPgupu_edNFoNRjSLv2hoSe_bOytt/exec";
+  }
+
+  function getRenderMode(mount){
+    if(!mount) return "main";
+    if(mount.id === "sports-articles") return "mini";
+    if((mount.className || "").indexOf("sports-articles-grid") !== -1) return "main";
+    return "affiliate";
+  }
+
+  function emptyClassForMode(mode){
+    if(mode === "main") return "sports-empty";
+    if(mode === "mini") return "empty-state";
+    return "article-empty";
+  }
+
+  function renderArticleCard(article, mode){
+    const title = safeText(article.title || "Sports Update");
+    const summary = safeText(article.summary || article.subtitle || "");
+    const image = safeText(article.hero_image_url || article.image || "https://ios.cgnnews.net/sports/CGNStockSportsImage01.webp");
+    const author = safeText(article.author || "CGN Sports Desk");
+    const date = safeText(formatArticleDate(article));
+    const url = buildSportsArticleUrl(article);
+
+    if(mode === "mini"){
+      return `<article class="article-mini"><img src="${image}" alt="${title}" loading="lazy"><div class="article-mini-body"><small>Sports • ${author}${date ? " • " + date : ""}</small><h3>${title}</h3><p>${summary}</p><a class="read" href="${url}">Read more</a></div></article>`;
+    }
+
+    if(mode === "affiliate"){
+      return `<a class="article-card" href="${url}" aria-label="Read ${title}"><img src="${image}" alt="${title}" loading="lazy"><div class="article-body"><div class="article-meta">Sports • ${author}${date ? " • " + date : ""}</div><h3>${title}</h3><p>${summary}</p></div></a>`;
+    }
+
+    return `<a class="sports-article-card" href="${url}" aria-label="Read ${title}"><img src="${image}" alt="${title}" loading="lazy"><div class="sports-article-body"><div class="sports-article-meta">Sports • ${author}${date ? " • " + date : ""}</div><h3>${title}</h3><p>${summary}</p></div></a>`;
+  }
+
+  function ensureLoadMoreButton(){
+    const mount = getSportsMount();
+    if(!mount) return null;
+    let wrap = document.getElementById("sportsLoadMoreWrap");
+    if(!wrap){
+      wrap = document.createElement("div");
+      wrap.id = "sportsLoadMoreWrap";
+      wrap.className = "sports-load-more-wrap";
+      const button = document.createElement("button");
+      button.id = "sportsLoadMoreBtn";
+      button.type = "button";
+      button.className = "sports-load-more-btn";
+      button.textContent = "Load More";
+      button.addEventListener("click", function(){
+        sportsVisibleCount += SPORTS_ARTICLE_BATCH_SIZE;
+        renderSportsArticleBatch();
+      });
+      wrap.appendChild(button);
+      mount.insertAdjacentElement("afterend", wrap);
+    }
+    return wrap;
+  }
+
+  function updateLoadMoreButton(){
+    const wrap = ensureLoadMoreButton();
+    const button = document.getElementById("sportsLoadMoreBtn");
+    if(!wrap || !button) return;
+    const hasMore = sportsVisibleCount < sportsArticlePool.length;
+    wrap.style.display = hasMore ? "flex" : "none";
+    button.disabled = !hasMore;
+    const remaining = Math.max(0, sportsArticlePool.length - sportsVisibleCount);
+    button.textContent = remaining > 0 ? `Load More (${remaining})` : "No More Articles";
+  }
+
+  function renderSportsArticleBatch(){
+    const mount = getSportsMount();
+    if(!mount) return;
+    const mode = getRenderMode(mount);
+    if(!sportsArticlePool.length){
+      mount.innerHTML = `<div class="${emptyClassForMode(mode)}">No sports articles are available right now.</div>`;
+      updateLoadMoreButton();
+      return;
+    }
+    mount.innerHTML = sportsArticlePool.slice(0, sportsVisibleCount).map(function(article){
+      return renderArticleCard(article, mode);
+    }).join("");
+    updateLoadMoreButton();
+  }
+
+  async function loadSportsArticlesEnhanced(){
+    const mount = getSportsMount();
+    if(!mount) return;
+    const mode = getRenderMode(mount);
+    try{
+      const base = getApiBase();
+      let articles = [];
+      try{
+        articles = await fetchArticlesFrom(`${base}?action=sports_articles&limit=${SPORTS_ARTICLE_FETCH_LIMIT}`);
+      }catch(err){
+        articles = [];
+      }
+      if(!articles.length){
+        try{
+          articles = await fetchArticlesFrom(`${base}?action=articles&category=Sports&limit=${SPORTS_ARTICLE_FETCH_LIMIT}`);
+        }catch(err){
+          articles = [];
+        }
+      }
+      if(!articles.length){
+        const allArticles = await fetchArticlesFrom(`${base}?action=articles&limit=${SPORTS_ARTICLE_FETCH_LIMIT}`);
+        articles = allArticles.filter(isPublishedSportsArticle);
+      }
+      sportsArticlePool = dedupeArticles(articles)
+        .filter(isPublishedSportsArticle)
+        .sort(function(a,b){ return getArticleTime(b) - getArticleTime(a); });
+      sportsVisibleCount = SPORTS_ARTICLE_BATCH_SIZE;
+      renderSportsArticleBatch();
+    }catch(err){
+      console.error("SPORTS ARTICLES LOAD MORE ERROR:", err);
+      mount.innerHTML = `<div class="${emptyClassForMode(mode)}">Sports articles are temporarily unavailable.</div>`;
+      updateLoadMoreButton();
+    }
+  }
+
+  window.changeSportsCity = function(url){
+    if(!url) return;
+    window.location.href = url;
+  };
+
+  window.initSportsCitySelector = function(){
+    const selector = document.getElementById("sportsCitySelect");
+    if(!selector) return;
+    let current;
+    try{
+      current = new URL(window.location.href);
+    }catch(err){
+      return;
+    }
+    const currentHost = current.hostname.toLowerCase();
+    const currentPath = current.pathname.replace(/\/+$/, "/");
+    Array.from(selector.options).forEach(function(option){
+      try{
+        const optionUrl = new URL(option.value);
+        const optionPath = optionUrl.pathname.replace(/\/+$/, "/");
+        if(optionUrl.hostname.toLowerCase() === currentHost && optionPath === currentPath){
+          selector.value = option.value;
+        }
+      }catch(err){}
+    });
+  };
+
+  window.loadSportsArticles = loadSportsArticlesEnhanced;
+  window.loadMoreSportsArticles = function(){
+    sportsVisibleCount += SPORTS_ARTICLE_BATCH_SIZE;
+    renderSportsArticleBatch();
+  };
+
+  function bootSportsEnhancements(){
+    ensureLoadMoreButton();
+    window.initSportsCitySelector();
+    loadSportsArticlesEnhanced();
+    const refresh = document.getElementById("sports-refresh");
+    if(refresh && !refresh.dataset.cgnLoadMoreBound){
+      refresh.dataset.cgnLoadMoreBound = "1";
+      refresh.addEventListener("click", function(){
+        setTimeout(loadSportsArticlesEnhanced, 80);
+      });
+    }
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", bootSportsEnhancements);
+  } else {
+    bootSportsEnhancements();
+  }
+  window.addEventListener("load", function(){
+    setTimeout(bootSportsEnhancements, 250);
+  });
+})();
+</script>
+
+<script src="/assets/cgn-now-shell.js"></script>
+</body>
+</html>

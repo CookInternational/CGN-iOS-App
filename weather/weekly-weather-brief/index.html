@@ -1,0 +1,1332 @@
+<!doctype html>
+<!-- CGN Weekly Weather Brief v8.6.0 | 50-City Weekly Weather Brief Articles | Build UTC: 2026-06-22T00:00:00Z -->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>CGN Weekly Weather Brief | 7-Day Forecast</title>
+<meta content="Watch the CGN News Weekly Weather Brief with a city-by-city seven-day forecast for major Midwest, U.S., and international cities." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="CGN News" name="author"/>
+<link href="https://ios.cgnnews.net/weather/weekly-weather-brief/" rel="canonical"/>
+
+
+
+
+<meta content="website" property="og:type"/>
+<meta content="CGN News" property="og:site_name"/>
+<meta content="CGN Weekly Weather Brief | 7-Day Forecast" property="og:title"/>
+<meta content="Watch the CGN News Weekly Weather Brief with a city-by-city seven-day forecast for major Midwest, U.S., and international cities." property="og:description"/>
+<meta content="https://ios.cgnnews.net/weather/weekly-weather-brief/" property="og:url"/>
+<meta content="https://www.cgnnews.net/weather/weekly-weather-forecast/WeeklyWeatherBriefBanner01.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="CGN Weekly Weather Brief | 7-Day Forecast" name="twitter:title"/>
+<meta content="Watch the CGN News Weekly Weather Brief with a city-by-city seven-day forecast for major Midwest, U.S., and international cities." name="twitter:description"/>
+<meta content="https://www.cgnnews.net/weather/weekly-weather-forecast/WeeklyWeatherBriefBanner01.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.cgnnews.net/weather/weekly-weather-brief/#webpage",
+      "url": "https://www.cgnnews.net/weather/weekly-weather-brief/",
+      "name": "CGN Weekly Weather Brief | 7-Day Forecast",
+      "description": "Watch the CGN News Weekly Weather Brief with a city-by-city seven-day forecast for major Midwest, U.S., and international cities.",
+      "isPartOf": { "@id": "https://www.cgnnews.net/#website" },
+      "publisher": { "@id": "https://www.cgnnews.net/#organization" },
+      "about": { "@type": "Thing", "name": "Weather forecast" }
+    },
+    {
+      "@type": "MediaObject",
+      "@id": "https://www.cgnnews.net/weather/weekly-weather-brief/#weekly-weather-brief-player",
+      "name": "CGN Weekly Weather Brief",
+      "description": "An inline CGN News weather briefing stream with live city-by-city seven-day forecast cards.",
+      "contentUrl": "https://www.cgnnews.net/weather/weekly-weather-brief/",
+      "encodingFormat": "text/html"
+    },
+    {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.cgnnews.net/#organization",
+      "name": "CGN News",
+      "legalName": "Cook Global News Network",
+      "url": "https://www.cgnnews.net/",
+      "logo": { "@type": "ImageObject", "url": "https://www.cgnnews.net/CGNNewsLogo01.png" },
+      "email": "tips@cgnnews.net",
+      "sameAs": [
+        "https://instagram.com/cookglobalnews",
+        "https://x.com/CookGlobalNews",
+        "https://youtube.com/@CookGlobalNews"
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --cgn-navy:#07111f;
+  --cgn-blue:#0b63c7;
+  --cgn-red:#c40000;
+  --cgn-cyan:#53d5ff;
+  --cgn-ice:#eaf8ff;
+  --cgn-border:#d9d9d9;
+}
+* { box-sizing:border-box; }
+body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#fff; color:#111; }
+.cgn-weekly-weather { width:min(1180px, calc(100% - 34px)); margin:34px auto 44px; }
+.cgn-wwb-banner { width:100%; display:block; border:1px solid #111827; background:#07111f; aspect-ratio:32/7; object-fit:cover; box-shadow:0 18px 40px rgba(7,17,31,.12); }
+.cgn-wwb-intro { margin:22px 0 18px; display:grid; grid-template-columns:1fr auto; gap:20px; align-items:end; border-bottom:1px solid #ddd; padding-bottom:18px; }
+.cgn-wwb-kicker { display:inline-flex; align-items:center; gap:8px; color:#c40000; font-size:12px; font-weight:900; text-transform:uppercase; letter-spacing:.1em; margin-bottom:8px; }
+.cgn-wwb-kicker::before { content:""; width:9px; height:9px; border-radius:50%; background:#e11d2e; box-shadow:0 0 0 5px rgba(225,29,46,.15); }
+.cgn-wwb-intro h1 { margin:0; font-size:38px; line-height:1.05; letter-spacing:-.03em; }
+.cgn-wwb-intro p { margin:9px 0 0; color:#4b5563; max-width:780px; font-size:15px; line-height:1.55; }
+.cgn-wwb-live-pill { display:inline-flex; align-items:center; gap:8px; padding:9px 12px; border:1px solid #ddd; background:#f8fafc; font-size:12px; color:#111827; font-weight:900; text-transform:uppercase; letter-spacing:.05em; white-space:nowrap; }
+.cgn-wwb-live-pill span { width:9px; height:9px; display:inline-block; border-radius:50%; background:#22c55e; box-shadow:0 0 0 5px rgba(34,197,94,.16); }
+.weather-action-panel { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:0 0 24px; }
+.weather-action-btn { position:relative; overflow:hidden; min-height:86px; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:16px 18px; color:#fff; text-decoration:none; border:1px solid rgba(255,255,255,.16); box-shadow:0 16px 34px rgba(7,17,31,.14); isolation:isolate; transition:transform .18s ease, box-shadow .18s ease; }
+.weather-action-btn:hover { transform:translateY(-2px); box-shadow:0 20px 44px rgba(7,17,31,.22); text-decoration:none; }
+.weather-action-copy,.weather-action-arrow { position:relative; z-index:2; }
+.weather-action-title { display:flex; align-items:center; gap:9px; font-size:18px; line-height:1.1; letter-spacing:.04em; text-transform:uppercase; font-weight:900; }
+.weather-action-copy small { display:block; margin-top:6px; font-size:12px; line-height:1.35; color:rgba(255,255,255,.86); font-weight:800; }
+.weather-action-arrow { flex:0 0 auto; width:36px; height:36px; border-radius:999px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.42); background:rgba(255,255,255,.12); font-size:20px; font-weight:900; }
+.weather-center-btn { background:radial-gradient(circle at 16% 20%, rgba(255,255,255,.95) 0 25px, rgba(255,226,116,.74) 26px 52px, transparent 54px), radial-gradient(circle at 60% 40%, rgba(255,255,255,.42), transparent 24%), linear-gradient(135deg,#0873df 0%,#139af2 48%,#7bd4ff 100%); border-color:rgba(125,211,252,.42); }
+.weather-center-btn::before,.weather-center-btn::after { content:""; position:absolute; z-index:1; border-radius:999px; pointer-events:none; background:rgba(255,255,255,.38); filter:blur(10px); animation:cgnCloudDrift 24s linear infinite; }
+.weather-center-btn::before { width:190px; height:54px; left:-40px; bottom:8px; }
+.weather-center-btn::after { width:135px; height:42px; right:28px; top:16px; opacity:.65; animation-duration:31s; animation-delay:-12s; }
+.partly-cloudy-icon { position:relative; width:38px; height:29px; display:inline-block; flex:0 0 auto; }
+.partly-cloudy-icon::before { content:""; position:absolute; left:0; top:0; width:22px; height:22px; border-radius:50%; background:#ffe071; box-shadow:0 0 18px rgba(255,224,113,.72); }
+.partly-cloudy-icon::after { content:""; position:absolute; right:0; bottom:0; width:30px; height:16px; border-radius:999px; background:#fff; box-shadow:-9px -3px 0 1px rgba(255,255,255,.94), 8px 0 0 -1px rgba(255,255,255,.94); }
+.weather-radar-btn { background:radial-gradient(circle at 13% 12%, rgba(96,165,250,.42), transparent 28%), radial-gradient(circle at 80% 18%, rgba(255,255,255,.16), transparent 26%), linear-gradient(135deg,#061226 0%,#0b3a72 48%,#0c7fc0 100%); border-color:rgba(96,165,250,.32); }
+.weather-radar-btn::before { content:""; position:absolute; inset:-40% -10% auto; height:120%; background:repeating-linear-gradient(105deg, transparent 0 18px, rgba(255,255,255,.18) 19px 21px, transparent 22px 40px); opacity:.7; animation:weatherButtonRainSweep 1.8s linear infinite; z-index:1; pointer-events:none; }
+.weather-radar-btn::after { content:""; position:absolute; right:-54px; bottom:-54px; width:170px; height:170px; border-radius:50%; border:2px solid rgba(255,255,255,.18); box-shadow:0 0 0 18px rgba(255,255,255,.055), 0 0 0 42px rgba(255,255,255,.035); z-index:1; pointer-events:none; }
+.radar-icon { position:relative; width:29px; height:29px; flex:0 0 auto; border-radius:50%; border:2px solid rgba(255,255,255,.88); box-shadow:inset 0 0 0 5px rgba(255,255,255,.18), 0 0 18px rgba(125,211,252,.46); }
+.radar-icon::before,.radar-icon::after { content:""; position:absolute; inset:50% auto auto 50%; transform-origin:left center; background:#fff; }
+.radar-icon::before { width:12px; height:2px; transform:rotate(-34deg); animation:weatherRadarSweep 2.6s linear infinite; }
+.radar-icon::after { width:5px; height:5px; margin:-2.5px 0 0 -2.5px; border-radius:50%; box-shadow:0 0 12px rgba(255,255,255,.9); }
+@keyframes cgnCloudDrift { from { transform:translateX(-28px); } to { transform:translateX(38px); } }
+@keyframes weatherButtonRainSweep { from { transform:translate3d(26px,-22px,0); } to { transform:translate3d(-44px,58px,0); } }
+@keyframes weatherRadarSweep { from { transform:rotate(-34deg); } to { transform:rotate(326deg); } }
+.cgn-wwb-player-shell { background:#07111f; border:1px solid #111827; box-shadow:0 20px 52px rgba(7,17,31,.18); overflow:hidden; }
+.cgn-wwb-player-topline { display:flex; justify-content:space-between; align-items:center; gap:14px; padding:13px 16px; background:radial-gradient(circle at 12% 12%, rgba(255,255,255,.10), transparent 28%), linear-gradient(135deg,#07111f,#0b2038 64%,#102947); color:#fff; border-bottom:1px solid rgba(255,255,255,.14); }
+.cgn-wwb-player-title strong { display:block; font-size:15px; letter-spacing:.04em; text-transform:uppercase; }
+.cgn-wwb-player-title span { display:block; color:#cbd5e1; font-size:12px; margin-top:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.cgn-wwb-status { display:flex; gap:8px; align-items:center; color:#dbeafe; font-size:12px; font-weight:800; white-space:nowrap; }
+.cgn-wwb-status-dot { width:8px; height:8px; border-radius:50%; background:#22c55e; box-shadow:0 0 0 5px rgba(34,197,94,.13); }
+.cgn-wwb-stage { position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; isolation:isolate; }
+.cgn-stock-image { position:absolute; inset:0; width:100%; height:100%; display:block; object-fit:contain; background:#000; opacity:0; transition:opacity .35s ease; z-index:1; }
+.cgn-stock-image.active { opacity:1; }
+.cgn-title-date-overlay { position:absolute; z-index:4; left:0; right:0; top:68.2%; text-align:center; font-family:"Trebuchet MS", Arial, sans-serif; font-size:clamp(20px,4.4vw,58px); font-weight:900; color:#fff; text-shadow:0 3px 12px rgba(0,0,0,.58); letter-spacing:.01em; pointer-events:none; display:none; }
+.cgn-map-overlays { position:absolute; inset:0; z-index:5; display:none; pointer-events:none; color:#fff; font-family:Arial, Helvetica, sans-serif; }
+.cgn-map-overlays.show { display:block; }
+.cgn-map-timezone,.cgn-map-updated { position:absolute; top:91.45%; height:4.2%; display:flex; align-items:center; color:#fff; text-shadow:0 3px 10px rgba(0,0,0,.95), 0 0 10px rgba(255,255,255,.22); font-size:clamp(9px,1.18vw,19px); font-weight:900; letter-spacing:.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.cgn-map-timezone { left:53.25%; width:13.8%; justify-content:flex-start; }
+.cgn-map-updated { left:76.35%; width:20.8%; justify-content:flex-start; }
+.cgn-city-card { position:absolute; inset:0; z-index:3; display:none; color:#fff; background:#06101f; overflow:hidden; }
+.cgn-city-card.active { display:block; }
+.cgn-city-card::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 16% 18%, rgba(48,155,255,.28), transparent 23%), radial-gradient(circle at 76% 14%, rgba(196,0,0,.20), transparent 22%), linear-gradient(135deg, #050b15 0%, #07172f 48%, #02060d 100%); z-index:0; }
+.cgn-city-card::after { content:""; position:absolute; inset:-1px; background:linear-gradient(rgba(83,213,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(83,213,255,.07) 1px, transparent 1px); background-size:48px 48px; opacity:.48; mask-image:radial-gradient(circle at center, black 20%, transparent 82%); z-index:0; }
+.cgn-city-inner { position:relative; z-index:2; height:100%; padding:clamp(18px,2vw,30px); display:grid; grid-template-rows:22% 58% 14%; gap:clamp(8px,1vw,16px); }
+.cgn-city-header { display:grid; grid-template-columns:minmax(160px,.72fr) minmax(320px,1.55fr) minmax(190px,.85fr); gap:18px; align-items:center; min-height:0; }
+.cgn-brand-logo { display:flex; align-items:flex-start; justify-content:flex-start; min-width:0; }
+.cgn-brand-logo img { display:block; width:min(190px, 22vw); max-height:74px; object-fit:contain; filter:drop-shadow(0 5px 16px rgba(0,0,0,.55)); }
+.cgn-city-titlebox { text-align:center; text-transform:uppercase; }
+.cgn-city-titlebox .brief-label { display:inline-block; padding:6px 12px; border:1px solid rgba(83,213,255,.45); background:rgba(7,17,31,.42); color:#dff8ff; font-size:clamp(9px,.85vw,13px); font-weight:900; letter-spacing:.18em; box-shadow:0 0 20px rgba(83,213,255,.15); }
+.cgn-city-titlebox .week-label { margin-top:7px; color:#86d9ff; font-size:clamp(9px,.82vw,12px); font-weight:900; letter-spacing:.22em; }
+.cgn-city-titlebox h2 { margin:7px 0 0; color:#fff; font-size:clamp(22px,3.4vw,54px); line-height:.98; letter-spacing:-.035em; text-shadow:0 4px 18px rgba(0,0,0,.62), 0 0 18px rgba(83,213,255,.2); }
+.cgn-bureau-clock { justify-self:end; min-width:185px; border:1px solid rgba(83,213,255,.42); background:rgba(2,8,17,.58); padding:10px 12px; box-shadow:0 0 26px rgba(83,213,255,.12); text-align:right; }
+.cgn-bureau-clock .clock-kicker { font-size:9px; color:#9ee7ff; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+.cgn-bureau-clock .clock-main { margin-top:4px; font-size:clamp(12px,1.25vw,20px); line-height:1; color:#fff; font-weight:900; letter-spacing:.06em; white-space:nowrap; text-shadow:0 0 12px rgba(255,255,255,.18); }
+.cgn-forecast-grid { display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:clamp(7px,.8vw,12px); min-height:0; height:100%; align-items:stretch; }
+.cgn-day-card { position:relative; overflow:hidden; border:1px solid rgba(148,220,255,.25); background:linear-gradient(180deg, rgba(9,30,58,.82), rgba(3,10,22,.76)); box-shadow:inset 0 0 0 1px rgba(255,255,255,.05), 0 12px 28px rgba(0,0,0,.25); padding:clamp(8px,.82vw,12px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:clamp(3px,.45vw,8px); text-align:center; min-height:0; }
+.cgn-day-card::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 50% 31%, rgba(83,213,255,.18), transparent 35%); opacity:.85; pointer-events:none; }
+.cgn-day-name { position:relative; z-index:2; color:#eaf8ff; font-weight:900; text-transform:uppercase; letter-spacing:.08em; font-size:clamp(9px,.88vw,14px); }
+.cgn-day-date { position:relative; z-index:2; color:#9fdaf0; font-size:clamp(7px,.7vw,11px); font-weight:800; margin-top:2px; }
+.cgn-day-icon { position:relative; z-index:2; font-size:clamp(27px,3.35vw,54px); line-height:1; filter:drop-shadow(0 4px 8px rgba(0,0,0,.7)); margin:clamp(2px,.35vw,5px) 0; }
+.cgn-day-condition { position:relative; z-index:2; color:#fff; text-transform:uppercase; font-size:clamp(8px,.9vw,14px); line-height:1.08; font-weight:900; letter-spacing:.03em; min-height:2.1em; display:flex; align-items:center; justify-content:center; text-shadow:0 2px 7px rgba(0,0,0,.86); }
+.cgn-temp-line { position:relative; z-index:2; display:flex; align-items:center; justify-content:center; gap:4px; font-size:clamp(11px,1.32vw,21px); font-weight:900; white-space:nowrap; margin-top:clamp(2px,.35vw,6px); }
+.cgn-temp-low { color:#ff6262; text-shadow:0 0 10px rgba(255,98,98,.28); }
+.cgn-temp-high { color:#67d7ff; text-shadow:0 0 10px rgba(103,215,255,.28); }
+.cgn-weather-small { position:relative; z-index:2; display:flex; align-items:center; justify-content:center; gap:4px; color:#f7fbff; font-size:clamp(7px,.88vw,14px); font-weight:900; min-height:1.35em; line-height:1.1; text-shadow:0 2px 7px rgba(0,0,0,.86); overflow:hidden; white-space:nowrap; max-width:100%; }
+.cgn-city-footer { display:flex; align-items:flex-end; justify-content:space-between; gap:18px; border-top:1px solid rgba(83,213,255,.24); padding-top:clamp(9px,1vw,15px); }
+.cgn-social-line { color:#eaf8ff; font-size:clamp(9px,.9vw,14px); line-height:1.35; font-weight:900; letter-spacing:.04em; text-shadow:0 2px 9px rgba(0,0,0,.72); }
+.cgn-social-row { display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
+.cgn-social-icon { width:18px; height:18px; display:inline-flex; align-items:center; justify-content:center; color:#fff; border:1px solid rgba(255,255,255,.38); background:rgba(255,255,255,.08); border-radius:5px; box-shadow:0 0 12px rgba(83,213,255,.10); }
+.cgn-social-icon svg { width:12px; height:12px; display:block; fill:currentColor; }
+.cgn-social-handle { margin-left:2px; color:#fff; }
+.cgn-social-line .site { display:block; color:#8addff; letter-spacing:.02em; margin-top:4px; }
+.cgn-city-meta { display:flex; align-items:flex-end; gap:clamp(14px,2.2vw,34px); text-align:right; color:#fff; }
+.cgn-city-meta span { display:block; color:#8bdfff; font-size:clamp(7px,.7vw,11px); font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+.cgn-city-meta strong { display:block; margin-top:2px; font-size:clamp(11px,1.16vw,19px); font-weight:900; text-shadow:0 2px 9px rgba(0,0,0,.84), 0 0 10px rgba(255,255,255,.14); white-space:nowrap; }
+.cgn-wwb-loader { position:absolute; inset:auto 16px 14px auto; z-index:8; padding:8px 10px; border:1px solid rgba(255,255,255,.24); background:rgba(7,17,31,.68); color:#fff; font-size:12px; font-weight:900; text-transform:uppercase; letter-spacing:.04em; backdrop-filter:blur(10px); }
+.cgn-wwb-controls { background:#0b1626; color:#fff; border-top:1px solid rgba(255,255,255,.14); padding:14px 16px 16px; }
+.cgn-wwb-progress-wrap { width:100%; height:8px; border-radius:999px; overflow:hidden; background:rgba(255,255,255,.16); margin-bottom:12px; }
+.cgn-wwb-progress { height:100%; width:0; background:linear-gradient(90deg,#c40000,#60a5fa); transition:width .12s linear; }
+.cgn-wwb-control-grid { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; }
+.cgn-wwb-button-row { display:flex; flex-wrap:wrap; gap:8px; }
+.cgn-wwb-controls button,.cgn-wwb-controls select { border:1px solid rgba(255,255,255,.28); background:transparent; color:#fff; padding:10px 12px; min-height:38px; font-weight:900; font-size:12px; text-transform:uppercase; cursor:pointer; border-radius:0; }
+.cgn-wwb-controls button:hover,.cgn-wwb-controls button.active { background:#c40000; border-color:#c40000; }
+.cgn-wwb-controls select { max-width:250px; background:#0b1626; }
+.cgn-wwb-meta { margin-top:12px; display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center; color:#cbd5e1; font-size:12px; line-height:1.35; }
+.cgn-wwb-meta strong { color:#fff; }
+.cgn-wwb-warning { display:none; margin-top:12px; border:1px solid rgba(251,191,36,.5); background:rgba(251,191,36,.12); color:#fde68a; padding:10px 12px; font-size:12px; font-weight:800; }
+.cgn-wwb-warning.show { display:block; }
+.cgn-wwb-articles { margin-top:22px; border:1px solid #d9dfe7; background:#fff; box-shadow:0 16px 38px rgba(7,17,31,.08); }
+.cgn-wwb-articles-head { display:flex; align-items:end; justify-content:space-between; gap:18px; padding:20px 22px; border-bottom:1px solid #e5e7eb; background:linear-gradient(135deg,#f8fafc,#fff); }
+.cgn-wwb-articles-kicker { margin:0 0 6px; color:#c40000; font-size:12px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+.cgn-wwb-articles-head h2 { margin:0; color:#07111f; font-size:27px; line-height:1.1; letter-spacing:-.025em; }
+.cgn-wwb-articles-status { color:#64748b; font-size:12px; font-weight:800; text-align:right; }
+.cgn-wwb-articles-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; padding:20px; }
+.cgn-wwb-article-card { min-width:0; border:1px solid #dce2ea; background:#fff; box-shadow:0 10px 24px rgba(7,17,31,.07); overflow:hidden; }
+.cgn-wwb-article-card:first-child { grid-column:span 2; }
+.cgn-wwb-article-link { display:flex; flex-direction:column; height:100%; color:inherit; text-decoration:none; }
+.cgn-wwb-article-link:hover .cgn-wwb-article-title { color:#0b63c7; }
+.cgn-wwb-article-image-wrap { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; background:#07111f; }
+.cgn-wwb-article-image { width:100%; height:100%; display:block; object-fit:cover; transition:transform .2s ease; }
+.cgn-wwb-article-link:hover .cgn-wwb-article-image { transform:scale(1.025); }
+.cgn-wwb-article-source { position:absolute; left:10px; bottom:10px; padding:5px 8px; background:rgba(7,17,31,.88); color:#fff; font-size:10px; font-weight:900; letter-spacing:.06em; text-transform:uppercase; }
+.cgn-wwb-article-copy { display:flex; flex:1; flex-direction:column; padding:16px; }
+.cgn-wwb-article-date { color:#c40000; font-size:11px; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+.cgn-wwb-article-title { margin:8px 0 0; color:#07111f; font-size:20px; line-height:1.18; letter-spacing:-.02em; transition:color .18s ease; }
+.cgn-wwb-article-summary { margin:10px 0 0; color:#4b5563; font-size:13px; line-height:1.55; }
+.cgn-wwb-article-read { margin-top:auto; padding-top:14px; color:#0b63c7; font-size:12px; font-weight:900; letter-spacing:.04em; text-transform:uppercase; }
+.cgn-wwb-articles-empty { grid-column:1/-1; margin:0; padding:24px; border:1px dashed #cbd5e1; color:#64748b; background:#f8fafc; text-align:center; font-weight:800; }
+.cgn-wwb-about { margin-top:22px; border:1px solid #ddd; background:#f8fafc; padding:18px; line-height:1.5; color:#4b5563; }
+.cgn-wwb-about h2 { margin:0 0 8px; color:#111; font-size:22px; }
+.cgn-wwb-about p { margin:0 0 10px; }
+.cgn-wwb-about p:last-child { margin-bottom:0; }
+@media(max-width:900px){
+  .cgn-weekly-weather { width:min(100% - 28px, 1180px); margin:26px auto 34px; }
+  .cgn-wwb-banner { aspect-ratio:16/5; }
+  .cgn-wwb-intro { grid-template-columns:1fr; gap:12px; }
+  .cgn-wwb-intro h1 { font-size:30px; }
+  .weather-action-panel { grid-template-columns:1fr; }
+  .cgn-wwb-player-topline { flex-direction:column; align-items:flex-start; }
+  .cgn-wwb-control-grid { align-items:stretch; }
+  .cgn-wwb-button-row,.cgn-wwb-controls select { width:100%; }
+  .cgn-wwb-controls button { flex:1 1 88px; }
+  .cgn-wwb-controls select { max-width:none; }
+  .cgn-wwb-meta { grid-template-columns:1fr; }
+  .cgn-wwb-articles-head { align-items:flex-start; flex-direction:column; }
+  .cgn-wwb-articles-status { text-align:left; }
+  .cgn-wwb-articles-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .cgn-wwb-article-card:first-child { grid-column:span 2; }
+  .cgn-city-inner { padding:12px; gap:8px; }
+  .cgn-city-header { grid-template-columns:1fr; gap:5px; }
+  .cgn-brand-logo { display:none; }
+  .cgn-bureau-clock { position:absolute; right:10px; top:10px; transform:scale(.78); transform-origin:top right; }
+  .cgn-city-titlebox { padding-right:120px; text-align:left; }
+  .cgn-city-titlebox h2 { font-size:clamp(18px,4.3vw,34px); }
+  .cgn-forecast-grid { gap:4px; }
+  .cgn-day-card { padding:5px 3px; }
+  .cgn-weather-small { font-size:clamp(5px,1.15vw,9px); }
+  .cgn-day-condition { font-size:clamp(5px,1.25vw,10px); }
+  .cgn-temp-line { font-size:clamp(6px,1.55vw,12px); }
+  .cgn-city-footer { padding-top:6px; }
+  .cgn-social-line { font-size:clamp(6px,1.35vw,10px); }
+  .cgn-city-meta strong { font-size:clamp(7px,1.55vw,12px); }
+  .cgn-city-meta span { font-size:clamp(5px,1.1vw,8px); }
+}
+@media(max-width:560px){
+  .weather-action-title { font-size:15px; }
+  .weather-action-copy small { font-size:11px; }
+  .cgn-wwb-controls { padding:12px; }
+  .cgn-wwb-controls button { font-size:11px; padding:9px 8px; }
+  .cgn-wwb-articles-grid { grid-template-columns:1fr; padding:14px; }
+  .cgn-wwb-article-card:first-child { grid-column:auto; }
+  .cgn-wwb-articles-head { padding:18px; }
+  .cgn-wwb-articles-head h2 { font-size:23px; }
+}
+
+
+/* CGN Weekly Weather Brief stream-only mode
+   Use /weather/weekly-weather-brief/?embed=1 for StreamYard/browser-source capture.
+   Full page remains unchanged at /weather/weekly-weather-brief/. */
+html.cgn-wwb-embed-root,
+html.cgn-wwb-embed-root body {
+  width:100% !important;
+  height:100% !important;
+  min-height:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:#000 !important;
+  overflow:hidden !important;
+}
+
+html.cgn-wwb-embed-root #cgn-site-header,
+html.cgn-wwb-embed-root #cgn-site-footer,
+html.cgn-wwb-embed-root .cgn-wwb-banner,
+html.cgn-wwb-embed-root .cgn-wwb-intro,
+html.cgn-wwb-embed-root .weather-action-panel,
+html.cgn-wwb-embed-root .cgn-wwb-about,
+html.cgn-wwb-embed-root .cgn-wwb-articles,
+html.cgn-wwb-embed-root .cgn-wwb-player-topline,
+html.cgn-wwb-embed-root .cgn-wwb-controls {
+  display:none !important;
+}
+
+html.cgn-wwb-embed-root .cgn-weekly-weather {
+  width:100% !important;
+  max-width:none !important;
+  height:100vh !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+html.cgn-wwb-embed-root .cgn-wwb-player-shell {
+  width:100% !important;
+  height:100vh !important;
+  border:0 !important;
+  box-shadow:none !important;
+  background:#000 !important;
+}
+
+html.cgn-wwb-embed-root .cgn-wwb-stage {
+  width:100% !important;
+  height:100vh !important;
+  aspect-ratio:auto !important;
+}
+
+html.cgn-wwb-embed-root .cgn-stock-image {
+  object-fit:contain !important;
+}
+
+html.cgn-wwb-embed-root .cgn-wwb-loader {
+  right:12px !important;
+  bottom:12px !important;
+}
+
+</style>
+<script>
+(function(){
+  try {
+    if (new URLSearchParams(window.location.search).get("embed") === "1") {
+      document.documentElement.classList.add("cgn-wwb-embed-root");
+    }
+  } catch (err) {}
+})();
+</script>
+
+
+
+
+
+
+<script>
+(function () {
+  const isEmbed =
+    new URLSearchParams(window.location.search).get("embed") === "1";
+
+  if (isEmbed) {
+    document.documentElement.setAttribute("translate", "no");
+    document.documentElement.classList.add("notranslate");
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.src = "/assets/cgn-dynamic-translate.js";
+  script.defer = true;
+  document.head.appendChild(script);
+})();
+</script>
+
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<meta content="#07111f" name="theme-color"/>
+<meta content="CGN NOW" name="apple-mobile-web-app-title"/>
+<meta content="CGN NOW" name="application-name"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<link href="/assets/cgn-now.css" rel="stylesheet"/>
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body>
+<div id="cgn-site-header"></div>
+<main class="cgn-weekly-weather">
+<img alt="CGN Weekly Weather Brief" class="cgn-wwb-banner" loading="eager" src="https://www.cgnnews.net/weather/weekly-weather-forecast/WeeklyWeatherBriefBanner01.png"/>
+<section aria-label="CGN Weekly Weather Brief introduction" class="cgn-wwb-intro">
+<div>
+<div class="cgn-wwb-kicker">CGN Weather</div>
+<h1>Weekly Weather Brief</h1>
+<p>Watch the latest CGN Weekly Weather Brief, featuring a city-by-city seven-day outlook across major Midwest, U.S., and international cities.</p>
+</div>
+<div class="cgn-wwb-live-pill"><span aria-hidden="true"></span> Forecast Card Stream</div>
+</section>
+<nav aria-label="CGN Weather quick actions" class="weather-action-panel">
+<a aria-label="Open Weather Center" class="weather-action-btn weather-center-btn" href="/weather/">
+<span class="weather-action-copy"><span class="weather-action-title">Weather Center <span aria-hidden="true" class="partly-cloudy-icon"></span></span><small>Current conditions, hourly updates, and extended forecasts.</small></span>
+<span aria-hidden="true" class="weather-action-arrow">→</span>
+</a>
+<a aria-label="Open Weather Radar" class="weather-action-btn weather-radar-btn" href="/weather/radar/">
+<span class="weather-action-copy"><span class="weather-action-title">Weather Radar <span aria-hidden="true" class="radar-icon"></span></span><small>Radar, NWS alerts, and aviation weather tools.</small></span>
+<span aria-hidden="true" class="weather-action-arrow">→</span>
+</a>
+</nav>
+<section aria-labelledby="cgn-wwb-player-title" class="cgn-wwb-player-shell">
+<div class="cgn-wwb-player-topline">
+<div class="cgn-wwb-player-title"><strong id="cgn-wwb-player-title">CGN Weekly Weather Brief</strong><span id="cgn-wwb-slide-label">Starting forecast stream...</span></div>
+<div class="cgn-wwb-status"><span aria-hidden="true" class="cgn-wwb-status-dot"></span><span id="cgn-wwb-data-status">Forecast updating</span></div>
+</div>
+<div class="cgn-wwb-stage" id="cgn-wwb-stage">
+<img alt="CGN Weekly Weather Brief title card" class="cgn-stock-image active" id="cgn-stock-image" loading="eager" src="https://www.cgnnews.net/weather/weekly-weather-forecast/00StockImages/01CGNWeeklyWeatherBriefTitleCard.png"/>
+<div class="cgn-title-date-overlay" id="cgn-title-date-overlay"></div>
+<div aria-hidden="true" class="cgn-map-overlays" id="cgn-map-overlays">
+<div class="cgn-map-timezone" id="cgn-map-timezone"></div>
+<div class="cgn-map-updated" id="cgn-map-updated"></div>
+</div>
+<div aria-live="polite" class="cgn-city-card" id="cgn-city-card"></div>
+<div class="cgn-wwb-loader" id="cgn-wwb-loader">Starting stream</div>
+</div>
+<div aria-label="CGN Weekly Weather Brief player controls" class="cgn-wwb-controls">
+<div aria-hidden="true" class="cgn-wwb-progress-wrap"><div class="cgn-wwb-progress" id="cgn-wwb-progress"></div></div>
+<div class="cgn-wwb-control-grid">
+<div class="cgn-wwb-button-row">
+<button id="cgn-wwb-play" type="button">Pause</button>
+<button id="cgn-wwb-prev" type="button">Previous</button>
+<button id="cgn-wwb-next" type="button">Next</button>
+<button id="cgn-wwb-restart" type="button">Restart</button>
+<button id="cgn-wwb-mute" type="button">Play Audio</button>
+</div>
+<select aria-label="Jump to a city forecast card" id="cgn-wwb-city-select"><option value="">Jump to city...</option></select>
+</div>
+<div class="cgn-wwb-meta">
+<div><strong>Source:</strong> Weather data powered by Open-Meteo. U.S. severe weather information should be checked with the National Weather Service and NOAA.</div>
+<div id="cgn-wwb-live-updated">Last updated: updating.</div>
+</div>
+<div class="cgn-wwb-warning" id="cgn-wwb-warning"></div>
+</div>
+</section>
+<section aria-labelledby="cgn-wwb-articles-title" class="cgn-wwb-articles">
+<div class="cgn-wwb-articles-head">
+<div>
+<p class="cgn-wwb-articles-kicker">CGN Weather</p>
+<h2 id="cgn-wwb-articles-title">Latest Weekly Weather Briefs</h2>
+</div>
+<div aria-live="polite" class="cgn-wwb-articles-status" id="cgn-wwb-articles-status">Loading the five most recent articles...</div>
+</div>
+<div class="cgn-wwb-articles-grid" id="cgn-wwb-articles-grid">
+<p class="cgn-wwb-articles-empty">Loading Weekly Weather Brief articles...</p>
+</div>
+</section>
+<section aria-label="About the Weekly Weather Brief" class="cgn-wwb-about">
+<h2>About this forecast</h2>
+<p>The CGN Weekly Weather Brief displays a continuous stream for the title card, weather map, live 50-city forecast cards, and credits card.</p>
+<p>Forecast cards now load directly from Open-Meteo in the browser with a once-per-day Eastern-time cache, keeping the CGN News backend, Articles, Logs, and Google Sheets fully isolated from the Weekly Weather Brief.</p>
+</section>
+</main>
+<audio autoplay="" id="cgn-wwb-audio" loop="" playsinline="" preload="auto">
+<source src="https://www.cgnnews.net/weather/weekly-weather-forecast/kimuor-future.mp3" type="audio/mpeg"/>
+</audio>
+<div id="cgn-site-footer"></div>
+<script src="/assets/cgn-now-shell.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  if(document.documentElement.classList.contains("cgn-wwb-embed-root")) return;
+
+  const API_FALLBACK = "https://script.google.com/macros/s/AKfycbx41mQg-Ine3XZ-VrMI_SaQn4_K6cDQHA0cBFyGPgupu_edNFoNRjSLv2hoSe_bOytt/exec";
+  const GRID = document.getElementById("cgn-wwb-articles-grid");
+  const STATUS = document.getElementById("cgn-wwb-articles-status");
+  const IMAGE_FALLBACK = "/weather/weekly-weather-forecast/WeeklyWeatherBriefBanner01.png";
+
+  function apiBase(){
+    const meta = document.querySelector('meta[name="cgn-api-base"]');
+    const value = window.CGN_API_BASE || (meta && meta.content) || API_FALLBACK;
+    return String(value || API_FALLBACK).trim().replace(/\?+$/, "");
+  }
+
+  function endpoint(action, params){
+    const url = new URL(apiBase());
+    url.searchParams.set("action", action);
+    Object.keys(params || {}).forEach(key => {
+      if(params[key] !== "" && params[key] != null) url.searchParams.set(key, params[key]);
+    });
+    return url.toString();
+  }
+
+  function escapeHtml(value){
+    return String(value == null ? "" : value).replace(/[&<>"']/g, character => ({
+      "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
+    })[character]);
+  }
+
+  function articleTime(article){
+    const value = article && (article.published_at || article.updated_at);
+    const time = new Date(value || 0).getTime();
+    return Number.isFinite(time) ? time : 0;
+  }
+
+function formatDate(value){
+  const date = new Date(value || 0);
+  if(Number.isNaN(date.getTime())) return "";
+
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone:"UTC",
+    day:"numeric",
+    month:"long",
+    year:"numeric"
+  }).formatToParts(date);
+
+  const map = {};
+  parts.forEach(function(part){
+    if(part.type !== "literal"){
+      map[part.type] = part.value;
+    }
+  });
+
+  return `${Number(map.day)} ${map.month} ${map.year}`;
+}
+
+  function articleKey(article){
+    return String(
+      article.article_id || article.source_article_id || article.canonical_url ||
+      article.archive_url || article.url || article.slug || article.title || ""
+    ).trim().toLowerCase();
+  }
+
+  function isWeeklyWeatherBrief(article){
+    const title = String(article && article.title || "").trim();
+    const category = String(article && article.category || "").trim().toLowerCase();
+    return category === "weather" && /\bweekly weather brief\b/i.test(title);
+  }
+
+  function absoluteImage(value, source){
+    const raw = String(value || "").trim();
+    if(!raw) return IMAGE_FALLBACK;
+    try {
+      const base = source === "archive" ? "https://archives.cgnnews.net/" : "https://www.cgnnews.net/";
+      const url = new URL(raw, base);
+      return /^https?:$/i.test(url.protocol) ? url.toString() : IMAGE_FALLBACK;
+    } catch(error){
+      return IMAGE_FALLBACK;
+    }
+  }
+
+  function articleUrl(article){
+    const source = article.__source === "archive" ? "archive" : "current";
+    const candidate = article.canonical_url || article.archive_url || article.url || "";
+    try {
+      const base = source === "archive" ? "https://archives.cgnnews.net/" : "https://www.cgnnews.net/";
+      const url = new URL(candidate, base);
+      return /^https?:$/i.test(url.protocol) ? url.toString() : "#";
+    } catch(error){
+      return "#";
+    }
+  }
+
+  function cleanSummary(article){
+    const source = String(article.summary || article.seo_description || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    if(source.length <= 180) return source;
+    return source.slice(0, 177).replace(/\s+\S*$/, "") + "...";
+  }
+
+  function normalizePayload(payload, source){
+    const rows = Array.isArray(payload) ? payload : (payload && Array.isArray(payload.articles) ? payload.articles : []);
+    return rows.map(article => Object.assign({}, article, { __source:source }));
+  }
+
+  function renderArticles(articles){
+    if(!articles.length){
+      GRID.innerHTML = '<p class="cgn-wwb-articles-empty">No Weekly Weather Brief articles are currently available.</p>';
+      STATUS.textContent = "No articles found";
+      return;
+    }
+
+    GRID.innerHTML = articles.map(article => {
+      const source = article.__source === "archive" ? "CGN Archives" : "CGN News";
+      const url = articleUrl(article);
+      const image = absoluteImage(article.hero_image_url || article.image, article.__source);
+      const title = escapeHtml(article.title || "Weekly Weather Brief");
+      const date = escapeHtml(formatDate(article.published_at || article.updated_at));
+      const summary = escapeHtml(cleanSummary(article));
+      return `<article class="cgn-wwb-article-card">
+        <a class="cgn-wwb-article-link" href="${escapeHtml(url)}">
+          <div class="cgn-wwb-article-image-wrap">
+            <img class="cgn-wwb-article-image" src="${escapeHtml(image)}" alt="${title}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='${IMAGE_FALLBACK}';">
+            <span class="cgn-wwb-article-source">${source}</span>
+          </div>
+          <div class="cgn-wwb-article-copy">
+            <div class="cgn-wwb-article-date">${date}</div>
+            <h3 class="cgn-wwb-article-title">${title}</h3>
+            ${summary ? `<p class="cgn-wwb-article-summary">${summary}</p>` : ""}
+            <span class="cgn-wwb-article-read">Read the full brief →</span>
+          </div>
+        </a>
+      </article>`;
+    }).join("");
+
+    STATUS.textContent = `Showing ${articles.length} most recent article${articles.length === 1 ? "" : "s"}`;
+  }
+
+  async function fetchJson(url){
+    const response = await fetch(url, { cache:"no-store", credentials:"omit" });
+    if(!response.ok) throw new Error(`Article feed HTTP ${response.status}`);
+    return response.json();
+  }
+
+  async function loadArticles(){
+    const currentUrl = endpoint("articles", {
+      format:"paged", limit:"100", category:"Weather", search:"Weekly Weather Brief"
+    });
+    const archiveUrl = endpoint("archive_live_index", {
+      limit:"100", category:"Weather", search:"Weekly Weather Brief"
+    });
+
+    const results = await Promise.allSettled([
+      fetchJson(currentUrl),
+      fetchJson(archiveUrl)
+    ]);
+
+    const combined = [];
+    if(results[0].status === "fulfilled") combined.push(...normalizePayload(results[0].value, "current"));
+    if(results[1].status === "fulfilled") combined.push(...normalizePayload(results[1].value, "archive"));
+
+    const seen = new Set();
+    const articles = combined
+      .filter(isWeeklyWeatherBrief)
+      .sort((a,b) => articleTime(b) - articleTime(a))
+      .filter(article => {
+        const key = articleKey(article);
+        if(!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .slice(0, 5);
+
+    if(!articles.length && results.every(result => result.status === "rejected")){
+      throw new Error("Both the current and archive article feeds were unavailable.");
+    }
+
+    renderArticles(articles);
+  }
+
+  loadArticles().catch(error => {
+    console.warn("CGN Weekly Weather Brief article list:", error);
+    GRID.innerHTML = '<p class="cgn-wwb-articles-empty">The Weekly Weather Brief article list is temporarily unavailable. Please try again shortly.</p>';
+    STATUS.textContent = "Article feed unavailable";
+  });
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+
+  const ASSET_BASE = "/weather/weekly-weather-forecast";
+  const SLIDE_MS = 7000;
+  const WEATHER_CHECK_MS = 10 * 60 * 1000;
+  const OPEN_METEO_URL = "https://api.open-meteo.com/v1/forecast";
+  const CACHE_PREFIX = "CGN_WWB_OPENMETEO_CACHE_V860_";
+  const CACHE_INDEX_KEY = "CGN_WWB_OPENMETEO_CACHE_INDEX_V860";
+  const FETCH_LOCK_KEY = "CGN_WWB_OPENMETEO_FETCH_LOCK_V860";
+  const FETCH_LOCK_TTL_MS = 2 * 60 * 1000;
+  const EASTERN_TZ = "America/New_York";
+
+  const CITY_CONFIG = [
+    {order:1,key:"indianapolis",display:"Indianapolis, IN USA",lat:39.7684,lon:-86.1581,timezoneId:"America/Indiana/Indianapolis",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:2,key:"valparaiso",display:"Valparaiso, IN USA",lat:41.4731,lon:-87.0611,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:3,key:"chicago",display:"Chicago, IL USA",lat:41.8781,lon:-87.6298,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:4,key:"desmoines",display:"Des Moines, IA USA",lat:41.5868,lon:-93.6250,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:5,key:"stlouis",display:"St. Louis, MO USA",lat:38.6270,lon:-90.1994,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:6,key:"kansascity",display:"Kansas City, MO/KS USA",lat:39.0997,lon:-94.5786,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:7,key:"springfieldmo",display:"Springfield, MO USA",lat:37.2089,lon:-93.2923,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:8,key:"tecumsehmo",display:"Tecumseh, MO USA",lat:36.5903,lon:-92.3007,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:9,key:"wichita",display:"Wichita, KS USA",lat:37.6872,lon:-97.3301,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:10,key:"detroit",display:"Detroit, MI USA",lat:42.3314,lon:-83.0458,timezoneId:"America/Detroit",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:11,key:"grandrapids",display:"Grand Rapids, MI USA",lat:42.9634,lon:-85.6681,timezoneId:"America/Detroit",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:12,key:"cleveland",display:"Cleveland, OH USA",lat:41.4993,lon:-81.6944,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:13,key:"columbus",display:"Columbus, OH USA",lat:39.9612,lon:-82.9988,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:14,key:"cincinnati",display:"Cincinnati, OH USA",lat:39.1031,lon:-84.5120,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:15,key:"milwaukee",display:"Milwaukee, WI USA",lat:43.0389,lon:-87.9065,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:16,key:"madison",display:"Madison, WI USA",lat:43.0731,lon:-89.4012,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:17,key:"minneapolisstpaul",display:"Minneapolis-St. Paul, MN USA",lat:44.9778,lon:-93.2650,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:18,key:"omaha",display:"Omaha, NE USA",lat:41.2565,lon:-95.9345,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:19,key:"fargo",display:"Fargo, ND USA",lat:46.8772,lon:-96.7898,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:20,key:"siouxfalls",display:"Sioux Falls, SD USA",lat:43.5460,lon:-96.7313,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:21,key:"louisville",display:"Louisville, KY USA",lat:38.2527,lon:-85.7585,timezoneId:"America/Kentucky/Louisville",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:22,key:"lexington",display:"Lexington, KY USA",lat:38.0406,lon:-84.5037,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:23,key:"nashville",display:"Nashville, TN USA",lat:36.1627,lon:-86.7816,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:24,key:"memphis",display:"Memphis, TN USA",lat:35.1495,lon:-90.0490,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:25,key:"newyork",display:"New York, NY USA",lat:40.7128,lon:-74.0060,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:26,key:"boston",display:"Boston, MA USA",lat:42.3601,lon:-71.0589,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:27,key:"philadelphia",display:"Philadelphia, PA USA",lat:39.9526,lon:-75.1652,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:28,key:"pittsburgh",display:"Pittsburgh, PA USA",lat:40.4406,lon:-79.9959,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:29,key:"washingtondc",display:"Washington, D.C. USA",lat:38.9072,lon:-77.0369,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:30,key:"norfolk",display:"Norfolk, VA USA",lat:36.8508,lon:-76.2859,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:31,key:"raleigh",display:"Raleigh, NC USA",lat:35.7796,lon:-78.6382,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:32,key:"myrtlebeach",display:"Myrtle Beach, SC USA",lat:33.6891,lon:-78.8867,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:33,key:"miami",display:"Miami, FL USA",lat:25.7617,lon:-80.1918,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:34,key:"tampa",display:"Tampa, FL USA",lat:27.9506,lon:-82.4572,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:35,key:"orlando",display:"Orlando, FL USA",lat:28.5383,lon:-81.3792,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:36,key:"batonrouge",display:"Baton Rouge, LA USA",lat:30.4515,lon:-91.1871,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:37,key:"atlanta",display:"Atlanta, GA USA",lat:33.7490,lon:-84.3880,timezoneId:"America/New_York",timezoneLabel:"EDT",unitSystem:"imperial"},
+    {order:38,key:"dallas",display:"Dallas, TX USA",lat:32.7767,lon:-96.7970,timezoneId:"America/Chicago",timezoneLabel:"CDT",unitSystem:"imperial"},
+    {order:39,key:"denver",display:"Denver, CO USA",lat:39.7392,lon:-104.9903,timezoneId:"America/Denver",timezoneLabel:"MDT",unitSystem:"imperial"},
+    {order:40,key:"saltlakecity",display:"Salt Lake City, UT USA",lat:40.7608,lon:-111.8910,timezoneId:"America/Denver",timezoneLabel:"MDT",unitSystem:"imperial"},
+    {order:41,key:"lasvegas",display:"Las Vegas, NV USA",lat:36.1699,lon:-115.1398,timezoneId:"America/Los_Angeles",timezoneLabel:"PDT",unitSystem:"imperial"},
+    {order:42,key:"phoenix",display:"Phoenix, AZ USA",lat:33.4484,lon:-112.0740,timezoneId:"America/Phoenix",timezoneLabel:"MST",unitSystem:"imperial"},
+    {order:43,key:"losangeles",display:"Los Angeles, CA USA",lat:34.0522,lon:-118.2437,timezoneId:"America/Los_Angeles",timezoneLabel:"PDT",unitSystem:"imperial"},
+    {order:44,key:"seattle",display:"Seattle, WA USA",lat:47.6062,lon:-122.3321,timezoneId:"America/Los_Angeles",timezoneLabel:"PDT",unitSystem:"imperial"},
+    {order:45,key:"london",display:"London, England",lat:51.5072,lon:-0.1276,timezoneId:"Europe/London",timezoneLabel:"BST",unitSystem:"metric"},
+    {order:46,key:"sydney",display:"Sydney, Australia",lat:-33.8688,lon:151.2093,timezoneId:"Australia/Sydney",timezoneLabel:"AEST",unitSystem:"metric"},
+    {order:47,key:"hongkong",display:"Hong Kong",lat:22.3193,lon:114.1694,timezoneId:"Asia/Hong_Kong",timezoneLabel:"HKT",unitSystem:"metric"},
+    {order:48,key:"riodejaneiro",display:"Rio de Janeiro, Brazil",lat:-22.9068,lon:-43.1729,timezoneId:"America/Sao_Paulo",timezoneLabel:"BRT",unitSystem:"metric"},
+    {order:49,key:"manila",display:"Manila, Philippines",lat:14.5995,lon:120.9842,timezoneId:"Asia/Manila",timezoneLabel:"PHT",unitSystem:"metric"},
+    {order:50,key:"mumbai",display:"Mumbai, India",lat:19.0760,lon:72.8777,timezoneId:"Asia/Kolkata",timezoneLabel:"IST",unitSystem:"metric"}
+  ];
+
+  const BUREAUS = [
+    {city:"INDIANAPOLIS", timezoneId:"America/Indiana/Indianapolis"},
+    {city:"CHICAGO", timezoneId:"America/Chicago"},
+    {city:"LONDON", timezoneId:"Europe/London"},
+    {city:"SYDNEY", timezoneId:"Australia/Sydney"},
+    {city:"HONG KONG", timezoneId:"Asia/Hong_Kong"},
+    {city:"RIO DE JANEIRO", timezoneId:"America/Sao_Paulo"},
+    {city:"MANILA", timezoneId:"Asia/Manila"},
+    {city:"MUMBAI", timezoneId:"Asia/Kolkata"}
+  ];
+
+  const SLIDES = [
+    {type:"stock", stockType:"title", label:"Title Card", src:`${ASSET_BASE}/00StockImages/01CGNWeeklyWeatherBriefTitleCard.png`, alt:"CGN Weekly Weather Brief title card", duration:SLIDE_MS},
+    {type:"stock", stockType:"map", label:"Weather Map", src:`${ASSET_BASE}/00StockImages/02WeatherMapStock.png`, alt:"CGN Weather map card", duration:SLIDE_MS},
+    ...CITY_CONFIG.map(city => ({type:"city", cityOrder:city.order, label:city.display, duration:SLIDE_MS})),
+    {type:"stock", stockType:"credits", label:"Credits", src:`${ASSET_BASE}/00StockImages/03CGNWeatherBriefCreditsCard.png`, alt:"CGN Weekly Weather Brief credits card", duration:SLIDE_MS}
+  ];
+
+  const state = {
+    currentIndex:0, playing:true, startedAt:0, elapsedBeforePause:0, timer:null, raf:null,
+    weatherByOrder:new Map(), lastDataUpdated:"", mapUpdatedDisplay:"", mapTimezoneLabel:"EDT",
+    productionDate:"", audioBlocked:false, lastCacheKey:"", lastSource:""
+  };
+
+  const stockImage = document.getElementById("cgn-stock-image");
+  const titleDate = document.getElementById("cgn-title-date-overlay");
+  const mapOverlays = document.getElementById("cgn-map-overlays");
+  const mapTimezone = document.getElementById("cgn-map-timezone");
+  const mapUpdated = document.getElementById("cgn-map-updated");
+  const cityCard = document.getElementById("cgn-city-card");
+  const progress = document.getElementById("cgn-wwb-progress");
+  const label = document.getElementById("cgn-wwb-slide-label");
+  const loader = document.getElementById("cgn-wwb-loader");
+  const warning = document.getElementById("cgn-wwb-warning");
+  const dataStatus = document.getElementById("cgn-wwb-data-status");
+  const liveUpdated = document.getElementById("cgn-wwb-live-updated");
+  const audio = document.getElementById("cgn-wwb-audio");
+  const playBtn = document.getElementById("cgn-wwb-play");
+  const muteBtn = document.getElementById("cgn-wwb-mute");
+  const citySelect = document.getElementById("cgn-wwb-city-select");
+
+  function safe(value){ return String(value == null ? "" : value).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c])); }
+  function int(value){ const n = Number(value); return Number.isFinite(n) ? Math.round(n) : null; }
+  function num(value){ const n = Number(value); return Number.isFinite(n) ? n : null; }
+  function valueOf(row, names){
+    if(!row) return "";
+    for(const name of names){ if(Object.prototype.hasOwnProperty.call(row, name) && row[name] != null && row[name] !== "") return row[name]; }
+    const lowerMap = {}; Object.keys(row).forEach(key => lowerMap[String(key).toLowerCase()] = row[key]);
+    for(const name of names){ const hit = lowerMap[String(name).toLowerCase()]; if(hit != null && hit !== "") return hit; }
+    return "";
+  }
+  function configForOrder(order){ return CITY_CONFIG.find(city => city.order === Number(order)) || null; }
+
+  function easternParts(date){
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone:EASTERN_TZ, year:"numeric", month:"2-digit", day:"2-digit",
+      hour:"2-digit", minute:"2-digit", second:"2-digit", hourCycle:"h23"
+    }).formatToParts(date || new Date());
+    const map = {};
+    parts.forEach(part => { if(part.type !== "literal") map[part.type] = part.value; });
+    return map;
+  }
+  function easternDateKey(date){
+    const p = easternParts(date || new Date());
+    return `${p.year}-${p.month}-${p.day}`;
+  }
+  function easternHour(date){
+    const p = easternParts(date || new Date());
+    return Number(p.hour || 0);
+  }
+  function getCacheKey(dateKey){ return CACHE_PREFIX + dateKey; }
+  function parseCache(raw){
+    try {
+      const parsed = JSON.parse(raw || "null");
+      if(parsed && Array.isArray(parsed.rows) && parsed.rows.length) return parsed;
+    } catch(err) {}
+    return null;
+  }
+  function readCache(dateKey){
+    try { return parseCache(localStorage.getItem(getCacheKey(dateKey))); } catch(err) { return null; }
+  }
+  function getCacheIndex(){
+    try {
+      const parsed = JSON.parse(localStorage.getItem(CACHE_INDEX_KEY) || "[]");
+      return Array.isArray(parsed) ? parsed.filter(Boolean) : [];
+    } catch(err) { return []; }
+  }
+  function setCacheIndex(keys){
+    try {
+      const unique = Array.from(new Set(keys)).sort().slice(-10);
+      localStorage.setItem(CACHE_INDEX_KEY, JSON.stringify(unique));
+      unique.slice(0, Math.max(0, unique.length - 7)).forEach(key => {
+        try { localStorage.removeItem(getCacheKey(key)); } catch(err) {}
+      });
+    } catch(err) {}
+  }
+  function writeCache(dateKey, rows, meta){
+    const payload = {
+      version:"v8.6.0",
+      source:"Open-Meteo direct browser fetch",
+      eastern_date:dateKey,
+      created_at_utc:new Date().toISOString(),
+      rows:rows || [],
+      meta:meta || {}
+    };
+    try {
+      localStorage.setItem(getCacheKey(dateKey), JSON.stringify(payload));
+      setCacheIndex(getCacheIndex().concat([dateKey]));
+    } catch(err) {
+      console.warn("CGN Weekly Weather Brief cache write failed:", err);
+    }
+    return payload;
+  }
+  function mostRecentCache(){
+    const keys = getCacheIndex().sort().reverse();
+    for(const key of keys){
+      const cached = readCache(key);
+      if(cached) return cached;
+    }
+    return null;
+  }
+  function acquireFetchLock(){
+    const now = Date.now();
+    try {
+      const raw = localStorage.getItem(FETCH_LOCK_KEY);
+      const parsed = raw ? JSON.parse(raw) : null;
+      if(parsed && parsed.expires_at && Number(parsed.expires_at) > now) return false;
+      localStorage.setItem(FETCH_LOCK_KEY, JSON.stringify({ started_at:now, expires_at:now + FETCH_LOCK_TTL_MS }));
+      return true;
+    } catch(err) {
+      return true;
+    }
+  }
+  function releaseFetchLock(){
+    try { localStorage.removeItem(FETCH_LOCK_KEY); } catch(err) {}
+  }
+  function shouldFetchToday(options){
+    options = options || {};
+    if(options.force) return true;
+    const today = easternDateKey();
+    if(readCache(today)) return false;
+    const hour = easternHour();
+    if(hour >= 6) return true;
+    return !mostRecentCache();
+  }
+
+  function formatLocalUpdated(date, timezoneId){
+    const d = date instanceof Date ? date : new Date(date);
+    if(isNaN(d.getTime())) return "";
+    const parts = new Intl.DateTimeFormat("en-US", { timeZone: timezoneId || EASTERN_TZ, day:"numeric", month:"long", year:"numeric", hour:"2-digit", minute:"2-digit", second:"2-digit", hourCycle:"h23" }).formatToParts(d);
+    const map = {}; parts.forEach(part => { if(part.type !== "literal") map[part.type] = part.value; });
+    return `${Number(map.day)} ${map.month} ${map.year} • ${map.hour}:${map.minute}:${map.second}`;
+  }
+  function formatDateOnly(date){
+    const d = date instanceof Date ? date : new Date(date); if(isNaN(d.getTime())) return "";
+    const parts = new Intl.DateTimeFormat("en-US", { timeZone:EASTERN_TZ, day:"numeric", month:"long", year:"numeric" }).formatToParts(d);
+    const map = {}; parts.forEach(part => { if(part.type !== "literal") map[part.type] = part.value; });
+    return `${Number(map.day)} ${map.month} ${map.year}`;
+  }
+  function cleanTimeZone(value, config){
+    const text = String(value || "").trim().toUpperCase();
+    if(text && !text.includes("/") && !text.includes("GMT") && text.length <= 5) return text;
+    return config && config.timezoneLabel ? config.timezoneLabel : "";
+  }
+  function cleanUpdated(value, row, config){
+    const direct = String(value || "").trim();
+    if(direct && !/GMT|America\/|Europe\/|Asia\/|Australia\//i.test(direct)) {
+      return direct.replace(/\s*\|\s*/g," • ").replace(/\s+(EDT|EST|CDT|CST|MDT|MST|PDT|PST|BST|GMT|AEST|AEDT|HKT|BRT|IST|PHT)$/i, "").trim();
+    }
+    const utc = valueOf(row, ["updated_at_utc","updatedAtUtc","updated_utc","updated_at"]);
+    return utc ? formatLocalUpdated(utc, config && config.timezoneId) : formatLocalUpdated(new Date(), config && config.timezoneId);
+  }
+  function conditionFromCode(code){
+    const n = Number(code);
+    if(n === 0) return {label:"Sunny", icon:"☀️"};
+    if(n === 1) return {label:"Mostly Sunny", icon:"🌤"};
+    if(n === 2) return {label:"Partly Cloudy", icon:"⛅"};
+    if(n === 3) return {label:"Cloudy", icon:"☁️"};
+    if(n === 45 || n === 48) return {label:"Fog", icon:"🌫"};
+    if([51,53,55,56,57,80,81,82].includes(n)) return {label:"Showers", icon:"🌦"};
+    if([61,63,65,66,67].includes(n)) return {label:"Rain", icon:"🌧"};
+    if([71,73,75,77,85,86].includes(n)) return {label:"Snow", icon:"❄️"};
+    if([95,96,99].includes(n)) return {label:"Thunderstorms", icon:"⛈"};
+    return {label:"Partly Cloudy", icon:"⛅"};
+  }
+  function conditionLabel(row){
+    const text = String(valueOf(row, ["condition_label","condition","label"]) || "").replace(/Observed/ig, "").trim();
+    return text || conditionFromCode(valueOf(row, ["weather_code","weathercode","code"])).label;
+  }
+  function conditionIcon(row, label){
+    const existing = valueOf(row, ["condition_icon","icon"]); if(existing) return existing;
+    const text = String(label || "").toLowerCase();
+    if(text.includes("thunder")) return "⛈"; if(text.includes("snow")) return "❄️"; if(text.includes("fog")) return "🌫"; if(text.includes("rain")) return "🌧"; if(text.includes("shower")) return "🌦";
+    if(text.includes("wind") || text.includes("breez")) return "🌬"; if(text.includes("mostly sunny")) return "🌤"; if(text.includes("partly")) return "⛅"; if(text.includes("cloud")) return "☁️"; if(text.includes("sun") || text.includes("hot") || text.includes("humid")) return "☀️";
+    return conditionFromCode(valueOf(row, ["weather_code","weathercode","code"])).icon;
+  }
+  function windDirectionLabel(degrees){
+    const n = Number(degrees);
+    if(!Number.isFinite(n)) return "";
+    const dirs = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
+    return dirs[Math.round((((n % 360) + 360) % 360) / 22.5) % 16];
+  }
+  function windText(row){
+    const existing = valueOf(row, ["wind_text","windText"]); if(existing) return String(existing);
+    const speed = int(valueOf(row, ["wind_speed","wind_speed_mph","windspeed_10m_max","wind_mph","windSpeedMph"]));
+    const dir = valueOf(row, ["wind_direction_label","windDirectionLabel","wind_dir","windDir"]);
+    const unit = String(valueOf(row, ["wind_speed_unit","wind_unit","windUnit"]) || "mph").trim();
+    if(speed == null && !dir) return "";
+    if(speed == null) return String(dir);
+    return `${dir ? dir + " " : ""}${speed} ${unit}`;
+  }
+  function normalizePercent(value){
+    const raw = String(value == null ? "" : value).trim();
+    if(!raw) return "";
+    const numeric = Number(raw.replace(/%/g, "").trim());
+    if(!Number.isFinite(numeric)) return raw;
+    let pct = numeric;
+    if(!raw.includes("%") && Math.abs(pct) <= 1) pct = pct * 100;
+    return `${Math.round(pct)}%`;
+  }
+  function precipText(row){
+    const prob = valueOf(row, ["precip_probability","precipitation_probability_max","precip_probability_max","precipProbability"]);
+    if(prob !== "") return normalizePercent(prob);
+    const existing = valueOf(row, ["precip_text","precipText"]);
+    if(existing !== "") return normalizePercent(existing);
+    return "";
+  }
+  function tempLine(row){
+    const low = int(valueOf(row, ["temp_low","temp_low_f","temp_low_c","temperature_2m_min","low_f","min_f"]));
+    const high = int(valueOf(row, ["temp_high","temp_high_f","temp_high_c","temperature_2m_max","high_f","max_f"]));
+    const unit = String(valueOf(row, ["temp_unit_symbol","temperature_unit_symbol","tempUnitSymbol"]) || "°F").trim();
+    const lo = low == null ? "--" : String(low);
+    const hi = high == null ? "--" : String(high);
+    return `<span class="cgn-temp-low">${lo}°</span><span>/</span><span class="cgn-temp-high">${hi}${safe(unit)}</span>`;
+  }
+function dateShort(value){
+  if(!value) return "";
+  const d = new Date(String(value) + "T12:00:00Z");
+  if(isNaN(d.getTime())) return "";
+
+  const parts = new Intl.DateTimeFormat("en-US", {
+    day:"numeric",
+    month:"short",
+    timeZone:"UTC"
+  }).formatToParts(d);
+
+  const map = {};
+  parts.forEach(function(part){
+    if(part.type !== "literal"){
+      map[part.type] = part.value;
+    }
+  });
+
+  return `${Number(map.day)} ${map.month}`;
+}
+  function dayName(value){
+    if(!value) return "";
+    const d = new Date(String(value) + "T12:00:00Z");
+    if(isNaN(d.getTime())) return "";
+    return new Intl.DateTimeFormat("en-US", { weekday:"short", timeZone:"UTC" }).format(d);
+  }
+  function socialIconSvg(name){
+    if(name === "instagram") return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm5.1-2.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg>';
+    if(name === "x") return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.9 10.4 21.3 2h-2.1l-6.2 7.1L8 2H2.1l7.8 11.1L2 22h2.1l6.7-7.6 5.4 7.6H22l-8.1-11.6Zm-2.4 2.7-.8-1.1L4.8 3.6H7l4.9 7 .8 1.1 6.2 8.8h-2.2l-5.2-7.4Z"/></svg>';
+    return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.1a3 3 0 0 0-2.1-2.1C17.7 4.5 12 4.5 12 4.5s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1C2 8.9 2 12 2 12s0 3.1.4 4.9a3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1c.4-1.8.4-4.9.4-4.9s0-3.1-.4-4.9ZM10 15.4V8.6l6 3.4-6 3.4Z"/></svg>';
+  }
+
+  function groupRows(rows){
+    const byOrder = new Map();
+    rows.forEach(raw => {
+      const row = Object.assign({}, raw);
+      let order = int(valueOf(row, ["city_order","cityOrder","order"]));
+      if(order == null){
+        const key = String(valueOf(row, ["city_key","cityKey","key","city_display_name","cityDisplayName","city","name"]) || "").toLowerCase().replace(/[^a-z0-9]+/g,"");
+        const match = CITY_CONFIG.find(city => city.key === key || city.display.toLowerCase().replace(/[^a-z0-9]+/g,"") === key);
+        if(match) order = match.order;
+      }
+      if(order == null) return;
+      if(!byOrder.has(order)) byOrder.set(order, []);
+      byOrder.get(order).push(row);
+    });
+    byOrder.forEach(cityRows => cityRows.sort((a,b) => {
+      const ad = String(valueOf(a, ["forecast_date", "forecastDate", "date", "time"]));
+      const bd = String(valueOf(b, ["forecast_date", "forecastDate", "date", "time"]));
+      return ad.localeCompare(bd);
+    }));
+    return byOrder;
+  }
+
+  function unitSettingsForCity(city){
+    if(city && city.unitSystem === "metric") return {
+      temperature_unit:"celsius",
+      wind_speed_unit:"kmh",
+      precipitation_unit:"mm",
+      tempSymbol:"°C",
+      windUnit:"km/h",
+      precipUnit:"mm"
+    };
+    return {
+      temperature_unit:"fahrenheit",
+      wind_speed_unit:"mph",
+      precipitation_unit:"inch",
+      tempSymbol:"°F",
+      windUnit:"mph",
+      precipUnit:"in"
+    };
+  }
+
+  function buildOpenMeteoUrl(city){
+    const settings = unitSettingsForCity(city);
+    const url = new URL(OPEN_METEO_URL);
+    url.searchParams.set("latitude", city.lat);
+    url.searchParams.set("longitude", city.lon);
+    url.searchParams.set("daily", [
+      "weather_code",
+      "temperature_2m_max",
+      "temperature_2m_min",
+      "precipitation_sum",
+      "precipitation_probability_max",
+      "wind_speed_10m_max",
+      "wind_direction_10m_dominant"
+    ].join(","));
+    url.searchParams.set("temperature_unit", settings.temperature_unit);
+    url.searchParams.set("wind_speed_unit", settings.wind_speed_unit);
+    url.searchParams.set("precipitation_unit", settings.precipitation_unit);
+    url.searchParams.set("forecast_days", "7");
+    url.searchParams.set("timezone", "auto");
+    return url.toString();
+  }
+  async function fetchCityForecast(city){
+    const url = buildOpenMeteoUrl(city);
+    const response = await fetch(url, { cache:"no-store" });
+    if(!response.ok) throw new Error(`${city.display} Open-Meteo HTTP ${response.status}`);
+    const forecast = await response.json();
+    return { city, forecast };
+  }
+  async function fetchOpenMeteoPayload(){
+    const results = await Promise.allSettled(CITY_CONFIG.map(fetchCityForecast));
+    const successful = [];
+    const failed = [];
+    results.forEach((result, index) => {
+      if(result.status === "fulfilled") successful.push(result.value);
+      else failed.push({ city:CITY_CONFIG[index], error:result.reason });
+    });
+    const minSuccessfulCities = Math.ceil(CITY_CONFIG.length * 0.8);
+    if(successful.length < minSuccessfulCities){
+      throw new Error(`Open-Meteo returned ${successful.length}/${CITY_CONFIG.length} city forecasts; keeping cached forecast if available.`);
+    }
+    if(failed.length) console.warn("CGN Weekly Weather Brief partial Open-Meteo refresh:", failed);
+    return successful;
+  }
+  function normalizeOpenMeteoPayload(payload){
+    const forecasts = Array.isArray(payload) ? payload : [];
+    const nowIso = new Date().toISOString();
+    const rows = [];
+    forecasts.forEach((item) => {
+      const city = item && item.city;
+      const forecast = item && item.forecast;
+      if(!city || !forecast || !forecast.daily) return;
+      const settings = unitSettingsForCity(city);
+      const daily = forecast.daily;
+      const dates = daily.time || [];
+      const tzName = forecast.timezone || city.timezoneId;
+      const tzAbbr = forecast.timezone_abbreviation || city.timezoneLabel;
+      for(let i=0;i<Math.min(7, dates.length);i++){
+        const code = (daily.weather_code || daily.weathercode || [])[i];
+        const condition = conditionFromCode(code);
+        const windDegrees = (daily.wind_direction_10m_dominant || [])[i];
+        const windSpeed = (daily.wind_speed_10m_max || [])[i];
+        const windLabel = windDirectionLabel(windDegrees);
+        const precipProbability = (daily.precipitation_probability_max || [])[i];
+        const precipSum = (daily.precipitation_sum || [])[i];
+        const roundedWind = int(windSpeed);
+        rows.push({
+          weather_id:`wwb-${easternDateKey()}-${city.key}-${i + 1}`,
+          run_id:`openmeteo-browser-${easternDateKey()}`,
+          city_order:city.order,
+          city_key:city.key,
+          city_display_name:city.display,
+          image_file:String(city.order).padStart(2,"0") + city.key + ".png",
+          latitude:city.lat,
+          longitude:city.lon,
+          forecast_date:dates[i],
+          day_name:dayName(dates[i]),
+          condition_label:condition.label,
+          condition_icon:condition.icon,
+          weather_code:code,
+          temp_low:num((daily.temperature_2m_min || [])[i]),
+          temp_high:num((daily.temperature_2m_max || [])[i]),
+          temp_unit_symbol:settings.tempSymbol,
+          wind_speed:num(windSpeed),
+          wind_speed_unit:settings.windUnit,
+          wind_direction_degrees:num(windDegrees),
+          wind_direction_label:windLabel,
+          wind_text:`${windLabel ? windLabel + " " : ""}${roundedWind == null ? "" : roundedWind + " " + settings.windUnit}`.trim(),
+          precip_probability:int(precipProbability),
+          precip_sum:num(precipSum),
+          precip_unit:settings.precipUnit,
+          precip_text:int(precipProbability) == null ? "" : `${int(precipProbability)}%`,
+          unit_system:city.unitSystem || "imperial",
+          timezone_id:tzName,
+          timezone_label:cleanTimeZone(tzAbbr, city) || city.timezoneLabel,
+          local_updated_display:formatLocalUpdated(nowIso, city.timezoneId),
+          updated_at_utc:nowIso,
+          source:"Open-Meteo",
+          source_url:"https://open-meteo.com/",
+          status:"current",
+          notes:"Browser-side direct Open-Meteo fetch. No CGN Apps Script or Weather sheet dependency."
+        });
+      }
+    });
+    const minRows = Math.ceil(CITY_CONFIG.length * 0.8) * 7;
+    if(rows.length < minRows) throw new Error(`Open-Meteo returned only ${rows.length} forecast rows; keeping cached forecast if available.`);
+    return rows;
+  }
+
+  function applyRows(rows, sourceLabel, cacheKey){
+    const grouped = groupRows(rows);
+    if(!rows.length || !grouped.size) throw new Error("No usable forecast rows were available.");
+    state.weatherByOrder = grouped;
+    const firstGroup = grouped.values().next().value || [];
+    const first = firstGroup[0] || rows[0] || {};
+    state.mapTimezoneLabel = cleanTimeZone(valueOf(first, ["timezone_label","timezoneLabel"]) || "EDT", {timezoneLabel:"EDT"}) || "EDT";
+    state.mapUpdatedDisplay = valueOf(first, ["local_updated_display","updated_display"]) || formatLocalUpdated(valueOf(first, ["updated_at_utc","updated_at"]) || new Date(), EASTERN_TZ);
+    state.productionDate = state.mapUpdatedDisplay ? String(state.mapUpdatedDisplay).split(" • ")[0] : formatDateOnly(new Date());
+    state.lastDataUpdated = state.mapUpdatedDisplay;
+    state.lastSource = sourceLabel || "Open-Meteo";
+    state.lastCacheKey = cacheKey || "";
+    setDataStatus(true);
+    renderCurrentSlide();
+  }
+
+  async function loadLiveWeather(options){
+    options = options || {};
+    const todayKey = easternDateKey();
+    const todayCache = readCache(todayKey);
+    const fallbackCache = todayCache || mostRecentCache();
+
+    if(fallbackCache && !options.force){
+      try { applyRows(fallbackCache.rows, fallbackCache.source || "Open-Meteo cache", fallbackCache.eastern_date); } catch(err) { console.warn("CGN Weekly Weather Brief cache apply failed:", err); }
+    }
+
+    if(!shouldFetchToday(options)){
+      if(!fallbackCache) setDataStatus(false, new Error("Forecast cache is empty. Fetching will retry shortly."));
+      return !!fallbackCache;
+    }
+
+    if(!acquireFetchLock()){
+      setDataStatus(!!fallbackCache, new Error("Another tab is already refreshing the Weekly Weather Brief forecast."));
+      return !!fallbackCache;
+    }
+
+    try {
+      dataStatus.textContent = "Refreshing direct forecast";
+      const payload = await fetchOpenMeteoPayload();
+      const rows = normalizeOpenMeteoPayload(payload);
+      const cache = writeCache(todayKey, rows, { city_count:CITY_CONFIG.length, row_count:rows.length, requested_at_utc:new Date().toISOString() });
+      applyRows(cache.rows, "Open-Meteo direct", todayKey);
+      console.info("CGN Weekly Weather Brief direct Open-Meteo data loaded", { rows:rows.length, cache_key:todayKey });
+      return true;
+    } catch(error){
+      const latestCache = mostRecentCache();
+      if(latestCache){
+        try { applyRows(latestCache.rows, latestCache.source || "Open-Meteo cache", latestCache.eastern_date); } catch(err) {}
+      }
+      setDataStatus(!!latestCache, error);
+      return false;
+    } finally {
+      releaseFetchLock();
+    }
+  }
+
+  function setDataStatus(ok, error){
+    if(ok){
+      const source = state.lastSource ? ` • ${state.lastSource}` : "";
+      dataStatus.textContent = "Forecast data loaded";
+      liveUpdated.textContent = "Last updated: " + (state.lastDataUpdated || formatLocalUpdated(new Date(), EASTERN_TZ)) + source;
+      warning.classList.remove("show");
+      warning.textContent = "";
+    } else {
+      dataStatus.textContent = state.weatherByOrder && state.weatherByOrder.size ? "Forecast refreshing" : "Forecast updating";
+      liveUpdated.textContent = state.lastDataUpdated ? ("Last updated: " + state.lastDataUpdated + " — refreshing.") : "Last updated: updating.";
+      warning.textContent = "Forecast data is refreshing. The last loaded forecast will remain on screen if available.";
+      warning.classList.add("show");
+      if(error) console.warn("CGN Weekly Weather Brief forecast update:", error);
+    }
+  }
+
+  function buildCitySelect(){
+    CITY_CONFIG.forEach(city => {
+      const option = document.createElement("option");
+      option.value = String(city.order + 1);
+      option.textContent = String(city.order).padStart(2,"0") + " " + city.display;
+      citySelect.appendChild(option);
+    });
+  }
+  function showSlide(index, options){
+    options = options || {};
+    clearTimeout(state.timer);
+    state.currentIndex = ((index % SLIDES.length) + SLIDES.length) % SLIDES.length;
+    state.startedAt = performance.now();
+    state.elapsedBeforePause = 0;
+    renderCurrentSlide();
+    updateProgress();
+    loader.style.display = "none";
+    if(state.playing && !options.noTimer){
+      state.timer = setTimeout(() => {
+        if(state.currentIndex === SLIDES.length - 1) loadLiveWeather({ background:true });
+        showSlide(state.currentIndex + 1);
+      }, SLIDES[state.currentIndex].duration || SLIDE_MS);
+    }
+  }
+  function renderCurrentSlide(){
+    const slide = SLIDES[state.currentIndex];
+    label.textContent = `${String(state.currentIndex + 1).padStart(2,"0")} / ${String(SLIDES.length).padStart(2,"0")} — ${slide.label}`;
+    citySelect.value = slide.type === "city" ? String(slide.cityOrder + 1) : "";
+    stockImage.classList.remove("active");
+    cityCard.classList.remove("active");
+    titleDate.style.display = "none";
+    mapOverlays.classList.remove("show");
+    if(slide.type === "stock"){
+      stockImage.src = slide.src;
+      stockImage.alt = slide.alt || slide.label;
+      stockImage.classList.add("active");
+      if(slide.stockType === "title"){
+        titleDate.style.display = "block";
+        titleDate.textContent = state.productionDate || formatDateOnly(new Date());
+      }
+      if(slide.stockType === "map"){
+        mapOverlays.classList.add("show");
+        mapTimezone.textContent = state.mapTimezoneLabel || "EDT";
+        mapUpdated.textContent = state.mapUpdatedDisplay || formatLocalUpdated(new Date(), EASTERN_TZ);
+      }
+      return;
+    }
+    if(slide.type === "city"){
+      stockImage.removeAttribute("src");
+      renderCityCard(slide.cityOrder);
+      cityCard.classList.add("active");
+    }
+  }
+  function renderCityCard(order){
+    const config = configForOrder(order);
+    const rows = (state.weatherByOrder.get(order) || []).slice(0,7);
+    const first = rows[0] || {};
+    const tz = cleanTimeZone(valueOf(first,["timezone_label","timezoneLabel","time_zone","tz"]), config) || (config && config.timezoneLabel) || "";
+    const updated = cleanUpdated(valueOf(first,["local_updated_display","updated_display","updated_at","updated"]), first, config);
+    const cards = [];
+    for(let i=0;i<7;i++){
+      const row = rows[i] || {};
+      const cond = rows[i] ? conditionLabel(row) : "Forecast Pending";
+      const icon = rows[i] ? conditionIcon(row, cond) : "⛅";
+      const day = valueOf(row,["day_name","dayName"]) || (rows[i] ? "" : "Day " + (i+1));
+      const fdate = valueOf(row,["forecast_date","forecastDate","date","time"]);
+      cards.push(`<article class="cgn-day-card"><div><div class="cgn-day-name">${safe(day)}</div><div class="cgn-day-date">${safe(dateShort(fdate))}</div></div><div class="cgn-day-icon">${safe(icon)}</div><div class="cgn-day-condition">${safe(cond)}</div><div class="cgn-temp-line">${rows[i] ? tempLine(row) : '<span class="cgn-temp-low">--°</span><span>/</span><span class="cgn-temp-high">--' + safe(unitSettingsForCity(config).tempSymbol) + '</span>'}</div><div class="cgn-weather-small">↗ ${safe(rows[i] ? windText(row) : '')}</div><div class="cgn-weather-small">💧 ${safe(rows[i] ? precipText(row) : '')}</div></article>`);
+    }
+    cityCard.innerHTML = `<div class="cgn-city-inner"><header class="cgn-city-header"><div class="cgn-brand-logo"><img src="https://www.cgnnews.net/CGNNewsLogo01.png" alt="CGN News"></div><div class="cgn-city-titlebox"><span class="brief-label">Weekly Weather Brief</span><div class="week-label">Week Ahead Forecast</div><h2>${safe(config ? config.display : 'City Forecast')}</h2></div><div class="cgn-bureau-clock"><div class="clock-kicker">Bureau Clock</div><div class="clock-main" id="cgn-bureau-clock-main">--  --:--:--</div></div></header><section class="cgn-forecast-grid">${cards.join('')}</section><footer class="cgn-city-footer"><div class="cgn-social-line"><div class="cgn-social-row"><span class="cgn-social-icon" aria-label="Instagram">${socialIconSvg('instagram')}</span><span class="cgn-social-icon" aria-label="X">${socialIconSvg('x')}</span><span class="cgn-social-icon" aria-label="YouTube">${socialIconSvg('youtube')}</span><span class="cgn-social-handle">@CookGlobalNews</span></div><span class="site">www.cgnnews.net</span></div><div class="cgn-city-meta"><div><span>Time Zone</span><strong>${safe(tz)}</strong></div><div><span>Updated</span><strong>${safe(updated)}</strong></div></div></footer></div>`;
+    updateBureauClock();
+  }
+  function updateBureauClock(){
+    const node = document.getElementById("cgn-bureau-clock-main"); if(!node) return;
+    const bureau = BUREAUS[Math.floor(Date.now()/5000) % BUREAUS.length];
+    const parts = new Intl.DateTimeFormat("en-US", { timeZone:bureau.timezoneId, hour:"2-digit", minute:"2-digit", second:"2-digit", hourCycle:"h23" }).formatToParts(new Date());
+    const map = {}; parts.forEach(part => { if(part.type !== "literal") map[part.type] = part.value; });
+    node.textContent = `${bureau.city}  ${map.hour}:${map.minute}:${map.second}`;
+  }
+  function updateProgress(){
+    cancelAnimationFrame(state.raf); if(!state.playing) return;
+    const tick = now => {
+      const elapsed = Math.max(0, now - state.startedAt + state.elapsedBeforePause);
+      const pct = Math.min(100, (elapsed / (SLIDES[state.currentIndex].duration || SLIDE_MS)) * 100);
+      progress.style.width = pct + "%";
+      state.raf = requestAnimationFrame(tick);
+    };
+    state.raf = requestAnimationFrame(tick);
+  }
+  function pause(){
+    if(!state.playing) return;
+    state.playing = false; clearTimeout(state.timer); cancelAnimationFrame(state.raf);
+    state.elapsedBeforePause += performance.now() - state.startedAt;
+    playBtn.textContent = "Play";
+    if(audio) audio.pause();
+  }
+  function play(){
+    if(state.playing) return;
+    state.playing = true; playBtn.textContent = "Pause"; state.startedAt = performance.now();
+    const remaining = Math.max(500, (SLIDES[state.currentIndex].duration || SLIDE_MS) - state.elapsedBeforePause);
+    clearTimeout(state.timer); state.timer = setTimeout(() => showSlide(state.currentIndex + 1), remaining);
+    updateProgress(); tryPlayAudio(true);
+  }
+  async function tryPlayAudio(fromUser){
+    if(!audio) return false;
+    audio.muted = false; audio.volume = 0.65;
+    try {
+      const promise = audio.play();
+      if(promise && typeof promise.then === "function") await promise;
+      state.audioBlocked = false; updateAudioButton(); return true;
+    } catch(error){
+      state.audioBlocked = true; updateAudioButton();
+      if(fromUser) console.warn("CGN Weekly Weather Brief audio playback:", error);
+      return false;
+    }
+  }
+  function updateAudioButton(){
+    if(!audio) return;
+    if(state.audioBlocked || audio.paused) muteBtn.textContent = "Play Audio";
+    else muteBtn.textContent = audio.muted ? "Unmute" : "Mute";
+  }
+  async function toggleAudio(){
+    if(!audio) return;
+    if(state.audioBlocked || audio.paused){ await tryPlayAudio(true); return; }
+    audio.muted = !audio.muted; state.audioBlocked = false; updateAudioButton();
+  }
+  function next(){ showSlide(state.currentIndex + 1); }
+  function prev(){ showSlide(state.currentIndex - 1); }
+  function restart(){ showSlide(0); tryPlayAudio(true); }
+  function wireControls(){
+    playBtn.addEventListener("click", () => state.playing ? pause() : play());
+    document.getElementById("cgn-wwb-next").addEventListener("click", next);
+    document.getElementById("cgn-wwb-prev").addEventListener("click", prev);
+    document.getElementById("cgn-wwb-restart").addEventListener("click", restart);
+    muteBtn.addEventListener("click", toggleAudio);
+    citySelect.addEventListener("change", function(){ if(this.value !== "") showSlide(Number(this.value)); });
+    document.addEventListener("visibilitychange", () => { if(document.hidden && audio) audio.pause(); else if(state.playing) tryPlayAudio(false); });
+  }
+  function preloadStockSlides(){
+    SLIDES.filter(slide => slide.type === "stock").forEach(slide => { const img = new Image(); img.src = slide.src; });
+  }
+  function init(){
+    if(audio){ audio.muted = false; audio.volume = 0.65; updateAudioButton(); }
+    buildCitySelect();
+    wireControls();
+    preloadStockSlides();
+    showSlide(0);
+    tryPlayAudio(false);
+    loadLiveWeather({ startup:true });
+    setInterval(() => loadLiveWeather({ background:true }), WEATHER_CHECK_MS);
+    setInterval(updateBureauClock, 1000);
+  }
+  init();
+})();
+</script>
+
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  });
+}
+</script>
+</body>
+</html>

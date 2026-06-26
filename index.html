@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Install CGN NOW</title>
+<meta name="description" content="Install CGN NOW, the CGN News app for news, weather, sports and radar.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://ios.cgnnews.net/">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#07111f">
+<meta name="apple-mobile-web-app-title" content="CGN NOW">
+<meta name="application-name" content="CGN NOW">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Install CGN NOW">
+<meta property="og:description" content="Install CGN NOW for CGN News, weather, sports and radar.">
+<meta property="og:url" content="https://ios.cgnnews.net/">
+<meta property="og:image" content="https://ios.cgnnews.net/CGNNewsNowLogo.png">
+<style>
+:root{--navy:#07111f;--red:#c40000;--blue:#53d5ff;--line:rgba(255,255,255,.18);--safe-top:env(safe-area-inset-top,0px);--safe-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#07111f;color:#fff;padding:calc(22px + var(--safe-top)) 18px calc(24px + var(--safe-bottom));display:flex;align-items:center;justify-content:center}
+.install-shell{width:min(980px,100%);display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:center}
+.install-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.05));box-shadow:0 30px 80px rgba(0,0,0,.38);padding:24px;border-radius:28px;backdrop-filter:blur(12px)}
+.icon-wrap{display:flex;justify-content:center;margin-bottom:18px}
+.icon-wrap img{width:168px;height:168px;border-radius:36px;display:block;box-shadow:0 22px 54px rgba(0,0,0,.36)}
+.kicker{display:inline-flex;align-items:center;gap:8px;color:#ff4444;font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.kicker:before{content:"";width:9px;height:9px;border-radius:50%;background:#ff3030;box-shadow:0 0 0 5px rgba(255,48,48,.16)}
+h1{margin:10px 0 8px;font-size:clamp(38px,6vw,76px);line-height:.92;letter-spacing:-.06em}
+p{color:#dfe8f6;line-height:1.55;font-size:16px;margin:10px 0}
+.install-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button,.btn{appearance:none;border:1px solid rgba(255,255,255,.42);background:#fff;color:#07111f;border-radius:999px;min-height:44px;padding:11px 16px;font-weight:950;text-decoration:none;cursor:pointer;font-size:14px}
+button.secondary,.btn.secondary{background:transparent;color:#fff}
+button:hover,.btn:hover{opacity:.9;text-decoration:none}
+.instructions{display:grid;gap:12px}
+.instructions h2{font-size:22px;margin:0 0 6px}
+.instructions ol{margin:0;padding-left:20px;color:#dfe8f6;line-height:1.55}
+.instructions li+li{margin-top:5px}
+.mini{font-size:13px;color:#aeb8c8;margin-top:12px}
+.install-hidden{display:none!important}
+@media(max-width:820px){
+  body{align-items:flex-start}
+  .install-shell{grid-template-columns:1fr}
+  .install-card{border-radius:22px;padding:20px}
+  .icon-wrap img{width:132px;height:132px;border-radius:30px}
+}
+</style>
+<script>
+(function(){
+  var isStandalone = window.matchMedia && window.matchMedia('(display-mode: standalone)').matches;
+  var isIosStandalone = window.navigator.standalone === true;
+  if (isStandalone || isIosStandalone) {
+    location.replace('/news/');
+  }
+})();
+</script>
+</head>
+<body>
+<main class="install-shell" aria-label="Install CGN NOW">
+  <section class="install-card">
+    <div class="icon-wrap">
+      <img src="/CGNNewsNowLogo.png" alt="CGN NOW app icon" width="168" height="168">
+    </div>
+    <div class="kicker">Installable PWA</div>
+    <h1>CGN NOW</h1>
+    <p>Install CGN NOW for direct app-style access to CGN News, sports, weather, radar and account features.</p>
+    <div class="install-actions">
+      <button type="button" id="install-btn" class="install-hidden">Install CGN NOW</button>
+      <a class="btn secondary" href="/news/">Continue in browser</a>
+    </div>
+    <p class="mini">When installed, the app name appears as <strong>CGN NOW</strong> and launches to the News page.</p>
+  </section>
+
+  <section class="install-card instructions">
+    <div>
+      <h2>iPhone / iPad</h2>
+      <ol>
+        <li>Open this page in Safari.</li>
+        <li>Tap the Share icon.</li>
+        <li>Select Add to Home Screen.</li>
+        <li>Tap Add, then launch CGN NOW from your Home Screen.</li>
+      </ol>
+    </div>
+    <div>
+      <h2>Android / Desktop</h2>
+      <ol>
+        <li>Use the browser install button when it appears.</li>
+        <li>Or choose Install app / Add to Home screen from the browser menu.</li>
+        <li>Open CGN NOW as a standalone app.</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var deferredPrompt = null;
+  var installBtn = document.getElementById('install-btn');
+
+  window.addEventListener('beforeinstallprompt', function(event){
+    event.preventDefault();
+    deferredPrompt = event;
+    if(installBtn) installBtn.classList.remove('install-hidden');
+  });
+
+  if(installBtn){
+    installBtn.addEventListener('click', function(){
+      if(!deferredPrompt) return;
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.finally(function(){
+        deferredPrompt = null;
+        installBtn.classList.add('install-hidden');
+      });
+    });
+  }
+
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('/sw.js').catch(function(){});
+    });
+  }
+})();
+</script>
+</body>
+</html>

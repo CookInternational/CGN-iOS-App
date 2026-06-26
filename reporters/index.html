@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Reporters | CGN News</title>
+<meta content="Meet the CGN News reporting team. Browse reporter bios, beats, titles, social links, and profile pages for Cook Global News Network." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="CGN News" name="author"/>
+<link href="https://ios.cgnnews.net/reporters/" rel="canonical"/>
+
+
+
+<meta content="website" property="og:type"/>
+<meta content="CGN News" property="og:site_name"/>
+<meta content="Reporters | CGN News" property="og:title"/>
+<meta content="Meet the CGN News reporting team. Browse reporter bios, beats, titles, social links, and profile pages." property="og:description"/>
+<meta content="https://ios.cgnnews.net/reporters/" property="og:url"/>
+<meta content="https://www.cgnnews.net/CGNNewsLogo01.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Reporters | CGN News" name="twitter:title"/>
+<meta content="Meet the CGN News reporting team. Browse reporter bios, beats, titles, social links, and profile pages." name="twitter:description"/>
+<meta content="https://www.cgnnews.net/CGNNewsLogo01.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.cgnnews.net/reporters#webpage",
+      "url": "https://www.cgnnews.net/reporters",
+      "name": "Reporters | CGN News",
+      "description": "Meet the CGN News reporting team. Browse reporter bios, beats, titles, social links, and profile pages.",
+      "isPartOf": {
+        "@id": "https://www.cgnnews.net/#website"
+      },
+      "publisher": {
+        "@id": "https://www.cgnnews.net/#organization"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.cgnnews.net/#website",
+      "url": "https://www.cgnnews.net/",
+      "name": "CGN News",
+      "publisher": {
+        "@id": "https://www.cgnnews.net/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.cgnnews.net/reporters?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.cgnnews.net/#organization",
+      "name": "CGN News",
+      "legalName": "Cook Global News Network",
+      "url": "https://www.cgnnews.net/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.cgnnews.net/CGNNewsLogo01.png"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "151 N. Delaware Street, Suite 122",
+        "addressLocality": "Indianapolis",
+        "addressRegion": "IN",
+        "postalCode": "46204",
+        "addressCountry": "US"
+      },
+      "email": "tips@cgnnews.net",
+      "telephone": "+1-317-442-1437",
+      "sameAs": [
+        "https://instagram.com/cookglobalnews",
+        "https://x.com/CookGlobalNews",
+        "https://youtube.com/@CookGlobalNews"
+      ]
+    }
+  ]
+}
+</script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  background:#fff;
+  color:#111;
+}
+
+.reporters-page {
+  max-width:1180px;
+  margin:34px auto;
+  padding:0 20px 40px;
+}
+
+.reporters-hero {
+  position:relative;
+  overflow:hidden;
+  border:1px solid #111827;
+  background:#07111f;
+  color:#fff;
+  padding:34px;
+  margin-bottom:22px;
+  isolation:isolate;
+}
+
+.reporters-hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(255,255,255,.13), transparent 24%),
+    linear-gradient(135deg, rgba(196,0,0,.18), transparent 38%),
+    linear-gradient(315deg, rgba(255,198,0,.10), transparent 42%);
+  z-index:0;
+  pointer-events:none;
+}
+
+.reporters-hero-content {
+  position:relative;
+  z-index:1;
+  max-width:820px;
+}
+
+.reporters-hero-banner {
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:360px;
+  object-fit:cover;
+  background:#07111f;
+  border-bottom:1px solid rgba(255,255,255,.16);
+}
+
+.reporters-hero.has-banner {
+  padding:0;
+}
+
+.reporters-hero.has-banner .reporters-hero-content {
+  padding:28px 34px 34px;
+}
+
+.reporters-kicker {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:900;
+  color:#ff4242;
+  margin-bottom:10px;
+}
+
+.reporters-kicker span {
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  background:#ff2424;
+  box-shadow:0 0 0 5px rgba(255,36,36,.18);
+}
+
+.reporters-hero h1 {
+  margin:0;
+  font-size:48px;
+  line-height:1;
+  letter-spacing:-.03em;
+}
+
+.reporters-hero p {
+  margin:12px 0 0;
+  color:#e8edf5;
+  font-size:16px;
+  line-height:1.55;
+}
+
+.reporters-search-panel {
+  border:1px solid #d8dce4;
+  background:#f7f8fb;
+  padding:16px;
+  margin-bottom:20px;
+}
+
+.reporters-search-row {
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.reporters-search-row input {
+  flex:1;
+  min-width:0;
+  padding:13px 14px;
+  border:1px solid #bbb;
+  background:#fff;
+  color:#111;
+  font-size:15px;
+  box-sizing:border-box;
+}
+
+.reporters-search-row button {
+  padding:13px 14px;
+  border:1px solid #111;
+  background:#111;
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.reporters-search-row button:hover {
+  opacity:.86;
+}
+
+.reporters-search-note {
+  font-size:12px;
+  color:#666;
+  margin-top:9px;
+  line-height:1.4;
+}
+
+.reporters-section-title {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:16px;
+  border-bottom:1px solid #ddd;
+  padding-bottom:10px;
+  margin:0 0 18px;
+}
+
+.reporters-section-title h2 {
+  margin:0;
+  font-size:24px;
+}
+
+.reporters-section-title span {
+  color:#666;
+  font-size:13px;
+}
+
+.reporters-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:18px;
+}
+
+.reporter-card {
+  border:1px solid #d8dce4;
+  background:#fff;
+  min-height:100%;
+  box-shadow:0 12px 26px rgba(7,17,31,.06);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  color:#111;
+  text-decoration:none;
+  position:relative;
+}
+
+.reporter-card::before {
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:5px;
+  background:#07111f;
+}
+
+.reporter-card.featured-reporter::before {
+  background:#c40000;
+}
+
+.reporter-card:hover h3 a {
+  text-decoration:underline;
+}
+
+.reporter-photo-wrap {
+  width:100%;
+  height:230px;
+  background:#f1f3f7;
+  overflow:hidden;
+  border-bottom:1px solid #e5e7ec;
+  display:block;
+}
+
+.reporter-photo {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  background:#f1f3f7;
+}
+
+.reporter-body {
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.reporter-body h3 {
+  margin:0;
+  font-size:22px;
+  line-height:1.18;
+}
+
+.reporter-body h3 a {
+  color:#111;
+  text-decoration:none;
+}
+
+.reporter-title {
+  display:block;
+  margin-top:5px;
+  color:#c40000;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+  line-height:1.35;
+}
+
+.reporter-bio {
+  margin:12px 0 0;
+  color:#555;
+  line-height:1.5;
+  font-size:14px;
+  flex:1;
+}
+
+.reporter-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:14px;
+}
+
+.reporter-actions span,
+.reporter-actions a {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 9px;
+  border:1px solid #111;
+  background:#111;
+  color:#fff;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.reporter-actions a.secondary,
+.reporter-actions span.secondary {
+  background:#fff;
+  color:#111;
+}
+
+.reporter-socials {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.reporter-socials a {
+  color:#111;
+  font-size:12px;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.reporter-socials a:hover {
+  text-decoration:underline;
+}
+
+.reporters-empty {
+  border:1px solid #ddd;
+  background:#f7f7f7;
+  padding:16px;
+  color:#555;
+  line-height:1.5;
+}
+
+.cgn-ad-label {
+  font-size:11px;
+  color:#777;
+  margin-bottom:10px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+@media(max-width:900px){
+  .reporters-page {
+    margin:28px auto;
+    padding:0 16px 34px;
+  }
+
+  .reporters-hero {
+    padding:26px 20px;
+  }
+
+  .reporters-hero.has-banner .reporters-hero-content {
+    padding:22px 20px 26px;
+  }
+
+  .reporters-hero h1 {
+    font-size:38px;
+  }
+
+  .reporters-search-row {
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .reporters-search-row button {
+    width:100%;
+  }
+
+  .reporters-section-title {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+  }
+
+  .reporters-grid {
+    grid-template-columns:1fr;
+  }
+
+  .reporter-photo-wrap {
+    height:260px;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<meta content="#07111f" name="theme-color"/>
+<meta content="CGN NOW" name="apple-mobile-web-app-title"/>
+<meta content="CGN NOW" name="application-name"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<link href="/assets/cgn-now.css" rel="stylesheet"/>
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body>
+<div id="cgn-site-header"></div>
+<main class="reporters-page">
+<section aria-label="CGN News reporters" class="reporters-hero has-banner">
+<img alt="CGN Reporters" class="reporters-hero-banner" decoding="async" loading="eager" src="https://www.cgnnews.net/reporters/CGNReportersBanner01.png"/>
+<div class="reporters-hero-content">
+<div class="reporters-kicker"><span aria-hidden="true"></span> CGN Reporters</div>
+<h1>Meet the Reporting Team</h1>
+<p>Browse CGN News reporters, beats, bios, and profile pages. Each reporter profile will support direct contact options once the newsroom email aliases are created.</p>
+</div>
+</section>
+<section aria-label="Search reporters" class="reporters-search-panel">
+<div class="reporters-search-row">
+<input autocomplete="off" id="reporterSearchInput" oninput="handleReporterSearch()" placeholder="Search by reporter name, title, beat, bio, or social profile..." type="search"/>
+<button onclick="clearReporterSearch()" type="button">Clear</button>
+</div>
+<div class="reporters-search-note">
+    Search covers reporter name, title/category, bio, slug, and social links.
+  </div>
+</section>
+<section aria-labelledby="reporters-title">
+<div class="reporters-section-title">
+<h2 id="reporters-title">Reporter Directory</h2>
+<span id="reportersCount">Loading reporters...</span>
+</div>
+<div class="reporters-grid" id="reportersGrid">
+<div class="reporters-empty">Loading CGN News reporters...</div>
+</div>
+</section>
+</main>
+<div id="cgn-site-footer"></div>
+<script src="/assets/cgn-now-shell.js"></script>
+<script>
+
+const CGN_API_FALLBACK = "https://script.google.com/macros/s/AKfycbx41mQg-Ine3XZ-VrMI_SaQn4_K6cDQHA0cBFyGPgupu_edNFoNRjSLv2hoSe_bOytt/exec";
+const CGN_API_BASE = window.CGN_API_BASE || window.CGN_API_URL || CGN_API_FALLBACK;
+
+let allReporters = [];
+let filteredReporters = [];
+
+const REPORTER_ORDER = [
+  "michael-a-cook",
+  "michael-cook",
+  "sophie-keller",
+  "michael-trent"
+];
+
+function safeText(value){
+  return String(value || "").replace(/[&<>"']/g, function(c){
+    return {
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[c];
+  });
+}
+
+function slugify(value){
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function objectFirstValue(obj, keys){
+  if(!obj) return "";
+
+  for(let i = 0; i < keys.length; i++){
+    const key = keys[i];
+
+    if(Object.prototype.hasOwnProperty.call(obj, key) && obj[key] !== undefined && obj[key] !== null && String(obj[key]).trim() !== ""){
+      return obj[key];
+    }
+  }
+
+  return "";
+}
+
+function getReporterSlug(reporter){
+  if(Array.isArray(reporter)){
+    return slugify(reporter[1] || reporter[0] || "cgn-news-staff");
+  }
+
+  return slugify(reporter.slug || reporter.name || "cgn-news-staff");
+}
+
+function getReporterName(reporter){
+  if(Array.isArray(reporter)){
+    return reporter[0] || "CGN News Staff";
+  }
+
+  return reporter.name || reporter.reporter || reporter.full_name || "CGN News Staff";
+}
+
+function getReporterBio(reporter){
+  if(Array.isArray(reporter)){
+    return reporter[2] || "CGN News reporter profile coming soon.";
+  }
+
+  return reporter.bio || reporter.description || reporter.profile || "CGN News reporter profile coming soon.";
+}
+
+function getReporterTitle(reporter){
+  if(Array.isArray(reporter)){
+    return reporter[9] || reporter[8] || reporter[3] || "";
+  }
+
+  return objectFirstValue(reporter, [
+    "title",
+    "Title",
+    "TITLE",
+    "title_category",
+    "titleCategory",
+    "category_title",
+    "categoryTitle",
+    "reporter_title",
+    "reporterTitle",
+    "job_title",
+    "jobTitle",
+    "beat_title",
+    "beatTitle",
+    "column_j",
+    "columnJ",
+    "col_j",
+    "colJ",
+    "j",
+    "J",
+    "_j",
+    "field_10",
+    "field10",
+    "column_10",
+    "column10",
+    "beat",
+    "category",
+    "role"
+  ]);
+}
+
+function getReporterImage(reporter){
+  if(Array.isArray(reporter)){
+    return reporter[3] || "/" + getReporterSlug(reporter) + ".png";
+  }
+
+  const direct =
+    reporter.image_url ||
+    reporter.image ||
+    reporter.photo_url ||
+    reporter.photo ||
+    reporter.headshot ||
+    "";
+
+  if(direct) return direct;
+
+  const slug = getReporterSlug(reporter);
+
+  if(slug) return "/" + slug + ".png";
+
+  return "/CGNFavicon.png";
+}
+
+function getReporterProfileUrl(reporter){
+  return "/reporters/" + getReporterSlug(reporter) + "/";
+}
+
+function getSocialLinks(reporter){
+  if(Array.isArray(reporter)){
+    return [];
+  }
+
+  const links = [];
+  const facebook = reporter.facebook_url || reporter.facebook || "";
+  const twitter = reporter.twitter_url || reporter.x_url || reporter.twitter || reporter.x || "";
+  const instagram = reporter.instagram_url || reporter.instagram || "";
+  const youtube = reporter.youtube_url || reporter.youtube || "";
+  const linkedin = reporter.linkedin_url || reporter.linkedin || "";
+
+  if(facebook) links.push({label:"Facebook", url:facebook});
+  if(twitter) links.push({label:"X", url:String(twitter).indexOf("@") === 0 ? "https://x.com/" + String(twitter).replace(/^@/, "") : twitter});
+  if(instagram) links.push({label:"Instagram", url:String(instagram).indexOf("@") === 0 ? "https://instagram.com/" + String(instagram).replace(/^@/, "") : instagram});
+  if(youtube) links.push({label:"YouTube", url:youtube});
+  if(linkedin) links.push({label:"LinkedIn", url:linkedin});
+
+  return links;
+}
+
+
+function normalizeEmailAddress(value){
+  const email = String(value || "").trim();
+  if(!email) return "";
+  const cleaned = email.replace(/^mailto:/i, "").split("?")[0].trim();
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleaned) ? cleaned : "";
+}
+
+function reporterEmailFromName(nameValue){
+  const name = String(nameValue || "").trim();
+  if(!name || name.toLowerCase() === "cgn news" || name.toLowerCase() === "cgn news staff") return "tips@cgnnews.net";
+  const parts = name.toLowerCase().replace(/[^a-z\s-]/g, " ").replace(/-/g, " ").split(/\s+/).filter(Boolean);
+  if(parts.length < 2) return "tips@cgnnews.net";
+  return parts[0] + "." + parts[parts.length - 1] + "@cgnnews.net";
+}
+
+function getReporterEmail(reporter){
+  if(Array.isArray(reporter)){
+    return normalizeEmailAddress(reporter[10]) || reporterEmailFromName(getReporterName(reporter));
+  }
+  const explicit = objectFirstValue(reporter, ["email", "reporter_email", "contact_email", "public_email"]);
+  return normalizeEmailAddress(explicit) || reporterEmailFromName(getReporterName(reporter));
+}
+
+function getReporterMailto(reporter){
+  const name = getReporterName(reporter);
+  const email = getReporterEmail(reporter);
+  const subject = "RE: " + name;
+  return "mailto:" + encodeURIComponent(email) + "?subject=" + encodeURIComponent(subject);
+}
+
+function reporterMatchesSearch(reporter, query){
+  if(!query) return true;
+
+  const haystack = [
+    getReporterName(reporter),
+    getReporterSlug(reporter),
+    getReporterBio(reporter),
+    getReporterTitle(reporter),
+    Array.isArray(reporter) ? reporter.join(" ") : JSON.stringify(reporter)
+  ].join(" ").toLowerCase();
+
+  return haystack.indexOf(query) !== -1;
+}
+
+function reporterPriority(reporter){
+  const slug = getReporterSlug(reporter);
+  const nameSlug = slugify(getReporterName(reporter));
+  const index = REPORTER_ORDER.findIndex(function(item){
+    return item === slug || item === nameSlug;
+  });
+
+  return index === -1 ? 999 : index;
+}
+
+function sortReporters(list){
+  return [...list].sort(function(a,b){
+    const aPriority = reporterPriority(a);
+    const bPriority = reporterPriority(b);
+
+    if(aPriority !== bPriority){
+      return aPriority - bPriority;
+    }
+
+    const aName = String(getReporterName(a) || "").toLowerCase();
+    const bName = String(getReporterName(b) || "").toLowerCase();
+
+    return aName.localeCompare(bName);
+  });
+}
+
+function normalizeReportersPayload(data){
+  if(Array.isArray(data)){
+    return data;
+  }
+
+  if(data && Array.isArray(data.reporters)){
+    return data.reporters;
+  }
+
+  if(data && Array.isArray(data.people)){
+    return data.people;
+  }
+
+  if(data && Array.isArray(data.rows)){
+    return data.rows;
+  }
+
+  return [];
+}
+
+function renderReporters(){
+  const grid = document.getElementById("reportersGrid");
+  const count = document.getElementById("reportersCount");
+
+  if(!grid) return;
+
+  if(count){
+    count.innerText = `${filteredReporters.length} reporter${filteredReporters.length === 1 ? "" : "s"}`;
+  }
+
+  if(!filteredReporters.length){
+    grid.innerHTML = `<div class="reporters-empty">No reporters matched your current search.</div>`;
+    return;
+  }
+
+  grid.innerHTML = "";
+
+  filteredReporters.forEach(function(reporter){
+    const nameRaw = getReporterName(reporter);
+    const slug = getReporterSlug(reporter);
+    const name = safeText(nameRaw);
+    const title = safeText(getReporterTitle(reporter));
+    const bio = safeText(getReporterBio(reporter));
+    const image = safeText(getReporterImage(reporter));
+    const profileUrl = getReporterProfileUrl(reporter);
+    const socials = getSocialLinks(reporter);
+    const featuredClass = reporterPriority(reporter) < 3 ? " featured-reporter" : "";
+
+    const socialsHtml = socials.length
+      ? `<div class="reporter-socials">${socials.map(function(link){
+          return `<a href="${safeText(link.url)}" target="_blank" rel="noopener">${safeText(link.label)}</a>`;
+        }).join("")}</div>`
+      : "";
+
+    grid.insertAdjacentHTML("beforeend", `
+      <article class="reporter-card${featuredClass}" itemscope itemtype="https://schema.org/Person">
+        <a class="reporter-photo-wrap" href="${profileUrl}" aria-label="Open ${name} reporter profile">
+          <img class="reporter-photo" src="${image}" alt="${name}" loading="lazy" itemprop="image" onerror="this.src='/CGNFavicon.png';">
+        </a>
+
+        <div class="reporter-body">
+          <h3 itemprop="name">
+            <a href="${profileUrl}">${name}</a>
+          </h3>
+
+          ${title ? `<span class="reporter-title" itemprop="jobTitle">${title}</span>` : `<span class="reporter-title" itemprop="jobTitle">CGN News Reporter</span>`}
+
+          <p class="reporter-bio" itemprop="description">${bio}</p>
+
+          <div class="reporter-actions">
+            <a href="${profileUrl}">View Profile</a>
+            <a class="secondary" href="${safeText(getReporterMailto(reporter))}" title="${safeText(getReporterEmail(reporter))}">Email</a>
+          </div>
+
+          ${socialsHtml}
+        </div>
+      </article>
+    `);
+  });
+}
+
+function applyReporterSearch(){
+  const input = document.getElementById("reporterSearchInput");
+  const query = input ? input.value.trim().toLowerCase() : "";
+
+  filteredReporters = sortReporters(allReporters.filter(function(reporter){
+    return reporterMatchesSearch(reporter, query);
+  }));
+
+  renderReporters();
+}
+
+function handleReporterSearch(){
+  applyReporterSearch();
+}
+
+function clearReporterSearch(){
+  const input = document.getElementById("reporterSearchInput");
+  if(input) input.value = "";
+  applyReporterSearch();
+}
+
+async function loadReporters(){
+  const grid = document.getElementById("reportersGrid");
+
+  try{
+    const res = await fetch(`${CGN_API_BASE}?action=reporters`);
+    const data = await res.json();
+
+    const reporters = normalizeReportersPayload(data);
+
+    allReporters = sortReporters(reporters.filter(function(reporter){
+      return reporter && (getReporterName(reporter) || getReporterSlug(reporter));
+    }));
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const q = urlParams.get("q");
+
+    if(q){
+      const input = document.getElementById("reporterSearchInput");
+      if(input) input.value = q;
+    }
+
+    applyReporterSearch();
+
+  } catch(err){
+    console.error("REPORTERS LOAD ERROR:", err);
+
+    if(grid){
+      grid.innerHTML = `<div class="reporters-empty">Unable to load CGN News reporters right now.</div>`;
+    }
+
+    const count = document.getElementById("reportersCount");
+    if(count) count.innerText = "Reporter feed unavailable";
+  }
+}
+
+loadReporters();
+
+</script>
+
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  });
+}
+</script>
+</body>
+</html>

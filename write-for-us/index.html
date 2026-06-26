@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Write For Us | CGN News</title>
+<meta content="Write for CGN News. Submit your name, email, and a writing sample for newsroom review." name="description"/>
+<meta content="index,follow" name="robots"/>
+<link href="https://ios.cgnnews.net/write-for-us/" rel="canonical"/>
+<meta content="Write For Us | CGN News" property="og:title"/>
+<meta content="Interested in writing for CGN News? Submit a writing sample for newsroom review." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://ios.cgnnews.net/write-for-us/" property="og:url"/>
+<meta content="https://www.cgnnews.net/write-for-us/WriteForUs01.png" property="og:image"/>
+
+
+
+
+
+
+<style>
+    :root{
+      --cgn-navy:#07172f;
+      --cgn-navy-2:#0b2344;
+      --cgn-blue:#1d4ed8;
+      --cgn-red:#c1121f;
+      --cgn-gold:#d6a84f;
+      --cgn-gray:#64748b;
+      --cgn-border:rgba(15,23,42,.12);
+      --cgn-shadow:0 18px 50px rgba(2,8,23,.13);
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      font-family:Georgia,"Times New Roman",serif;
+      color:#111827;
+      background:
+        radial-gradient(circle at top left,rgba(29,78,216,.12),transparent 34%),
+        linear-gradient(180deg,#f8fafc 0%,#eef2f7 46%,#f8fafc 100%);
+    }
+
+    a{color:inherit;}
+
+    .wfu-page{
+      width:min(1120px,calc(100% - 32px));
+      margin:0 auto;
+      padding:18px 0 60px;
+    }
+
+    .wfu-hero{
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      min-height:320px;
+      box-shadow:var(--cgn-shadow);
+      background:var(--cgn-navy);
+      isolation:isolate;
+    }
+
+    .wfu-hero img{
+      display:block;
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .wfu-hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg,rgba(7,23,47,.72),rgba(7,23,47,.22),rgba(7,23,47,.05)),
+        linear-gradient(0deg,rgba(7,23,47,.42),transparent 56%);
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .wfu-hero-content{
+      position:absolute;
+      left:clamp(20px,4vw,44px);
+      bottom:clamp(20px,3vw,32px);
+      z-index:2;
+      color:#fff;
+      max-width:620px;
+    }
+
+    .wfu-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 11px;
+      border:1px solid rgba(255,255,255,.28);
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:.76rem;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      backdrop-filter:blur(8px);
+    }
+
+    .wfu-kicker-dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--cgn-gold);
+      box-shadow:0 0 18px rgba(214,168,79,.85);
+    }
+
+    .wfu-hero h1{
+      margin:12px 0 6px;
+      font-size:clamp(2rem,4.6vw,4rem);
+      line-height:.95;
+      letter-spacing:-.055em;
+      text-shadow:0 14px 30px rgba(0,0,0,.35);
+    }
+
+    .wfu-hero p{
+      margin:0;
+      max-width:590px;
+      font-family:Arial,Helvetica,sans-serif;
+      color:rgba(255,255,255,.9);
+      line-height:1.45;
+      font-size:.98rem;
+    }
+
+    .wfu-section{
+      margin-top:28px;
+    }
+
+    .wfu-grid{
+      display:grid;
+      grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+      gap:18px;
+      align-items:start;
+    }
+
+    .wfu-card{
+      border:1px solid var(--cgn-border);
+      border-radius:22px;
+      background:rgba(255,255,255,.92);
+      box-shadow:0 12px 34px rgba(15,23,42,.08);
+      overflow:hidden;
+    }
+
+    .wfu-card-pad{
+      padding:22px;
+    }
+
+    .wfu-label{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#eff6ff;
+      color:#1e3a8a;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:.76rem;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .wfu-card h2,
+    .wfu-card h3{
+      margin:12px 0 8px;
+      color:var(--cgn-navy);
+      letter-spacing:-.035em;
+      line-height:1.08;
+    }
+
+    .wfu-card h2{font-size:clamp(1.6rem,3vw,2.4rem);}
+    .wfu-card h3{font-size:1.3rem;}
+
+    .wfu-card p,
+    .wfu-card li{
+      color:#475569;
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.55;
+      font-size:.96rem;
+    }
+
+    .wfu-card ul{
+      margin:14px 0 0;
+      padding-left:20px;
+    }
+
+    .wfu-form{
+      display:grid;
+      gap:14px;
+    }
+
+    .wfu-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .wfu-field{
+      display:grid;
+      gap:7px;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    .wfu-field label{
+      color:var(--cgn-navy);
+      font-weight:900;
+      font-size:.9rem;
+    }
+
+    .wfu-field input,
+    .wfu-field textarea{
+      width:100%;
+      border:1px solid rgba(15,23,42,.16);
+      border-radius:15px;
+      background:#fff;
+      color:#111827;
+      font:inherit;
+      padding:12px 13px;
+      outline:none;
+      transition:border .16s ease, box-shadow .16s ease;
+    }
+
+    .wfu-field input:focus,
+    .wfu-field textarea:focus{
+      border-color:rgba(29,78,216,.62);
+      box-shadow:0 0 0 4px rgba(29,78,216,.10);
+    }
+
+    .wfu-sample-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .wfu-counter{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      padding:5px 9px;
+      background:#f8fafc;
+      border:1px solid rgba(15,23,42,.10);
+      color:#334155;
+      font-size:.78rem;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    .wfu-counter.warning{
+      background:#fff7ed;
+      border-color:#fed7aa;
+      color:#9a3412;
+    }
+
+    .wfu-counter.over{
+      background:#fef2f2;
+      border-color:#fecaca;
+      color:#991b1b;
+    }
+
+    textarea#wfu-sample{
+      min-height:300px;
+      resize:vertical;
+      line-height:1.5;
+    }
+
+    .wfu-note{
+      margin-top:-3px;
+      color:#64748b;
+      font-size:.82rem;
+      line-height:1.4;
+    }
+
+    .wfu-status{
+      display:none;
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid #fed7aa;
+      background:#fff7ed;
+      color:#9a3412;
+      font-family:Arial,Helvetica,sans-serif;
+      font-weight:800;
+      line-height:1.4;
+    }
+
+    .wfu-status.show{display:block;}
+
+    .wfu-submit{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:12px 18px;
+      border:0;
+      border-radius:999px;
+      background:var(--cgn-navy);
+      color:#fff;
+      font-family:Arial,Helvetica,sans-serif;
+      font-weight:900;
+      font-size:.95rem;
+      cursor:pointer;
+      transition:transform .16s ease, background .16s ease, box-shadow .16s ease;
+      box-shadow:0 12px 26px rgba(7,23,47,.18);
+    }
+
+    .wfu-submit:hover{
+      transform:translateY(-1px);
+      background:var(--cgn-blue);
+    }
+
+    .wfu-mini-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+      font-family:Arial,Helvetica,sans-serif;
+      font-weight:900;
+      font-size:.88rem;
+    }
+
+    .wfu-mini-links a{
+      color:var(--cgn-blue);
+      text-decoration:none;
+    }
+
+    .wfu-mini-links a:hover{text-decoration:underline;}
+
+    @media(max-width:900px){
+      .wfu-grid{grid-template-columns:1fr;}
+      .wfu-row{grid-template-columns:1fr;}
+    }
+
+    @media(max-width:640px){
+      .wfu-page{width:min(100% - 20px,1120px);padding-top:12px;}
+      .wfu-hero{border-radius:20px;min-height:360px;}
+      .wfu-hero img{height:360px;}
+      .wfu-hero-content{left:18px;right:18px;bottom:22px;}
+      .wfu-card-pad{padding:17px;}
+      .wfu-sample-head{align-items:flex-start;flex-direction:column;}
+      .wfu-submit{width:100%;}
+    }
+  </style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Write For Us | CGN News",
+    "url": "https://www.cgnnews.net/write-for-us/",
+    "publisher": {
+      "@type": "NewsMediaOrganization",
+      "name": "CGN News",
+      "url": "https://www.cgnnews.net/",
+      "logo": "https://www.cgnnews.net/CGNNewsLogo01.png"
+    }
+  }
+  </script>
+
+
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<meta content="#07111f" name="theme-color"/>
+<meta content="CGN NOW" name="apple-mobile-web-app-title"/>
+<meta content="CGN NOW" name="application-name"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<link href="/assets/cgn-now.css" rel="stylesheet"/>
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body>
+<div id="cgn-site-header"></div>
+<main class="wfu-page">
+<section aria-label="Write For Us" class="wfu-hero">
+<img alt="CGN News Write For Us banner with typewriter, quill, and writing desk visuals" loading="eager" src="https://www.cgnnews.net/write-for-us/WriteForUs01.png"/>
+<div class="wfu-hero-content">
+<div class="wfu-kicker"><span class="wfu-kicker-dot"></span> CGN News Contributors</div>
+<h1>Write For Us</h1>
+<p>Share your voice with CGN News. Submit a writing sample for newsroom review.</p>
+</div>
+</section>
+<section class="wfu-section">
+<div class="wfu-grid">
+<article class="wfu-card wfu-card-pad">
+<span class="wfu-label">Submissions</span>
+<h2>Hey! Do You Want to Write for CGN News?</h2>
+<p>Fill out the form and send us a short writing sample. Our newsroom will review your submission and contact you if there is a fit.</p>
+<ul>
+<li>Use your real first and last name.</li>
+<li>Include a reachable email address.</li>
+<li>Keep the writing sample at or under 1,200 words.</li>
+<li>Do not submit copied, AI-spun, or plagiarized work.</li>
+</ul>
+<div class="wfu-mini-links">
+<a href="/editorial-standards">Editorial Standards</a>
+<a href="/support/">Contact Us</a>
+<a href="/copyright">Copyright</a>
+</div>
+</article>
+<article class="wfu-card wfu-card-pad">
+<span class="wfu-label">Write For Us</span>
+<h2>Contributor Inquiry</h2>
+<form class="wfu-form" id="wfu-form">
+<div class="wfu-row">
+<div class="wfu-field">
+<label for="wfu-first-name">First Name</label>
+<input autocomplete="given-name" id="wfu-first-name" name="first_name" required="" type="text"/>
+</div>
+<div class="wfu-field">
+<label for="wfu-last-name">Last Name</label>
+<input autocomplete="family-name" id="wfu-last-name" name="last_name" required="" type="text"/>
+</div>
+</div>
+<div class="wfu-field">
+<label for="wfu-email">Email</label>
+<input autocomplete="email" id="wfu-email" name="email" required="" type="email"/>
+</div>
+<div class="wfu-field">
+<div class="wfu-sample-head">
+<label for="wfu-sample">Writing Sample</label>
+<span class="wfu-counter" id="wfu-counter">0 / 1,200 words</span>
+</div>
+<textarea id="wfu-sample" name="writing_sample" placeholder="Paste or write your sample here..." required=""></textarea>
+<div class="wfu-note">Maximum: 1,200 words. The counter updates as you type.</div>
+</div>
+<div class="wfu-status" id="wfu-status" role="status"></div>
+<button class="wfu-submit" type="submit">Submit Writing Sample</button>
+</form>
+</article>
+</div>
+</section>
+</main>
+<div id="cgn-site-footer"></div>
+<script src="/assets/cgn-now-shell.js"></script>
+<script>
+    (function(){
+      const MAX_WORDS = 1200;
+      const TO_EMAIL = "tips@cgnnews.net";
+
+      const form = document.getElementById("wfu-form");
+      const firstName = document.getElementById("wfu-first-name");
+      const lastName = document.getElementById("wfu-last-name");
+      const email = document.getElementById("wfu-email");
+      const sample = document.getElementById("wfu-sample");
+      const counter = document.getElementById("wfu-counter");
+      const status = document.getElementById("wfu-status");
+
+      function cleanText(value){
+        return String(value || "").trim().replace(/\s+/g," ");
+      }
+
+      function countWords(value){
+        const clean = cleanText(value);
+        if(!clean) return 0;
+        return clean.split(/\s+/).filter(Boolean).length;
+      }
+
+      function updateCounter(){
+        const words = countWords(sample.value);
+        counter.textContent = words.toLocaleString() + " / 1,200 words";
+        counter.classList.toggle("warning", words >= 1050 && words <= MAX_WORDS);
+        counter.classList.toggle("over", words > MAX_WORDS);
+        return words;
+      }
+
+      function showStatus(message){
+        status.textContent = message;
+        status.classList.add("show");
+      }
+
+      sample.addEventListener("input", updateCounter);
+
+      form.addEventListener("submit", function(event){
+        event.preventDefault();
+
+        const words = updateCounter();
+        const fn = cleanText(firstName.value);
+        const ln = cleanText(lastName.value);
+        const fromEmail = cleanText(email.value);
+        const writingSample = String(sample.value || "").trim();
+
+        if(!fn || !ln || !fromEmail || !writingSample){
+          showStatus("Please complete every field before submitting.");
+          return;
+        }
+
+        if(words > MAX_WORDS){
+          showStatus("Your writing sample is over 1,200 words. Please shorten it before submitting.");
+          return;
+        }
+
+        const subject = `RE: Write For Us - ${fn} ${ln}`;
+        const body = [
+          "Write For Us submission",
+          "",
+          `First Name: ${fn}`,
+          `Last Name: ${ln}`,
+          `Email: ${fromEmail}`,
+          `Word Count: ${words}`,
+          "",
+          "Writing Sample:",
+          writingSample
+        ].join("\n");
+
+        const mailto = `mailto:${TO_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
+
+        showStatus("Your email app should open with the submission ready to send. Please review it and press Send.");
+      });
+
+      updateCounter();
+    })();
+  </script>
+
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  });
+}
+</script>
+</body>
+</html>

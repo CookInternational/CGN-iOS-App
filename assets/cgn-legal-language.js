@@ -1,0 +1,1 @@
+/* CGN NOW legal language script intentionally empty. */

@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Subscription Confirmed | CGN News</title>
+<meta content="Your CGN News subscription confirmation page." name="description"/>
+<meta content="noindex, follow" name="robots"/>
+<link href="https://ios.cgnnews.net/payment-success/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="CGN News" property="og:site_name"/>
+<meta content="Subscription Confirmed | CGN News" property="og:title"/>
+<meta content="Your CGN News subscription confirmation page." property="og:description"/>
+<meta content="https://ios.cgnnews.net/payment-success/" property="og:url"/>
+<meta content="https://www.cgnnews.net/CGNNewsLogo01.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Subscription Confirmed | CGN News" name="twitter:title"/>
+<meta content="Your CGN News subscription confirmation page." name="twitter:description"/>
+<meta content="https://www.cgnnews.net/CGNNewsLogo01.png" name="twitter:image"/>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  background:#fff;
+  color:#111;
+}
+
+.confirm-shell {
+  max-width:900px;
+  margin:60px auto;
+  padding:0 20px;
+  text-align:center;
+}
+
+.confirm-card {
+  border:1px solid #ddd;
+  padding:34px 24px;
+  background:#fff;
+}
+
+.status-label {
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:#666;
+  margin-bottom:10px;
+}
+
+h1 {
+  font-size:34px;
+  line-height:1.15;
+  margin:0 0 12px;
+}
+
+p {
+  font-size:16px;
+  line-height:1.55;
+  color:#555;
+}
+
+.action-row {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
+}
+
+button,
+.button-link {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border:1px solid #111;
+  background:#111;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.button-link.secondary,
+button.secondary {
+  background:#fff;
+  color:#111;
+}
+
+.notice {
+  max-width:680px;
+  margin:18px auto 0;
+  padding:14px;
+  background:#f7f7f7;
+  border:1px solid #ddd;
+  color:#444;
+  font-size:14px;
+  line-height:1.45;
+}
+
+.notice.error {
+  background:#fff5f5;
+  border-color:#e1b5b5;
+  color:#7a1111;
+}
+
+.notice.success {
+  background:#f4fff4;
+  border-color:#b5d8b5;
+  color:#174d17;
+}
+
+@media (max-width: 900px) {
+  .confirm-shell {
+    margin:36px auto;
+    padding:0 16px;
+  }
+
+  h1 {
+    font-size:28px;
+  }
+
+  .action-row {
+    flex-direction:column;
+  }
+
+  button,
+  .button-link {
+    width:100%;
+    box-sizing:border-box;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<meta content="#07111f" name="theme-color"/>
+<meta content="CGN NOW" name="apple-mobile-web-app-title"/>
+<meta content="CGN NOW" name="application-name"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<link href="/assets/cgn-now.css" rel="stylesheet"/>
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body>
+<div id="cgn-site-header"></div>
+<main class="confirm-shell">
+<section class="confirm-card">
+<div class="status-label" id="status-label">Processing Subscription</div>
+<h1 id="headline">Confirming Your Subscription</h1>
+<p id="message-primary">
+  Please wait while CGN News attaches your subscription to your account.
+</p>
+<p id="message-secondary">
+  This should only take a moment.
+</p>
+<div class="notice" id="notice">
+  Checking your CGN News account...
+</div>
+<div class="action-row">
+<button onclick="goHome()">Go to Homepage</button>
+<button class="secondary" onclick="goBackToArticle()">Return to Article</button>
+<a class="button-link secondary" href="/account/">View Account</a>
+</div>
+</section>
+</main>
+<div id="cgn-site-footer"></div>
+<script src="/assets/cgn-payments.js"></script>
+<script>
+
+const CGN_DEFAULT_API_BASE = "https://script.google.com/macros/s/AKfycbx41mQg-Ine3XZ-VrMI_SaQn4_K6cDQHA0cBFyGPgupu_edNFoNRjSLv2hoSe_bOytt/exec";
+const API =
+  window.CGN_API_BASE ||
+  window.CGN_API_URL ||
+  localStorage.getItem("cgn_api_base") ||
+  CGN_DEFAULT_API_BASE;
+
+function getUrlParam(name){
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name) || "";
+}
+
+function getUser(){
+
+  const urlUserId = getUrlParam("user_id");
+
+  if(urlUserId){
+    localStorage.setItem("user_id", urlUserId);
+    return urlUserId;
+  }
+
+  return localStorage.getItem("user_id") || "";
+}
+
+
+function getPaymentCurrency(){
+  const fromUrl = getUrlParam("currency");
+  if(window.CGNPayments) return window.CGNPayments.normalizeCurrency(fromUrl || localStorage.getItem("cgn_payment_currency") || "USD");
+  return String(fromUrl || localStorage.getItem("cgn_payment_currency") || "USD").toUpperCase().replace(/[^A-Z]/g, "") || "USD";
+}
+
+function getPaymentHostedButtonId(currency){
+  const fromUrl = getUrlParam("hosted_button_id") || getUrlParam("paypal_button_id");
+  if(fromUrl) return fromUrl;
+  if(window.CGNPayments){
+    const cfg = window.CGNPayments.byCode(currency || getPaymentCurrency());
+    return cfg.hostedButtonId;
+  }
+  return localStorage.getItem("cgn_payment_hosted_button_id") || "";
+}
+
+function setStatus(type, label, headline, primary, secondary){
+
+  const statusLabel = document.getElementById("status-label");
+  const headlineEl = document.getElementById("headline");
+  const primaryEl = document.getElementById("message-primary");
+  const secondaryEl = document.getElementById("message-secondary");
+  const notice = document.getElementById("notice");
+
+  if(statusLabel) statusLabel.innerText = label || "";
+  if(headlineEl) headlineEl.innerText = headline || "";
+  if(primaryEl) primaryEl.innerText = primary || "";
+  if(secondaryEl) secondaryEl.innerText = secondary || "";
+
+  if(notice){
+    notice.className = "notice" + (type ? " " + type : "");
+    notice.innerText = secondary || "";
+  }
+}
+
+async function confirmSubscription(){
+
+  const user_id = getUser();
+
+  if(!user_id){
+
+    localStorage.removeItem("subscriber");
+
+    setStatus(
+      "error",
+      "Account Required",
+      "Subscription Could Not Be Attached",
+      "CGN News could not find a signed-in account in this browser.",
+      "Please log in or create an account first, then subscribe again so the purchase can attach to your CGN News account."
+    );
+
+    return;
+  }
+
+  try {
+
+    setStatus(
+      "",
+      "Processing Subscription",
+      "Confirming Your Subscription",
+      "Please wait while CGN News attaches your subscription to your account.",
+      "Checking your CGN News account..."
+    );
+
+    const currency = getPaymentCurrency();
+    const hostedButtonId = getPaymentHostedButtonId(currency);
+    const query = new URLSearchParams({
+      action:"confirm_payment",
+      user_id:user_id,
+      currency:currency,
+      hosted_button_id:hostedButtonId,
+      paypal_button_id:hostedButtonId,
+      source:"payment-success.html"
+    });
+
+    const res = await fetch(`${API}?${query.toString()}`);
+
+    const data = await res.json();
+
+    if(data.success){
+
+      localStorage.setItem("subscriber", "true");
+      if(data.currency){ localStorage.setItem("cgn_last_confirmed_currency", data.currency); }
+
+      if(data.already_active){
+
+        setStatus(
+          "success",
+          "Already Active",
+          "Your Subscription Is Already Active",
+          "Your CGN News account already has unlimited access.",
+          "You can continue reading CGN News."
+        );
+
+      } else {
+
+        setStatus(
+          "success",
+          "Subscription Confirmed",
+          "Subscription Confirmed",
+          "Thank you for subscribing to CGN News.",
+          "Your account now has unlimited access."
+        );
+      }
+
+      return;
+    }
+
+    localStorage.removeItem("subscriber");
+
+    setStatus(
+      "error",
+      "Confirmation Failed",
+      "Subscription Could Not Be Confirmed",
+      "The payment was returned, but CGN News could not attach it to your account.",
+      data.error || "Please contact CGN News support at tips@cgnnews.net."
+    );
+
+  } catch(err){
+
+    console.error("CONFIRM SUBSCRIPTION ERROR:", err);
+
+    localStorage.removeItem("subscriber");
+
+    setStatus(
+      "error",
+      "Connection Error",
+      "Subscription Could Not Be Confirmed",
+      "CGN News could not reach the subscription system.",
+      "Please refresh this page once. If the issue continues, contact tips@cgnnews.net."
+    );
+  }
+}
+
+function goHome(){
+  window.location.href = "/";
+}
+
+function goBackToArticle(){
+
+  const lastArticle = localStorage.getItem("last_article_url");
+
+  if(lastArticle){
+    window.location.href = lastArticle;
+    return;
+  }
+
+  window.location.href = "/";
+}
+
+confirmSubscription();
+
+</script>
+<script src="/assets/cgn-now-shell.js"></script>
+
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  });
+}
+</script>
+</body>
+</html>

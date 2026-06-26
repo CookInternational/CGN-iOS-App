@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>News | CGN News</title>
+<meta content="Browse the latest CGN News reporting by category, reporter, article title, tag, and date. Coverage includes Local, World, Politics, Business, Markets, Technology, Entertainment, Environment, Energy, Opinion, Weather, Sports, Investigations, and Special Reports." name="description"/>
+<meta content="index, follow, max-image-preview:large" name="robots"/>
+<meta content="CGN News" name="author"/>
+<link href="https://ios.cgnnews.net/news/" rel="canonical"/>
+
+
+
+<meta content="website" property="og:type"/>
+<meta content="CGN News" property="og:site_name"/>
+<meta content="News | CGN News" property="og:title"/>
+<meta content="Browse the latest CGN News reporting by category, reporter, article title, tag, and date." property="og:description"/>
+<meta content="https://ios.cgnnews.net/news/" property="og:url"/>
+<meta content="https://www.cgnnews.net/news/CGNNewsDesk01.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="News | CGN News" name="twitter:title"/>
+<meta content="Browse the latest CGN News reporting by category, reporter, article title, tag, and date." name="twitter:description"/>
+<meta content="https://www.cgnnews.net/news/CGNNewsDesk01.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.cgnnews.net/news#webpage",
+      "url": "https://www.cgnnews.net/news",
+      "name": "News | CGN News",
+      "description": "Browse the latest CGN News reporting by category, reporter, article title, tag, and date.",
+      "isPartOf": {
+        "@id": "https://www.cgnnews.net/#website"
+      },
+      "publisher": {
+        "@id": "https://www.cgnnews.net/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.cgnnews.net/news/CGNNewsDesk01.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.cgnnews.net/#website",
+      "url": "https://www.cgnnews.net/",
+      "name": "CGN News",
+      "publisher": {
+        "@id": "https://www.cgnnews.net/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.cgnnews.net/news?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "NewsMediaOrganization",
+      "@id": "https://www.cgnnews.net/#organization",
+      "name": "CGN News",
+      "legalName": "Cook Global News Network",
+      "url": "https://www.cgnnews.net/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.cgnnews.net/CGNNewsLogo01.png"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "151 N. Delaware Street, Suite 122",
+        "addressLocality": "Indianapolis",
+        "addressRegion": "IN",
+        "postalCode": "46204",
+        "addressCountry": "US"
+      },
+      "email": "tips@cgnnews.net",
+      "telephone": "+1-317-442-1437",
+      "sameAs": [
+        "https://instagram.com/cookglobalnews",
+        "https://x.com/CookGlobalNews",
+        "https://youtube.com/@CookGlobalNews"
+      ]
+    }
+  ]
+}
+</script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  background:#fff;
+  color:#111;
+}
+
+.news-page {
+  max-width:1180px;
+  margin:34px auto;
+  padding:0 20px 40px;
+}
+
+.news-hero {
+  border-bottom:1px solid #d7dce6;
+  padding-bottom:18px;
+  margin-bottom:22px;
+}
+
+.news-desk-banner-link {
+  display:block;
+  width:100%;
+  text-decoration:none;
+}
+
+.news-desk-banner {
+  width:100%;
+  height:190px;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  border-radius:14px;
+  background:#07172f;
+  box-shadow:0 10px 28px rgba(7,23,47,.18);
+}
+
+.news-hero p {
+  max-width:820px;
+  color:#555;
+  font-size:16px;
+  line-height:1.55;
+  margin:16px 0 0;
+}
+
+.news-search-panel {
+  border:1px solid #d8dce4;
+  background:#f7f8fb;
+  padding:16px;
+  margin-bottom:18px;
+}
+
+.news-search-row {
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.news-search-row input {
+  flex:1;
+  min-width:0;
+  padding:13px 14px;
+  border:1px solid #bbb;
+  background:#fff;
+  color:#111;
+  font-size:15px;
+  box-sizing:border-box;
+}
+
+.news-search-row button {
+  padding:13px 14px;
+  border:1px solid #111;
+  background:#111;
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.news-search-row button:hover {
+  opacity:.86;
+}
+
+.news-filter-note {
+  font-size:12px;
+  color:#666;
+  margin-top:9px;
+  line-height:1.4;
+}
+
+.category-filter {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:18px 0 24px;
+}
+
+.category-filter button {
+  border:1px solid #111;
+  background:#fff;
+  color:#111;
+  padding:9px 11px;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.035em;
+  cursor:pointer;
+}
+
+.category-filter button.active,
+.category-filter button:hover {
+  background:#111;
+  color:#fff;
+}
+
+.news-layout {
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:28px;
+  align-items:start;
+}
+
+.news-feed {
+  min-width:0;
+}
+
+.news-section-title {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:16px;
+  border-bottom:1px solid #ddd;
+  padding-bottom:10px;
+  margin-bottom:16px;
+}
+
+.news-section-title h2 {
+  margin:0;
+  font-size:24px;
+}
+
+.news-section-title span {
+  color:#666;
+  font-size:13px;
+}
+
+.article-row {
+  display:flex;
+  gap:14px;
+  margin-bottom:18px;
+  border-bottom:1px solid #eee;
+  padding-bottom:18px;
+}
+
+.article-row img {
+  width:170px;
+  height:108px;
+  object-fit:cover;
+  background:#eee;
+  flex:0 0 auto;
+}
+
+.article-row h3 {
+  margin:0 0 6px;
+  font-size:21px;
+  line-height:1.2;
+}
+
+.article-row h3 a {
+  color:#111;
+  text-decoration:none;
+}
+
+.article-row h3 a:hover {
+  text-decoration:underline;
+}
+
+.article-row p {
+  margin:5px 0;
+  color:#444;
+  line-height:1.45;
+  font-size:14px;
+}
+
+.article-meta {
+  font-size:12px;
+  color:#666;
+  font-weight:800;
+  margin:4px 0 7px !important;
+}
+
+.article-meta a {
+  color:#111;
+  text-decoration:none;
+}
+
+.article-meta a:hover {
+  text-decoration:underline;
+}
+
+.news-empty {
+  border:1px solid #ddd;
+  background:#f7f7f7;
+  padding:16px;
+  color:#555;
+  line-height:1.5;
+}
+
+.load-more-wrap {
+  margin-top:20px;
+  text-align:center;
+}
+
+.load-more-wrap button {
+  padding:11px 18px;
+  border:1px solid #111;
+  background:#111;
+  color:#fff;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.load-more-wrap button:hover {
+  opacity:.86;
+}
+
+.news-sidebar {
+  position:sticky;
+  top:20px;
+}
+
+.sidebar-card {
+  border:1px solid #ddd;
+  background:#fff;
+  padding:18px;
+  margin-bottom:18px;
+}
+
+.sidebar-card h3 {
+  margin:0 0 10px;
+  font-size:18px;
+}
+
+.sidebar-card p {
+  margin:0;
+  color:#555;
+  line-height:1.5;
+  font-size:13px;
+}
+
+.sidebar-list {
+  margin-top:12px;
+  display:grid;
+  gap:8px;
+}
+
+.sidebar-list a {
+  color:#111;
+  text-decoration:none;
+  font-weight:800;
+  font-size:13px;
+  border-bottom:1px solid #eee;
+  padding-bottom:8px;
+}
+
+.sidebar-list a:hover {
+  text-decoration:underline;
+}
+
+.cgn-ad-label {
+  font-size:11px;
+  color:#777;
+  margin-bottom:10px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+@media(max-width:900px){
+  .news-page {
+    margin:28px auto;
+    padding:0 16px 34px;
+  }
+
+  .news-desk-banner {
+    height:132px;
+    border-radius:10px;
+  }
+
+  .news-hero p {
+    font-size:15px;
+    margin-top:12px;
+  }
+
+  .news-search-row {
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .news-search-row button {
+    width:100%;
+  }
+
+  .news-layout {
+    grid-template-columns:1fr;
+  }
+
+  .news-sidebar {
+    position:static;
+  }
+
+  .article-row {
+    flex-direction:column;
+  }
+
+  .article-row img {
+    width:100%;
+    height:auto;
+    max-height:260px;
+  }
+
+  .news-section-title {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+  }
+
+  .category-filter {
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    padding-bottom:8px;
+  }
+
+  .category-filter button {
+    flex:0 0 auto;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<meta content="#07111f" name="theme-color"/>
+<meta content="CGN NOW" name="apple-mobile-web-app-title"/>
+<meta content="CGN NOW" name="application-name"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<link href="/assets/cgn-now.css" rel="stylesheet"/>
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body>
+<div id="cgn-site-header"></div>
+<main class="news-page">
+<section aria-label="CGN News Desk" class="news-hero">
+<h1>Latest Reporting</h1>
+<a aria-label="CGN News Desk" class="news-desk-banner-link" href="/news">
+<img alt="CGN News Desk — Indianapolis, Chicago, London, Sydney, Hong Kong, and Rio de Janeiro" class="news-desk-banner" fetchpriority="high" loading="eager" src="https://www.cgnnews.net/news/CGNNewsDesk01.png"/>
+</a>
+<p>Browse CGN News by category, reporter, article title, tags, and date. Stories are sorted by most recent publication date first.</p>
+</section>
+<section aria-label="Search CGN News" class="news-search-panel">
+<div class="news-search-row">
+<input autocomplete="off" id="newsSearchInput" oninput="handleNewsSearch()" placeholder="Search by category, tag, article name, reporter, or keyword..." type="search"/>
+<button onclick="clearNewsSearch()" type="button">Clear</button>
+</div>
+<div class="news-filter-note">
+    Search covers article title, subtitle, summary, category, tags, reporter, and article body preview when available.
+  </div>
+</section>
+<nav aria-label="News category filters" class="category-filter" id="categoryFilter"></nav>
+<section class="news-layout">
+<div class="news-feed">
+<div class="news-section-title">
+<h2 id="newsFeedTitle">All News</h2>
+<span id="newsCount">Loading articles...</span>
+</div>
+<div id="newsFeed">
+<div class="news-empty">Loading CGN News articles...</div>
+</div>
+<div class="load-more-wrap">
+<button id="loadMoreBtn" onclick="loadMoreNews()" type="button">Load More</button>
+</div>
+</div>
+<aside aria-label="News page sidebar" class="news-sidebar">
+<section class="sidebar-card">
+<h3>Browse by Coverage</h3>
+<p>Local reporting appears first, followed by national, global, markets, technology, culture, weather, sports, investigations, and special reports.</p>
+<div class="sidebar-list" id="sidebarCategories"></div>
+</section>
+<section class="sidebar-card">
+<h3>Reporters</h3>
+<p>Explore CGN News reporters, beats, bios, and social links.</p>
+<div class="sidebar-list">
+<a href="/reporters">Open Reporters Directory</a>
+</div>
+</section>
+<section class="sidebar-card">
+<h3>Submit a Tip</h3>
+<p>Send confidential tips, documents, corrections, or story leads to the CGN News editorial team.</p>
+<div class="sidebar-list">
+<a href="mailto:tips@cgnnews.net?subject=RE%3A%20Tip">tips@cgnnews.net</a>
+</div>
+</section>
+</aside>
+</section>
+</main>
+<div id="cgn-site-footer"></div>
+<script src="/assets/cgn-now-shell.js"></script>
+<script>
+
+function getCGNApiBase(){
+  return window.CGN_API_BASE ||
+    window.CGN_API_URL ||
+    (window.CGN_CONFIG && (window.CGN_CONFIG.google_apps_script_web_app_url || window.CGN_CONFIG.api_url)) ||
+    "";
+}
+
+const NEWS_CATEGORY_ORDER = [
+  "Local",
+  "World",
+  "Politics",
+  "Business",
+  "Markets",
+  "Technology",
+  "Entertainment",
+  "Environment",
+  "Energy",
+  "Opinion",
+  "Weather",
+  "Sports",
+  "Investigations",
+  "Special Reports"
+];
+
+let allNewsArticles = [];
+let filteredNewsArticles = [];
+let visibleNewsCount = 20;
+let activeCategory = "All";
+
+function safeText(value){
+  return String(value || "").replace(/[&<>"']/g, function(c){
+    return {
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[c];
+  });
+}
+
+function slugify(value){
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function normalizeCategory(category){
+  const raw = String(category || "").trim();
+  const lower = raw.toLowerCase();
+
+  const map = {
+    "local":"Local",
+    "indy":"Local",
+    "indianapolis":"Local",
+    "world":"World",
+    "politics":"Politics",
+    "business":"Business",
+    "markets":"Markets",
+    "technology":"Technology",
+    "entertainment":"Entertainment",
+    "environment":"Environment",
+    "energy":"Energy",
+    "opinion":"Opinion",
+    "weather":"Weather",
+    "sports":"Sports",
+    "sport":"Sports",
+    "investigations":"Investigations",
+    "investigation":"Investigations",
+    "cgn investigates":"Investigations",
+    "special reports":"Special Reports",
+    "special report":"Special Reports",
+    "cgn special reports":"Special Reports",
+    "cgn special report":"Special Reports",
+    "economy":"Business",
+    "analysis":"Markets",
+    "climate":"Environment"
+  };
+
+  return map[lower] || raw || "World";
+}
+
+function categoryUrl(category){
+  const clean = normalizeCategory(category);
+
+  if(clean === "Weather") return "/weather";
+  if(clean === "Sports") return "/sports";
+
+  return "/category/" + slugify(clean);
+}
+
+function authorUrl(author){
+  return "/reporters/" + slugify(author || "cgn-news-staff");
+}
+
+function getArticleTime(article){
+  if(!article) return 0;
+
+  const directDate =
+    article.published_at ||
+    article.updated_at ||
+    article.date ||
+    article.created_at ||
+    "";
+
+  if(directDate){
+    const parsed = new Date(directDate).getTime();
+    if(!isNaN(parsed)) return parsed;
+  }
+
+  const year = String(article.year || "").trim();
+  const month = String(article.month || "").trim().padStart(2, "0");
+  const day = String(article.day || "").trim().padStart(2, "0");
+
+  if(year && month && day){
+    const parsedParts = new Date(`${year}-${month}-${day}T00:00:00Z`).getTime();
+    if(!isNaN(parsedParts)) return parsedParts;
+  }
+
+  return 0;
+}
+
+function formatArticleDate(article){
+  const time = getArticleTime(article);
+  if(!time) return "";
+
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone:"America/New_York",
+    day:"numeric",
+    month:"long",
+    year:"numeric",
+    hour:"numeric",
+    minute:"2-digit",
+    second:"2-digit",
+    hour12:true,
+    timeZoneName:"short"
+  }).formatToParts(new Date(time));
+
+  const map = {};
+  parts.forEach(function(p){ map[p.type] = p.value; });
+
+  return `${map.day} ${map.month} ${map.year} at ${map.hour}:${map.minute}:${map.second} ${map.dayPeriod} ${map.timeZoneName}`;
+}
+
+function buildArticleUrl(article){
+  const category = normalizeCategory(article.category || "");
+  const existingUrl = String(article.url || article.canonical_url || "").trim();
+
+  if(existingUrl){
+    const pathOnly = existingUrl.replace(/^https?:\/\/[^/]+/i, "");
+
+    if(category === "Weather"){
+      if(pathOnly.indexOf("/weather/") === 0) return pathOnly;
+      if(pathOnly.indexOf("/news/") === 0) return pathOnly.replace(/^\/news\//, "/weather/");
+    }
+
+    if(category === "Sports"){
+      if(pathOnly.indexOf("/sports/") === 0) return pathOnly;
+      if(pathOnly.indexOf("/news/") === 0) return pathOnly.replace(/^\/news\//, "/sports/");
+    }
+
+    return pathOnly || existingUrl;
+  }
+
+  const slug = slugify(article.slug || article.title || "article");
+  const time = getArticleTime(article);
+  const date = time ? new Date(time) : new Date();
+
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(date.getUTCDate()).padStart(2, "0");
+
+  if(category === "Weather") return `/weather/${year}/${month}/${day}/${slug}`;
+  if(category === "Sports") return `/sports/${year}/${month}/${day}/${slug}`;
+
+  return `/news/${year}/${month}/${day}/${slug}`;
+}
+
+function sortMostRecent(list){
+  return [...list].sort(function(a,b){
+    return getArticleTime(b) - getArticleTime(a);
+  });
+}
+
+function renderCategoryFilters(){
+  const filter = document.getElementById("categoryFilter");
+  const sidebar = document.getElementById("sidebarCategories");
+
+  if(filter){
+    filter.innerHTML = "";
+
+    const allBtn = document.createElement("button");
+    allBtn.type = "button";
+    allBtn.innerText = "All";
+    allBtn.className = activeCategory === "All" ? "active" : "";
+    allBtn.onclick = function(){ setCategory("All"); };
+    filter.appendChild(allBtn);
+
+    NEWS_CATEGORY_ORDER.forEach(function(category){
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.innerText = category;
+      btn.className = activeCategory === category ? "active" : "";
+      btn.onclick = function(){ setCategory(category); };
+      filter.appendChild(btn);
+    });
+
+  }
+
+  if(sidebar){
+    sidebar.innerHTML = NEWS_CATEGORY_ORDER.map(function(category){
+      return `<a href="#" onclick="setCategory('${safeText(category)}'); return false;">${safeText(category)}</a>`;
+    }).join("");
+  }
+}
+
+function setCategory(category){
+  activeCategory = category || "All";
+  visibleNewsCount = 20;
+
+  const input = document.getElementById("newsSearchInput");
+  if(input) input.value = "";
+
+  applyFilters();
+}
+
+function articleMatchesSearch(article, query){
+  if(!query) return true;
+
+  const haystack = [
+    article.title,
+    article.subtitle,
+    article.summary,
+    article.category,
+    article.tags,
+    article.author,
+    article.body_html,
+    article.what_this_means,
+    article.seo_title,
+    article.seo_description
+  ].join(" ").toLowerCase();
+
+  return haystack.indexOf(query) !== -1;
+}
+
+function applyFilters(){
+  const input = document.getElementById("newsSearchInput");
+  const query = input ? input.value.trim().toLowerCase() : "";
+
+  filteredNewsArticles = allNewsArticles.filter(function(article){
+    const category = normalizeCategory(article.category || "");
+
+    if(activeCategory !== "All" && category !== activeCategory){
+      return false;
+    }
+
+    return articleMatchesSearch(article, query);
+  });
+
+  filteredNewsArticles = sortMostRecent(filteredNewsArticles);
+
+  renderCategoryFilters();
+  renderNewsArticles();
+}
+
+function handleNewsSearch(){
+  visibleNewsCount = 20;
+  applyFilters();
+}
+
+function clearNewsSearch(){
+  const input = document.getElementById("newsSearchInput");
+  if(input) input.value = "";
+  activeCategory = "All";
+  visibleNewsCount = 20;
+  applyFilters();
+}
+
+function renderNewsArticles(){
+  const feed = document.getElementById("newsFeed");
+  const count = document.getElementById("newsCount");
+  const title = document.getElementById("newsFeedTitle");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+  if(!feed) return;
+
+  const visible = filteredNewsArticles.slice(0, visibleNewsCount);
+
+  if(title){
+    title.innerText = activeCategory === "All" ? "All News" : activeCategory;
+  }
+
+  if(count){
+    count.innerText = `${filteredNewsArticles.length} article${filteredNewsArticles.length === 1 ? "" : "s"} • Most recent first`;
+  }
+
+  if(!visible.length){
+    feed.innerHTML = `<div class="news-empty">No articles matched your current search or category filter.</div>`;
+    if(loadMoreBtn) loadMoreBtn.style.display = "none";
+    return;
+  }
+
+  feed.innerHTML = "";
+
+  visible.forEach(function(article){
+    const rawCategory = normalizeCategory(article.category || "World");
+    const rawAuthor = article.author || "CGN News";
+    const title = safeText(article.title || "Untitled Article");
+    const summary = safeText(article.summary || article.subtitle || "");
+    const image = safeText(article.hero_image_url || article.image || "/CGNFavicon.png");
+    const url = buildArticleUrl(article);
+    const displayDate = safeText(formatArticleDate(article));
+    const category = safeText(rawCategory);
+    const author = safeText(rawAuthor);
+
+    feed.insertAdjacentHTML("beforeend", `
+      <article class="article-row" itemscope itemtype="https://schema.org/NewsArticle">
+        <a href="${url}" aria-label="Read ${title}">
+          <img src="${image}" alt="${title}" loading="lazy" itemprop="image">
+        </a>
+
+        <div>
+          <h3 itemprop="headline">
+            <a href="${url}">${title}</a>
+          </h3>
+
+          <p class="article-meta">
+            <a href="${categoryUrl(rawCategory)}">${category}</a> •
+            <a href="${authorUrl(rawAuthor)}">${author}</a>${displayDate ? " • " + displayDate : ""}
+          </p>
+
+          <p itemprop="description">${summary}</p>
+        </div>
+      </article>
+    `);
+  });
+
+  if(loadMoreBtn){
+    loadMoreBtn.style.display = visibleNewsCount < filteredNewsArticles.length ? "inline-block" : "none";
+  }
+}
+
+function loadMoreNews(){
+  visibleNewsCount += 20;
+  renderNewsArticles();
+}
+
+async function loadNewsArticles(){
+  const feed = document.getElementById("newsFeed");
+
+  try{
+    const apiBase = getCGNApiBase();
+    if(!apiBase) throw new Error("CGN API URL is not configured.");
+    const res = await fetch(`${apiBase}?action=articles&limit=300`);
+    const data = await res.json();
+
+    const articles = Array.isArray(data) ? data : (data.articles || []);
+
+    allNewsArticles = sortMostRecent(articles.filter(function(article){
+      const status = String(article.status || "published").toLowerCase();
+      return !status || status === "published";
+    }));
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const q = urlParams.get("q");
+    const category = urlParams.get("category");
+
+    if(category){
+      const normalized = normalizeCategory(category);
+      if(NEWS_CATEGORY_ORDER.includes(normalized)){
+        activeCategory = normalized;
+      }
+    }
+
+    if(q){
+      const input = document.getElementById("newsSearchInput");
+      if(input) input.value = q;
+    }
+
+    applyFilters();
+
+  } catch(err){
+    console.error("NEWS LOAD ERROR:", err);
+
+    if(feed){
+      feed.innerHTML = `<div class="news-empty">Unable to load CGN News articles right now.</div>`;
+    }
+
+    const count = document.getElementById("newsCount");
+    if(count) count.innerText = "Article feed unavailable";
+  }
+}
+
+renderCategoryFilters();
+loadNewsArticles();
+
+</script>
+
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  });
+}
+</script>
+</body>
+</html>

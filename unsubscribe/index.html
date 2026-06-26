@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Unsubscribe From Newsletter | CGN News</title>
+<meta content="Unsubscribe from the CGN News e-mail briefing. This only affects newsletter e-mails and does not cancel a paid CGN News subscription." name="description"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="CGN News" name="author"/>
+<link href="https://ios.cgnnews.net/unsubscribe/" rel="canonical"/>
+
+
+
+<meta content="website" property="og:type"/>
+<meta content="CGN News" property="og:site_name"/>
+<meta content="Unsubscribe From Newsletter | CGN News" property="og:title"/>
+<meta content="Unsubscribe from CGN News e-mail briefings. Paid subscriptions are managed separately." property="og:description"/>
+<meta content="https://ios.cgnnews.net/unsubscribe/" property="og:url"/>
+<meta content="https://www.cgnnews.net/unsubscribe/CGNUnsubBanner01.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Unsubscribe From Newsletter | CGN News" name="twitter:title"/>
+<meta content="Unsubscribe from CGN News e-mail briefings. Paid subscriptions are managed separately." name="twitter:description"/>
+<meta content="https://www.cgnnews.net/unsubscribe/CGNUnsubBanner01.png" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"Unsubscribe From Newsletter | CGN News",
+  "url":"https://www.cgnnews.net/unsubscribe/",
+  "description":"Unsubscribe from the CGN News e-mail briefing.",
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"CGN News",
+    "url":"https://www.cgnnews.net/"
+  },
+  "publisher":{
+    "@type":"NewsMediaOrganization",
+    "name":"CGN News",
+    "legalName":"Cook Global News Network",
+    "url":"https://www.cgnnews.net/",
+    "logo":{
+      "@type":"ImageObject",
+      "url":"https://www.cgnnews.net/unsubscribe/CGNUnsubBanner01.png"
+    }
+  }
+}
+</script>
+<style>
+body {
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f6f7fb;
+  color:#111;
+}
+
+.unsubscribe-page {
+  max-width:980px;
+  margin:34px auto;
+  padding:0 20px 42px;
+}
+
+.unsubscribe-hero {
+  position:relative;
+  overflow:hidden;
+  border:1px solid #111827;
+  background:#07111f;
+  color:#fff;
+  padding:0;
+  margin-bottom:22px;
+  isolation:isolate;
+  box-shadow:0 16px 34px rgba(7,17,31,.16);
+}
+
+.unsubscribe-hero::before {
+  display:none;
+}
+
+.unsubscribe-hero-banner {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1960 / 520;
+  object-fit:cover;
+  background:#07111f;
+}
+
+.unsubscribe-hero-content {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0, 0, 0, 0);
+  white-space:nowrap;
+  border:0;
+}
+
+.unsubscribe-kicker {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:900;
+  color:#ff4242;
+  margin-bottom:10px;
+}
+
+.unsubscribe-kicker span {
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  background:#ff2424;
+  box-shadow:0 0 0 5px rgba(255,36,36,.18);
+}
+
+.unsubscribe-hero h1 {
+  margin:0;
+  font-size:48px;
+  line-height:1;
+  letter-spacing:-.035em;
+}
+
+.unsubscribe-hero p {
+  margin:12px 0 0;
+  color:#e8edf5;
+  font-size:16px;
+  line-height:1.55;
+}
+
+.unsubscribe-layout {
+  display:grid;
+  grid-template-columns:1fr .72fr;
+  gap:20px;
+  align-items:start;
+}
+
+.unsubscribe-card {
+  border:1px solid #d8dce4;
+  background:#fff;
+  padding:22px;
+  box-shadow:0 12px 26px rgba(7,17,31,.06);
+}
+
+.unsubscribe-card h2 {
+  margin:0 0 10px;
+  font-size:24px;
+  letter-spacing:-.02em;
+}
+
+.unsubscribe-card p {
+  color:#555;
+  line-height:1.55;
+  margin:8px 0;
+  font-size:14px;
+}
+
+.unsubscribe-form {
+  display:grid;
+  gap:12px;
+  margin-top:16px;
+}
+
+.unsubscribe-form label {
+  font-size:12px;
+  font-weight:900;
+  color:#344054;
+  text-transform:uppercase;
+  letter-spacing:.055em;
+}
+
+.unsubscribe-form input {
+  width:100%;
+  box-sizing:border-box;
+  padding:12px;
+  border:1px solid #bbb;
+  background:#fff;
+  color:#111;
+  font-size:15px;
+}
+
+.unsubscribe-form input:focus {
+  outline:2px solid #111;
+  outline-offset:1px;
+}
+
+.unsubscribe-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:14px;
+}
+
+.unsubscribe-btn,
+.unsubscribe-actions a,
+.unsubscribe-actions button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:11px 14px;
+  border:1px solid #111;
+  background:#111;
+  color:#fff;
+  text-decoration:none;
+  font-weight:900;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.unsubscribe-btn.secondary,
+.unsubscribe-actions .secondary {
+  background:#fff;
+  color:#111;
+}
+
+.unsubscribe-btn:hover,
+.unsubscribe-actions a:hover,
+.unsubscribe-actions button:hover {
+  opacity:.86;
+  text-decoration:none;
+}
+
+.unsubscribe-alert {
+  display:none;
+  border:1px solid #d8dce4;
+  background:#fff;
+  padding:15px;
+  margin-bottom:18px;
+  line-height:1.5;
+}
+
+.unsubscribe-alert.success {
+  border-color:#0f7b3f;
+  background:#f1fff6;
+  color:#0b5d30;
+}
+
+.unsubscribe-alert.error {
+  border-color:#b42318;
+  background:#fff5f5;
+  color:#912018;
+}
+
+.unsubscribe-alert.info {
+  border-color:#667085;
+  background:#f7f8fb;
+  color:#344054;
+}
+
+.notice-box {
+  border-left:4px solid #b40000;
+  background:#fff7f7;
+  padding:14px;
+  margin-top:14px;
+  color:#444;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.side-list {
+  margin:12px 0 0;
+  padding:0;
+  list-style:none;
+}
+
+.side-list li {
+  border-top:1px solid #eceff3;
+  padding:10px 0;
+  font-size:14px;
+  color:#444;
+  line-height:1.45;
+}
+
+.side-list li:first-child {
+  border-top:0;
+}
+
+.cgn-ad-label {
+  font-size:11px;
+  color:#777;
+  margin-bottom:10px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+@media(max-width:900px){
+  .unsubscribe-page {
+    margin:28px auto;
+    padding:0 16px 34px;
+  }
+
+  .unsubscribe-hero {
+    padding:0;
+  }
+
+  .unsubscribe-hero-banner {
+    aspect-ratio:1960 / 520;
+  }
+
+  .unsubscribe-layout {
+    grid-template-columns:1fr;
+  }
+
+  .unsubscribe-actions {
+    flex-direction:column;
+  }
+
+  .unsubscribe-actions a,
+  .unsubscribe-actions button,
+  .unsubscribe-btn {
+    width:100%;
+    box-sizing:border-box;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<meta content="#07111f" name="theme-color"/>
+<meta content="CGN NOW" name="apple-mobile-web-app-title"/>
+<meta content="CGN NOW" name="application-name"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<link href="/assets/cgn-now.css" rel="stylesheet"/>
+<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+</head>
+<body>
+<div id="cgn-site-header"></div>
+<main class="unsubscribe-page">
+<section aria-label="Unsubscribe From the CGN News E-mail Briefing" class="unsubscribe-hero">
+<img alt="Unsubscribe From the CGN News E-mail Briefing — Real-time news. Global perspective." class="unsubscribe-hero-banner" fetchpriority="high" height="520" loading="eager" src="https://www.cgnnews.net/unsubscribe/CGNUnsubBanner01.png" width="1960"/>
+<div class="unsubscribe-hero-content">
+<div class="unsubscribe-kicker"><span aria-hidden="true"></span> Email Preferences</div>
+<h1>Unsubscribe From the CGN News E-mail Briefing</h1>
+<p>
+      Use this page to stop CGN News newsletter and e-mail briefing messages. This does not cancel, pause, refund, or change any paid CGN News subscription.
+    </p>
+</div>
+</section>
+<div class="unsubscribe-alert" id="unsubscribeAlert"></div>
+<section class="unsubscribe-layout">
+<div class="unsubscribe-card">
+<h2>Newsletter Unsubscribe</h2>
+<p>
+      Enter the e-mail address that receives CGN News e-mail briefings. We will remove it from the newsletter list if it is currently subscribed.
+    </p>
+<form class="unsubscribe-form" onsubmit="submitUnsubscribe(event)">
+<div>
+<label for="unsubscribeEmail">E-mail Address</label>
+<input autocomplete="email" id="unsubscribeEmail" placeholder="you@example.com" required="" type="email"/>
+</div>
+<div class="unsubscribe-actions">
+<button id="unsubscribeButton" type="submit">Unsubscribe from Newsletter</button>
+<a class="secondary" href="/account">Manage Account</a>
+</div>
+</form>
+<div class="notice-box">
+<strong>Important:</strong> This page only manages newsletter e-mails. Paid CGN News subscription access, renewal status, and payment support are handled separately through your account page or CGN News support.
+    </div>
+</div>
+<aside class="unsubscribe-card">
+<h2>What Changes?</h2>
+<ul class="side-list">
+<li><strong>Newsletter:</strong> Your email is removed from the CGN News e-mail briefing list.</li>
+<li><strong>Paid Subscription:</strong> Your paid access is not canceled or changed by this page.</li>
+<li><strong>Account:</strong> Your CGN News login remains available unless you separately request account support.</li>
+<li><strong>Rejoin Later:</strong> You can subscribe again from the homepage or account page.</li>
+</ul>
+<div class="unsubscribe-actions">
+<a href="/news/">Return Home</a>
+<a class="secondary" href="/support/">Contact Support</a>
+</div>
+</aside>
+</section>
+</main>
+<div id="cgn-site-footer"></div>
+<script>
+function getCGNApiBase(){
+  return String(
+    window.CGN_API_BASE ||
+    localStorage.getItem("cgn_api_base") ||
+    ""
+  ).trim().replace(/\?+$/, "");
+}
+
+function showUnsubscribeAlert(type, message){
+  const box = document.getElementById("unsubscribeAlert");
+  if(!box) return;
+
+  box.className = "unsubscribe-alert " + (type || "info");
+  box.innerText = message || "";
+  box.style.display = message ? "block" : "none";
+
+  if(message){
+    box.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+  }
+}
+
+function getQueryParam(name){
+  return new URLSearchParams(window.location.search).get(name) || "";
+}
+
+function normalizeEmail(value){
+  return String(value || "").trim().toLowerCase();
+}
+
+async function apiGet(params){
+  const qs = new URLSearchParams(params);
+  qs.set("_", String(Date.now()));
+
+  const apiBase = getCGNApiBase();
+
+  if(!apiBase){
+    throw new Error("CGN backend URL is not configured yet.");
+  }
+
+  const res = await fetch(apiBase + "?" + qs.toString(), {
+    method:"GET"
+  });
+
+  if(!res.ok){
+    throw new Error("Network error. Please try again.");
+  }
+
+  return await res.json();
+}
+
+async function submitUnsubscribe(event){
+  event.preventDefault();
+
+  const input = document.getElementById("unsubscribeEmail");
+  const btn = document.getElementById("unsubscribeButton");
+
+  if(!input) return;
+
+  const email = normalizeEmail(input.value);
+
+  if(!email || email.indexOf("@") === -1){
+    showUnsubscribeAlert("error", "Enter a valid e-mail address.");
+    return;
+  }
+
+  if(btn){
+    btn.disabled = true;
+    btn.innerText = "Unsubscribing...";
+  }
+
+  showUnsubscribeAlert("info", "Processing your newsletter unsubscribe request...");
+
+  try {
+    const data = await apiGet({
+      action:"unsubscribe_newsletter",
+      email:email
+    });
+
+    if(data && data.success){
+      showUnsubscribeAlert(
+        "success",
+        data.message || "You have been unsubscribed from the CGN News newsletter."
+      );
+    } else {
+      showUnsubscribeAlert(
+        "error",
+        data && data.error ? data.error : "Unable to unsubscribe right now."
+      );
+    }
+
+  } catch(err){
+    console.error("CGN UNSUBSCRIBE ERROR:", err);
+    showUnsubscribeAlert("error", err.message || "Unable to unsubscribe right now.");
+  } finally {
+    if(btn){
+      btn.disabled = false;
+      btn.innerText = "Unsubscribe from Newsletter";
+    }
+  }
+}
+
+function initUnsubscribePage(){
+  const input = document.getElementById("unsubscribeEmail");
+  if(!input) return;
+
+  const email =
+    getQueryParam("email") ||
+    getQueryParam("e") ||
+    getQueryParam("subscriber") ||
+    "";
+
+  if(email){
+    input.value = normalizeEmail(email);
+  }
+}
+
+initUnsubscribePage();
+</script>
+<script src="/assets/cgn-now-shell.js"></script>
+
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  });
+}
+</script>
+</body>
+</html>
