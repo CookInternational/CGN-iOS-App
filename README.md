@@ -19,11 +19,11 @@ Market Square Center
 151 N. Delaware Street, Suite 122  
 Indianapolis, IN 46204  
 tips@cgnnews.net | www.cgnnews.net | +1 (317) 442-1437 | Copyright © 2026 | CGN News/Cook Global News Network | All Rights Reserved.
-
+---
 ## What's Changed in v1.4.0 Alpha?
 
 v1.4.0 updated the Copyright page, Editorial Standards page, and added CGN Traffic Center.
----
+
 ## What's Changed in v1.3.0 Alpha?
 
 v1.3.0 updated the Weather Radar pages, Account Page, and removed Archives from the /news page on iOS.
