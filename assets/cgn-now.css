@@ -25,7 +25,7 @@ a,button{touch-action:manipulation;}
 .cgn-now-category-bar a{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:7px 10px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(255,255,255,.08);color:#fff;text-decoration:none;font-size:12px;font-weight:900;white-space:nowrap;}
 .cgn-now-category-bar a.active,.cgn-now-category-bar a:hover{background:#fff;color:#07111f;text-decoration:none;}
 #cgn-site-footer{position:fixed;left:0;right:0;bottom:0;z-index:9990;background:rgba(7,17,31,.98);padding-bottom:var(--cgn-now-safe-bottom);box-shadow:0 -12px 30px rgba(7,17,31,.22);}
-.cgn-now-tabs{display:grid;grid-template-columns:repeat(5,1fr);min-height:64px;border-top:1px solid rgba(255,255,255,.12);}
+.cgn-now-tabs{display:grid;grid-template-columns:repeat(6,1fr);min-height:64px;border-top:1px solid rgba(255,255,255,.12);}
 .cgn-now-tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:rgba(255,255,255,.72);text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;}
 .cgn-now-tab-icon{font-size:20px;line-height:1;}
 .cgn-now-tab.active{color:#fff;background:linear-gradient(180deg,rgba(83,213,255,.13),rgba(255,255,255,.04));}
@@ -206,3 +206,17 @@ a,button{touch-action:manipulation;}
     padding-right:10px;
   }
 }
+
+
+/* CGN NOW Traffic tab icon */
+.cgn-now-car-icon{position:relative;display:inline-block;width:28px;height:18px;margin-bottom:1px;}
+.cgn-now-car-icon:before{content:"";position:absolute;left:2px;right:2px;bottom:0;height:2px;border-radius:999px;background:rgba(255,255,255,.42);box-shadow:10px 0 0 rgba(255,255,255,.25);animation:cgn-now-road-dash .9s linear infinite;}
+.cgn-now-car-body{position:absolute;left:3px;right:3px;bottom:4px;height:8px;border-radius:5px 7px 4px 4px;background:linear-gradient(90deg,#f8fafc,#53d5ff);box-shadow:0 0 0 1px rgba(255,255,255,.38),0 0 12px rgba(83,213,255,.42);}
+.cgn-now-car-roof{position:absolute;left:8px;right:8px;bottom:10px;height:6px;border-radius:7px 7px 2px 2px;background:linear-gradient(90deg,#fff,#dbeafe);}
+.cgn-now-car-window{position:absolute;left:11px;right:11px;bottom:11px;height:4px;border-radius:4px 4px 1px 1px;background:#07111f;opacity:.8;}
+.cgn-now-car-wheel{position:absolute;bottom:2px;width:6px;height:6px;border:1px solid rgba(255,255,255,.9);border-radius:999px;background:#07111f;}
+.cgn-now-car-wheel-left{left:7px;}
+.cgn-now-car-wheel-right{right:7px;}
+.cgn-now-car-headlight{position:absolute;right:2px;bottom:7px;width:4px;height:2px;border-radius:999px;background:#facc15;box-shadow:4px 0 9px rgba(250,204,21,.8);}
+.cgn-now-tab.active .cgn-now-car-body{background:linear-gradient(90deg,#fff,#facc15);box-shadow:0 0 0 1px rgba(255,255,255,.5),0 0 13px rgba(250,204,21,.55);}
+@keyframes cgn-now-road-dash{0%{transform:translateX(4px)}100%{transform:translateX(-4px)}}
