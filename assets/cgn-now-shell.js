@@ -299,10 +299,10 @@
         <a class="cgn-now-copyright-line" href="/copyright/">Copyright © 2026 | CGN News — All Rights Reserved</a>\
         <nav class="cgn-now-tabs" aria-label="CGN NOW app tabs">\
           <a class="' + cls("news") + '" href="/news/"><span class="cgn-now-tab-icon">📰</span><span>News</span></a>\
-          <a class="' + cls("traffic") + '" href="/traffic/"><span class=\"cgn-now-tab-icon cgn-now-car-icon\" aria-hidden=\"true\"><span class=\"cgn-now-car-roof\"></span><span class=\"cgn-now-car-window\"></span><span class=\"cgn-now-car-body\"></span><span class=\"cgn-now-car-wheel cgn-now-car-wheel-left\"></span><span class=\"cgn-now-car-wheel cgn-now-car-wheel-right\"></span><span class=\"cgn-now-car-headlight\"></span></span><span>Traffic</span></a>\
           <a class="' + cls("sports") + '" href="/sports/"><span class="cgn-now-tab-icon">🏟️</span><span>Sports</span></a>\
           <a class="' + cls("weather") + '" href="/weather/"><span class="cgn-now-tab-icon">🌦️</span><span>Weather</span></a>\
           <a class="' + cls("radar") + '" href="/weather/radar/"><span class="cgn-now-tab-icon">📡</span><span>Radar</span></a>\
+          <a class="' + cls("traffic") + '" href="/traffic/"><span class=\"cgn-now-tab-icon cgn-now-car-icon\" aria-hidden=\"true\"><span class=\"cgn-now-car-roof\"></span><span class=\"cgn-now-car-window\"></span><span class=\"cgn-now-car-body\"></span><span class=\"cgn-now-car-wheel cgn-now-car-wheel-left\"></span><span class=\"cgn-now-car-wheel cgn-now-car-wheel-right\"></span><span class=\"cgn-now-car-headlight\"></span></span><span>Traffic</span></a>\
           <a class="' + cls("account") + '" href="/account/"><span class="cgn-now-tab-icon">👤</span><span>Account</span></a>\
         </nav>\
       </div>';
