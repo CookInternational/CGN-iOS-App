@@ -1,15 +1,15 @@
 [README.md](https://github.com/user-attachments/files/29233241/README.md)
 <img src="CGNNewsNowLogo.png" alt="CGN NOW" width="240">
 
-# CGN NOW iOS App PWA v1.3.0 Alpha
+# CGN NOW iOS App PWA v1.4.0 Alpha
 
 **Plain-English + Technical README / Operating Manual**  
 Progressive Web App | CGN NOW | iOS App Experience | Browser Install Page | News | Sports | Weather | Radar | Account | Paywall | Legal Pages | Support Footer | Static GitHub Pages | Service Worker | Web Manifest | App Icons | Offline Shell | Dynamic Article Routes
 
-**Updated:** 26 June 2026 • 21:28:29Z UTC  
-**App Build Stamp:** 26 June 2026 • 21:28:29Z UTC   | Developed by Cook Technology Services  
-**App Version:** `CGN NOW iOS APP PWA v1.3.0 Alpha`  
-**App Slug:** `cgn-now-ios-pwa-v1.3.0-alpha`  
+**Updated:** 27 June 2026 • 02:58:02Z UTC  
+**App Build Stamp:** 27 June 2026 • 02:58:02Z UTC | Developed by Cook Technology Services  
+**App Version:** `CGN NOW iOS APP PWA v1.4.0 Alpha`  
+**App Slug:** `cgn-now-ios-pwa-v1.4.0-alpha`  
 **Repository:** `CookInternational/CGN-iOS-App`  
 **Site:** https://ios.cgnnews.net  
 **Production Domain:** `ios.cgnnews.net`
@@ -20,6 +20,9 @@ Market Square Center
 Indianapolis, IN 46204  
 tips@cgnnews.net | www.cgnnews.net | +1 (317) 442-1437 | Copyright © 2026 | CGN News/Cook Global News Network | All Rights Reserved.
 
+## What's Changed in v1.4.0 Alpha?
+
+v1.4.0 updated the Copyright page, Editorial Standards page, and added CGN Traffic Center.
 ---
 ## What's Changed in v1.3.0 Alpha?
 
@@ -504,6 +507,6 @@ Check `.github/workflows/`, GitHub Pages settings, `CNAME`, and repository deplo
 
 ---
 
-Last Updated on 26 June 2026 • 21:28:29Z UTC | Developed by Cook Technology Services  
+Last Updated on 27 June 2026 • 02:58:02Z UTC | Developed by Cook Technology Services  
 Copyright © 2026 | CGN News/Cook Global News Network. All Rights Reserved.  
-End of README - CGN NOW iOS App PWA v1.3.0 Alpha
+End of README - CGN NOW iOS App PWA v1.4.0 Alpha
