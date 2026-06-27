@@ -147,6 +147,7 @@
   }
   function activeTab(){
     var p = location.pathname;
+    if(p.indexOf("/traffic") === 0) return "traffic";
     if(p.indexOf("/sports") === 0) return "sports";
     if(p.indexOf("/weather/radar") === 0) return "radar";
     if(p.indexOf("/weather") === 0) return "weather";
@@ -220,6 +221,18 @@
       .cgn-now-bottom-fixed .cgn-now-tabs{position:static!important;left:auto!important;right:auto!important;bottom:auto!important;z-index:auto!important;width:100%!important;margin:0!important;}\
       .cgn-now-legal-footer{display:none!important;}\
       .cgn-now-install-window{bottom:calc(148px + env(safe-area-inset-bottom,0px))!important;}\
+      .cgn-now-bottom-fixed .cgn-now-tabs{grid-template-columns:repeat(6,minmax(0,1fr))!important;}\
+      .cgn-now-car-icon{position:relative!important;display:inline-block!important;width:28px!important;height:18px!important;margin-bottom:1px!important;}\
+      .cgn-now-car-icon:before{content:""!important;position:absolute!important;left:2px!important;right:2px!important;bottom:0!important;height:2px!important;border-radius:999px!important;background:rgba(255,255,255,.42)!important;box-shadow:10px 0 0 rgba(255,255,255,.25)!important;animation:cgn-now-road-dash .9s linear infinite!important;}\
+      .cgn-now-car-body{position:absolute!important;left:3px!important;right:3px!important;bottom:4px!important;height:8px!important;border-radius:5px 7px 4px 4px!important;background:linear-gradient(90deg,#f8fafc,#53d5ff)!important;box-shadow:0 0 0 1px rgba(255,255,255,.38),0 0 12px rgba(83,213,255,.42)!important;}\
+      .cgn-now-car-roof{position:absolute!important;left:8px!important;right:8px!important;bottom:10px!important;height:6px!important;border-radius:7px 7px 2px 2px!important;background:linear-gradient(90deg,#ffffff,#dbeafe)!important;}\
+      .cgn-now-car-window{position:absolute!important;left:11px!important;right:11px!important;bottom:11px!important;height:4px!important;border-radius:4px 4px 1px 1px!important;background:#07111f!important;opacity:.8!important;}\
+      .cgn-now-car-wheel{position:absolute!important;bottom:2px!important;width:6px!important;height:6px!important;border:1px solid rgba(255,255,255,.9)!important;border-radius:999px!important;background:#07111f!important;}\
+      .cgn-now-car-wheel-left{left:7px!important;}\
+      .cgn-now-car-wheel-right{right:7px!important;}\
+      .cgn-now-car-headlight{position:absolute!important;right:2px!important;bottom:7px!important;width:4px!important;height:2px!important;border-radius:999px!important;background:#facc15!important;box-shadow:4px 0 9px rgba(250,204,21,.8)!important;}\
+      .cgn-now-tab.active .cgn-now-car-body{background:linear-gradient(90deg,#fff,#facc15)!important;box-shadow:0 0 0 1px rgba(255,255,255,.5),0 0 13px rgba(250,204,21,.55)!important;}\
+      @keyframes cgn-now-road-dash{0%{transform:translateX(4px)}100%{transform:translateX(-4px)}}\
       @media(max-width:560px){body.cgn-now-shell{padding-bottom:calc(136px + env(safe-area-inset-bottom,0px))!important;}.cgn-now-support-toggle{min-height:42px!important;font-size:11px!important;padding:5px 8px!important;}.cgn-now-legal-panel{left:6px!important;right:6px!important;max-height:170px!important;padding:7px!important;}.cgn-now-legal-panel a{min-height:30px!important;font-size:10.5px!important;padding:6px!important;}.cgn-now-bottom-fixed .cgn-now-copyright-line{font-size:10.2px!important;min-height:21px!important;padding-left:6px!important;padding-right:6px!important;}.cgn-now-install-window{bottom:calc(146px + env(safe-area-inset-bottom,0px))!important;}}\
     ';
     document.head.appendChild(style);
@@ -286,6 +299,7 @@
         <a class="cgn-now-copyright-line" href="/copyright/">Copyright © 2026 | CGN News — All Rights Reserved</a>\
         <nav class="cgn-now-tabs" aria-label="CGN NOW app tabs">\
           <a class="' + cls("news") + '" href="/news/"><span class="cgn-now-tab-icon">📰</span><span>News</span></a>\
+          <a class="' + cls("traffic") + '" href="/traffic/"><span class=\"cgn-now-tab-icon cgn-now-car-icon\" aria-hidden=\"true\"><span class=\"cgn-now-car-roof\"></span><span class=\"cgn-now-car-window\"></span><span class=\"cgn-now-car-body\"></span><span class=\"cgn-now-car-wheel cgn-now-car-wheel-left\"></span><span class=\"cgn-now-car-wheel cgn-now-car-wheel-right\"></span><span class=\"cgn-now-car-headlight\"></span></span><span>Traffic</span></a>\
           <a class="' + cls("sports") + '" href="/sports/"><span class="cgn-now-tab-icon">🏟️</span><span>Sports</span></a>\
           <a class="' + cls("weather") + '" href="/weather/"><span class="cgn-now-tab-icon">🌦️</span><span>Weather</span></a>\
           <a class="' + cls("radar") + '" href="/weather/radar/"><span class="cgn-now-tab-icon">📡</span><span>Radar</span></a>\
