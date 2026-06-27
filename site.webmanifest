@@ -1,7 +1,7 @@
 {
   "name": "CGN NOW",
   "short_name": "CGN NOW",
-  "description": "CGN NOW delivers CGN News, weather, sports and radar in an installable app experience.",
+  "description": "CGN NOW delivers CGN News, sports, weather, radar and traffic in an installable app experience.",
   "id": "https://ios.cgnnews.net/",
   "start_url": "/news/",
   "scope": "/",
@@ -16,8 +16,9 @@
   "theme_color": "#07111f",
   "categories": [
     "news",
+    "sports",
     "weather",
-    "sports"
+    "navigation"
   ],
   "icons": [
     {
@@ -55,17 +56,6 @@
       ]
     },
     {
-      "name": "Weather",
-      "short_name": "Weather",
-      "url": "/weather/",
-      "icons": [
-        {
-          "src": "/icons/pwa-192.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
       "name": "Sports",
       "short_name": "Sports",
       "url": "/sports/",
@@ -77,9 +67,31 @@
       ]
     },
     {
+      "name": "Weather",
+      "short_name": "Weather",
+      "url": "/weather/",
+      "icons": [
+        {
+          "src": "/icons/pwa-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
       "name": "Radar",
       "short_name": "Radar",
       "url": "/weather/radar/",
+      "icons": [
+        {
+          "src": "/icons/pwa-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Traffic",
+      "short_name": "Traffic",
+      "url": "/traffic/",
       "icons": [
         {
           "src": "/icons/pwa-192.png",
