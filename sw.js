@@ -1,4 +1,4 @@
-const CGN_NOW_CACHE = 'cgn-now-shell-v3-radar44';
+const CGN_NOW_CACHE = 'cgn-now-shell-v4-traffic-nav';
 const CORE_ASSETS = [
   "/",
   "/index.html",
@@ -51,6 +51,14 @@ const CORE_ASSETS = [
   "/weather/radar/los-angeles/",
   "/weather/radar/seattle/",
   "/weather/weekly-weather-brief/",
+  "/traffic/",
+  "/traffic/chicago/",
+  "/traffic/st-louis/",
+  "/traffic/baton-rouge/",
+  "/traffic/miami/",
+  "/traffic/los-angeles/",
+  "/traffic/new-york/",
+  "/traffic/philadelphia/",
   "/account/",
   "/support/",
   "/reporters/",
@@ -64,6 +72,9 @@ const CORE_ASSETS = [
   "/weather/CGNWeatherRadar01.png",
   "/weather/CGNWeatherRadar02.png",
   "/weather/radar/st-louis/CGNWeatherRadar03.png",
+  "/traffic/CGNTrafficAdvisory01.png",
+  "/traffic/CGNTrafficCenter01.png",
+  "/traffic/CGNTrafficCenterIndiana01.png",
   "/CGNNewsNowLogo.png",
   "/icons/pwa-192.png",
   "/icons/pwa-512.png",
