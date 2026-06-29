@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- CGN Weather Page | CGN LIVE Weekly Weather Brief embedded-player default | Build date: 17 May 2026 -->
+<!-- CGN iOS Weather Page | Observed current conditions separated from severe alerts | Build date: 29 June 2026 -->
 <html lang="en">
 <head>
 
@@ -561,6 +561,85 @@ body {
   color:rgba(255,255,255,0.86);
 }
 
+.nws-alert-ticker {
+  margin-top:18px;
+  border:1px solid rgba(255,255,255,0.38);
+  background:rgba(7,17,31,0.38);
+  color:#fff;
+  overflow:hidden;
+  backdrop-filter:blur(8px);
+}
+
+.nws-alert-ticker[hidden] {
+  display:none !important;
+}
+
+.nws-alert-ticker a {
+  display:flex;
+  align-items:center;
+  min-height:46px;
+  color:#fff;
+  text-decoration:none;
+}
+
+.nws-alert-ticker a:hover,
+.nws-alert-ticker a:focus {
+  background:rgba(255,255,255,0.10);
+  text-decoration:none;
+}
+
+.nws-alert-label {
+  flex:0 0 auto;
+  align-self:stretch;
+  display:flex;
+  align-items:center;
+  padding:0 13px;
+  background:#c40000;
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+.nws-alert-marquee {
+  flex:1 1 auto;
+  min-width:0;
+  overflow:hidden;
+  white-space:nowrap;
+  font-size:13px;
+  font-weight:800;
+}
+
+.nws-alert-marquee span {
+  display:inline-block;
+  padding-left:100%;
+  animation:nwsAlertScroll 30s linear infinite;
+}
+
+.nws-alert-open {
+  flex:0 0 auto;
+  padding:0 13px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.88);
+}
+
+@keyframes nwsAlertScroll {
+  from { transform:translateX(0); }
+  to { transform:translateX(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nws-alert-marquee span {
+    padding-left:0;
+    animation:none;
+  }
+}
+
+
 .weather-toolbar-row {
   position:relative;
   z-index:4;
@@ -994,6 +1073,25 @@ body {
   .weather-stat-card strong {
     font-size:16px;
   }
+
+  .nws-alert-ticker a {
+    flex-wrap:wrap;
+    min-height:0;
+  }
+
+  .nws-alert-label,
+  .nws-alert-open {
+    min-height:38px;
+  }
+
+  .nws-alert-marquee {
+    flex-basis:100%;
+    order:3;
+    min-height:38px;
+    display:flex;
+    align-items:center;
+  }
+
 
   .forecast-section {
     overflow:hidden;
@@ -1677,6 +1775,14 @@ html {
 
 <div id="weatherStats" class="weather-stats-grid" aria-label="Current weather details"></div>
 
+<div id="nwsAlertTicker" class="nws-alert-ticker" hidden aria-live="polite" aria-label="Active National Weather Service alerts for this location">
+  <a href="/weather/radar/" aria-label="Open CGN Weather Radar for active National Weather Service alerts">
+    <span class="nws-alert-label">NWS Alerts</span>
+    <span class="nws-alert-marquee"><span id="nwsAlertTickerText"></span></span>
+    <span class="nws-alert-open">Open Radar →</span>
+  </a>
+</div>
+
 <div id="updated"></div>
 
 <div class="controls" aria-label="Forecast range controls">
@@ -1827,6 +1933,9 @@ const WEATHER_UNIT_SETTINGS = {
 let weatherUnits = loadWeatherUnits();
 let savedWeatherLocations = loadSavedWeatherLocations();
 
+let currentWeatherRequestId = 0;
+let currentWeatherAbortController = null;
+
 function setActiveButton(){
   [1,3,5,7,10,14].forEach(days => {
     const btn = document.getElementById("btn-" + days);
@@ -1848,17 +1957,170 @@ function setDays(days){
 }
 
 function getWeather(code){
-  if(code === 0) return {icon:"☀️", text:"Clear", type:"clear", intensity:"light"};
-  if([1,2].includes(code)) return {icon:"🌤", text:"Partly Cloudy", type:"cloudy", intensity:"light"};
-  if(code === 3) return {icon:"☁️", text:"Cloudy", type:"cloudy", intensity:"moderate"};
-  if([45,48].includes(code)) return {icon:"🌫", text:"Fog", type:"fog", intensity: code === 48 ? "heavy" : "moderate"};
-  if([51,53,55].includes(code)) return {icon:"🌦", text:"Drizzle", type:"rain", intensity: code === 55 ? "moderate" : "light"};
-  if([56,57].includes(code)) return {icon:"🌧", text:"Freezing Drizzle", type:"sleet", intensity:"moderate"};
-  if([61,63,65,80,81,82].includes(code)) return {icon:"🌧", text:"Rain", type:"rain", intensity: [65,82].includes(code) ? "heavy" : "moderate"};
-  if([66,67].includes(code)) return {icon:"🌧", text:"Freezing Rain", type:"sleet", intensity: code === 67 ? "heavy" : "moderate"};
-  if([71,73,75,77,85,86].includes(code)) return {icon:"❄️", text:"Snow", type:"snow", intensity: [75,86].includes(code) ? "heavy" : "moderate"};
-  if([95,96,99].includes(code)) return {icon:"⛈", text:"Storm", type:"storm", intensity: [96,99].includes(code) ? "heavy" : "moderate"};
+  const numericCode = Number(code);
+  if(!Number.isFinite(numericCode)) return {icon:"🌤", text:"Weather", type:"cloudy", intensity:"light"};
+  if(numericCode === 0) return {icon:"☀️", text:"Clear", type:"clear", intensity:"light"};
+  if([1,2].includes(numericCode)) return {icon:"🌤", text:"Partly Cloudy", type:"cloudy", intensity:"light"};
+  if(numericCode === 3) return {icon:"☁️", text:"Cloudy", type:"cloudy", intensity:"moderate"};
+  if([45,48].includes(numericCode)) return {icon:"🌫", text:"Fog", type:"fog", intensity: numericCode === 48 ? "heavy" : "moderate"};
+  if([51,53,55].includes(numericCode)) return {icon:"🌦", text:"Drizzle", type:"rain", intensity: numericCode === 55 ? "moderate" : "light"};
+  if([56,57].includes(numericCode)) return {icon:"🌧", text:"Freezing Drizzle", type:"sleet", intensity:"moderate"};
+  if([61,63,65,80,81,82].includes(numericCode)) return {icon:"🌧", text:"Rain", type:"rain", intensity: [65,82].includes(numericCode) ? "heavy" : "moderate"};
+  if([66,67].includes(numericCode)) return {icon:"🌧", text:"Freezing Rain", type:"sleet", intensity: numericCode === 67 ? "heavy" : "moderate"};
+  if([71,73,75,77,85,86].includes(numericCode)) return {icon:"❄️", text:"Snow", type:"snow", intensity: [75,86].includes(numericCode) ? "heavy" : "moderate"};
+  if([95,96,99].includes(numericCode)) return {icon:"⛈", text:"Storm", type:"storm", intensity: [96,99].includes(numericCode) ? "heavy" : "moderate"};
   return {icon:"🌤", text:"Weather", type:"cloudy", intensity:"light"};
+}
+
+function getWeatherFromConditionText(value){
+  const raw = String(value || "").replace(/_/g, " ").replace(/\s+/g, " ").trim();
+  const text = raw || "Weather";
+  const lower = text.toLowerCase();
+
+  if(!raw || /^(unknown|not available|n\/a|null)$/i.test(raw)){
+    return null;
+  }
+
+  if(/thunder|t-?storm|lightning/.test(lower)){
+    return { icon:"⛈", text:text, type:"storm", intensity:/heavy|severe/i.test(text) ? "heavy" : "moderate" };
+  }
+
+  if(/freezing rain|freezing drizzle|sleet|ice pellet/.test(lower)){
+    return { icon:"🌧", text:text, type:"sleet", intensity:/heavy/i.test(text) ? "heavy" : "moderate" };
+  }
+
+  if(/snow|flurr|blizzard/.test(lower)){
+    return { icon:"❄️", text:text, type:"snow", intensity:/heavy|blizzard/i.test(text) ? "heavy" : "moderate" };
+  }
+
+  if(/rain|shower|drizzle|sprinkle/.test(lower)){
+    return { icon:/sun|partly/i.test(text) ? "🌦" : "🌧", text:text, type:"rain", intensity:/heavy|downpour/i.test(text) ? "heavy" : "moderate" };
+  }
+
+  if(/fog|mist|haze|smoke|dust/.test(lower)){
+    return { icon:"🌫", text:text, type:"fog", intensity:"moderate" };
+  }
+
+  if(/overcast|cloud|cloudy|few clouds|scattered clouds|broken clouds/.test(lower)){
+    return { icon:/partly|few|scattered/i.test(text) ? "🌤" : "☁️", text:text, type:"cloudy", intensity:/overcast|broken/i.test(text) ? "moderate" : "light" };
+  }
+
+  if(/fair|clear|sunny/.test(lower)){
+    return { icon:"☀️", text:text, type:"clear", intensity:"light" };
+  }
+
+  return { icon:"🌤", text:text, type:"cloudy", intensity:"light" };
+}
+
+function firstNumber(){
+  for(let i = 0; i < arguments.length; i++){
+    const n = num(arguments[i]);
+    if(n !== null) return n;
+  }
+  return null;
+}
+
+function isLikelyUSWeatherPoint(lat, lon, label){
+  const latitude = num(lat);
+  const longitude = num(lon);
+  const name = String(label || "").toLowerCase();
+
+  if(name.includes("united states") || /,\s*[a-z]{2}\b/.test(name)){
+    return true;
+  }
+
+  if(latitude === null || longitude === null) return false;
+
+  const continentalUS = latitude >= 24 && latitude <= 50 && longitude >= -125 && longitude <= -66;
+  const alaska = latitude >= 51 && latitude <= 72 && longitude >= -170 && longitude <= -129;
+  const hawaii = latitude >= 18 && latitude <= 23 && longitude >= -161 && longitude <= -154;
+  return continentalUS || alaska || hawaii;
+}
+
+function nwsValue(field){
+  if(field && typeof field === "object" && "value" in field){
+    return num(field.value);
+  }
+  return num(field);
+}
+
+function celsiusToDisplay(value){
+  const n = num(value);
+  if(n === null) return null;
+  return weatherUnits === "imperial" ? (n * 9 / 5) + 32 : n;
+}
+
+function metersPerSecondToDisplay(value){
+  const n = num(value);
+  if(n === null) return null;
+  return weatherUnits === "imperial" ? n * 2.2369362921 : n * 3.6;
+}
+
+function normalizeNWSObservation(properties){
+  if(!properties) return null;
+
+  const condition = getWeatherFromConditionText(properties.textDescription);
+  if(!condition) return null;
+
+  const heatIndex = celsiusToDisplay(nwsValue(properties.heatIndex));
+  const windChill = celsiusToDisplay(nwsValue(properties.windChill));
+  const temperature = celsiusToDisplay(nwsValue(properties.temperature));
+
+  return {
+    condition: condition,
+    conditionText: condition.text,
+    temperature: temperature,
+    apparentTemperature: firstNumber(heatIndex, windChill, temperature),
+    humidity: nwsValue(properties.relativeHumidity),
+    dewPoint: celsiusToDisplay(nwsValue(properties.dewpoint)),
+    windSpeed: metersPerSecondToDisplay(nwsValue(properties.windSpeed)),
+    windDirection: nwsValue(properties.windDirection),
+    windGusts: metersPerSecondToDisplay(nwsValue(properties.windGust)),
+    pressure: (function(){
+      const pa = nwsValue(properties.barometricPressure);
+      return pa === null ? null : pa / 100;
+    })(),
+    visibilityMeters: nwsValue(properties.visibility),
+    timestamp: properties.timestamp || null,
+    source: "National Weather Service observation"
+  };
+}
+
+async function fetchNWSCurrentObservation(lat, lon, label, signal){
+  if(!isLikelyUSWeatherPoint(lat, lon, label)) return null;
+
+  try {
+    const pointsUrl = `https://api.weather.gov/points/${Number(lat).toFixed(4)},${Number(lon).toFixed(4)}`;
+    const pointsResponse = await fetch(pointsUrl, { cache:"no-store", signal:signal, headers:{ "Accept":"application/geo+json" } });
+    if(!pointsResponse.ok) return null;
+
+    const pointsJson = await pointsResponse.json();
+    const stationsUrl = pointsJson && pointsJson.properties ? pointsJson.properties.observationStations : "";
+    if(!stationsUrl) return null;
+
+    const stationsResponse = await fetch(stationsUrl, { cache:"no-store", signal:signal, headers:{ "Accept":"application/geo+json" } });
+    if(!stationsResponse.ok) return null;
+
+    const stationsJson = await stationsResponse.json();
+    const stations = Array.isArray(stationsJson.features) ? stationsJson.features : [];
+
+    for(const station of stations.slice(0, 6)){
+      const latestUrl = station && station.id ? station.id.replace(/\/$/, "") + "/observations/latest?require_qc=false" : "";
+      if(!latestUrl) continue;
+
+      const observationResponse = await fetch(latestUrl, { cache:"no-store", signal:signal, headers:{ "Accept":"application/geo+json" } });
+      if(!observationResponse.ok) continue;
+
+      const observationJson = await observationResponse.json();
+      const observation = normalizeNWSObservation(observationJson && observationJson.properties);
+      if(observation) return observation;
+    }
+  } catch(err){
+    if(err && err.name === "AbortError") throw err;
+    console.warn("NWS CURRENT OBSERVATION ERROR:", err);
+  }
+
+  return null;
 }
 
 function setError(message){
@@ -2270,13 +2532,127 @@ function renderStat(label,value){
   `;
 }
 
+
+function resetNWSAlertTicker(){
+  const ticker = document.getElementById("nwsAlertTicker");
+  const tickerText = document.getElementById("nwsAlertTickerText");
+  if(ticker){
+    ticker.hidden = true;
+    ticker.classList.remove("has-alerts");
+  }
+  if(tickerText){
+    tickerText.textContent = "";
+  }
+}
+
+function nwsAlertPriority(alert){
+  const severityScore = {
+    Extreme: 50,
+    Severe: 40,
+    Moderate: 30,
+    Minor: 20,
+    Unknown: 10
+  };
+
+  const urgencyScore = {
+    Immediate: 5,
+    Expected: 4,
+    Future: 3,
+    Past: 1,
+    Unknown: 0
+  };
+
+  return (severityScore[alert.severity] || 0) + (urgencyScore[alert.urgency] || 0);
+}
+
+function formatNWSAlertTime(value){
+  if(!value) return "until further notice";
+  const date = new Date(value);
+  if(isNaN(date.getTime())) return "until further notice";
+  return date.toLocaleString("en-US", {
+    month:"short",
+    day:"numeric",
+    hour:"numeric",
+    minute:"2-digit",
+    timeZoneName:"short"
+  });
+}
+
+function buildNWSAlertLine(alert, fallbackLabel){
+  const event = String(alert.event || "Weather Alert").trim();
+  const severity = String(alert.severity || "NWS").trim();
+  const urgency = String(alert.urgency || "").trim();
+  const areas = String(alert.areaDesc || fallbackLabel || "this area").replace(/\s+/g," ").trim();
+  const expires = formatNWSAlertTime(alert.expires || alert.ends || alert.effective);
+  const alertType = urgency && urgency !== "Unknown" ? severity + "/" + urgency : severity;
+  return `${event} (${alertType}) — ${areas}; expires ${expires}`;
+}
+
+async function loadNWSAlerts(lat, lon, label){
+  const ticker = document.getElementById("nwsAlertTicker");
+  const tickerText = document.getElementById("nwsAlertTickerText");
+  if(!ticker || !tickerText) return;
+
+  resetNWSAlertTicker();
+
+  const alertLat = num(lat);
+  const alertLon = num(lon);
+  if(alertLat === null || alertLon === null) return;
+
+  try {
+    const alertsUrl = new URL("https://api.weather.gov/alerts/active");
+    alertsUrl.searchParams.set("point", alertLat.toFixed(4) + "," + alertLon.toFixed(4));
+
+    const response = await fetch(alertsUrl.toString(), {
+      cache:"no-store",
+      headers:{ "Accept":"application/geo+json" }
+    });
+
+    if(!response.ok) return;
+
+    const json = await response.json();
+    const features = Array.isArray(json.features) ? json.features : [];
+
+    const alerts = features
+      .map(function(feature){ return feature && feature.properties ? feature.properties : null; })
+      .filter(function(alert){
+        return alert && String(alert.status || "Actual") === "Actual" && String(alert.event || "").trim();
+      })
+      .sort(function(a,b){ return nwsAlertPriority(b) - nwsAlertPriority(a); });
+
+    if(!alerts.length) return;
+
+    const fallbackLabel = shortLocationLabel(label);
+    const alertLines = alerts.slice(0, 8).map(function(alert){
+      return buildNWSAlertLine(alert, fallbackLabel);
+    });
+
+    tickerText.textContent = `Active National Weather Service alerts near ${fallbackLabel}: ` + alertLines.join(" • ") + " • Click to open CGN Weather Radar.";
+    ticker.hidden = false;
+    ticker.classList.add("has-alerts");
+  } catch(err){
+    console.warn("NWS ALERT LOAD ERROR:", err);
+    resetNWSAlertTicker();
+  }
+}
+
 async function loadWeather(lat,lon,label){
+
+  const requestId = ++currentWeatherRequestId;
+
+  if(currentWeatherAbortController){
+    try { currentWeatherAbortController.abort(); } catch(err){}
+  }
+
+  const controller = new AbortController();
+  currentWeatherAbortController = controller;
 
   currentLat = lat;
   currentLon = lon;
   currentLabel = label;
 
   setError("");
+  resetNWSAlertTicker();
 
   try {
 
@@ -2285,6 +2661,7 @@ async function loadWeather(lat,lon,label){
     weatherUrl.searchParams.set("latitude", lat);
     weatherUrl.searchParams.set("longitude", lon);
     weatherUrl.searchParams.set("current_weather", "true");
+    weatherUrl.searchParams.set("current", "temperature_2m,apparent_temperature,is_day,weather_code,relative_humidity_2m,dew_point_2m,precipitation,cloud_cover,pressure_msl,wind_speed_10m,wind_direction_10m,wind_gusts_10m");
     weatherUrl.searchParams.set("hourly", "temperature_2m,apparent_temperature,relative_humidity_2m,dew_point_2m,precipitation_probability,precipitation,weathercode,cloudcover,visibility,pressure_msl,windspeed_10m,winddirection_10m,windgusts_10m");
     weatherUrl.searchParams.set("daily", "temperature_2m_max,temperature_2m_min,weathercode,precipitation_probability_max,precipitation_sum,windspeed_10m_max,windgusts_10m_max,uv_index_max,sunrise,sunset");
     weatherUrl.searchParams.set("forecast_days", "14");
@@ -2293,41 +2670,80 @@ async function loadWeather(lat,lon,label){
     weatherUrl.searchParams.set("precipitation_unit", unitSettings.apiPrecipitation);
     weatherUrl.searchParams.set("timezone", "auto");
 
-    const res = await fetch(weatherUrl.toString());
+    const res = await fetch(weatherUrl.toString(), { cache:"no-store", signal:controller.signal });
 
     const data = await res.json();
+    if(requestId !== currentWeatherRequestId) return;
 
-    if(!data || !data.current_weather || !data.hourly || !data.daily){
+    if(!data || (!data.current_weather && !data.current) || !data.hourly || !data.daily){
       setError("Weather data is temporarily unavailable. Please try another location or refresh the page.");
       return;
     }
 
-    const current = data.current_weather;
-    const currentIndex = nearestHourlyIndex(data.hourly.time, current.time);
-    const todayDailyIndex = getCurrentDailyIndex(data.daily.time, current.time);
-    const w = getWeather(current.weathercode);
+    const legacyCurrent = data.current_weather || {};
+    const modernCurrent = data.current || {};
+    const currentTime = modernCurrent.time || legacyCurrent.time || new Date().toISOString();
+    const currentIndex = nearestHourlyIndex(data.hourly.time, currentTime);
+    const todayDailyIndex = getCurrentDailyIndex(data.daily.time, currentTime);
 
-    const currentTemp = num(current.temperature);
-    const feelsLike = data.hourly.apparent_temperature ? data.hourly.apparent_temperature[currentIndex] : null;
-    const humidity = data.hourly.relative_humidity_2m ? data.hourly.relative_humidity_2m[currentIndex] : null;
-    const dewPoint = data.hourly.dew_point_2m ? data.hourly.dew_point_2m[currentIndex] : null;
+    const activeWeatherCode = firstNumber(
+      modernCurrent.weather_code,
+      legacyCurrent.weathercode,
+      data.hourly.weathercode ? data.hourly.weathercode[currentIndex] : null
+    );
+
+    const openMeteoWeather = getWeather(activeWeatherCode);
+
+    /*
+      Current condition and background visuals must be driven by observed
+      weather when available. Active NWS alerts stay separate in the ticker.
+      A Heat Advisory, Severe Thunderstorm Watch, Flood Warning, etc. must
+      never force the main current-condition card to Storm or Rain.
+    */
+    const observedCurrent = await fetchNWSCurrentObservation(lat, lon, label, controller.signal);
+    if(requestId !== currentWeatherRequestId) return;
+
+    const w = observedCurrent && observedCurrent.condition ? observedCurrent.condition : openMeteoWeather;
+
+    const openMeteoTemp = firstNumber(modernCurrent.temperature_2m, legacyCurrent.temperature);
+    const openMeteoFeelsLike = firstNumber(
+      modernCurrent.apparent_temperature,
+      data.hourly.apparent_temperature ? data.hourly.apparent_temperature[currentIndex] : null
+    );
+
+    const currentTemp = firstNumber(observedCurrent && observedCurrent.temperature, openMeteoTemp);
+    const feelsLike = firstNumber(observedCurrent && observedCurrent.apparentTemperature, openMeteoFeelsLike);
+    const humidity = firstNumber(observedCurrent && observedCurrent.humidity, modernCurrent.relative_humidity_2m, data.hourly.relative_humidity_2m ? data.hourly.relative_humidity_2m[currentIndex] : null);
+    const dewPoint = firstNumber(observedCurrent && observedCurrent.dewPoint, modernCurrent.dew_point_2m, data.hourly.dew_point_2m ? data.hourly.dew_point_2m[currentIndex] : null);
     const rainChance = data.hourly.precipitation_probability ? data.hourly.precipitation_probability[currentIndex] : null;
-    const precip = data.hourly.precipitation ? data.hourly.precipitation[currentIndex] : null;
-    const pressure = data.hourly.pressure_msl ? data.hourly.pressure_msl[currentIndex] : null;
-    const visibilityMeters = data.hourly.visibility ? data.hourly.visibility[currentIndex] : null;
-    const cloudCover = data.hourly.cloudcover ? data.hourly.cloudcover[currentIndex] : null;
-    const windSpeed = num(current.windspeed) !== null ? current.windspeed : (data.hourly.windspeed_10m ? data.hourly.windspeed_10m[currentIndex] : null);
-    const windDirection = num(current.winddirection) !== null ? current.winddirection : (data.hourly.winddirection_10m ? data.hourly.winddirection_10m[currentIndex] : null);
-    const windGusts = data.hourly.windgusts_10m ? data.hourly.windgusts_10m[currentIndex] : null;
+    const precip = firstNumber(modernCurrent.precipitation, data.hourly.precipitation ? data.hourly.precipitation[currentIndex] : null);
+    const pressure = firstNumber(observedCurrent && observedCurrent.pressure, modernCurrent.pressure_msl, data.hourly.pressure_msl ? data.hourly.pressure_msl[currentIndex] : null);
+    const visibilityMeters = firstNumber(observedCurrent && observedCurrent.visibilityMeters, data.hourly.visibility ? data.hourly.visibility[currentIndex] : null);
+    const cloudCover = firstNumber(modernCurrent.cloud_cover, data.hourly.cloudcover ? data.hourly.cloudcover[currentIndex] : null);
+    const windSpeed = firstNumber(observedCurrent && observedCurrent.windSpeed, modernCurrent.wind_speed_10m, legacyCurrent.windspeed, data.hourly.windspeed_10m ? data.hourly.windspeed_10m[currentIndex] : null);
+    const windDirection = firstNumber(observedCurrent && observedCurrent.windDirection, modernCurrent.wind_direction_10m, legacyCurrent.winddirection, data.hourly.winddirection_10m ? data.hourly.winddirection_10m[currentIndex] : null);
+    const windGusts = firstNumber(observedCurrent && observedCurrent.windGusts, modernCurrent.wind_gusts_10m, data.hourly.windgusts_10m ? data.hourly.windgusts_10m[currentIndex] : null);
+    const conditionText = observedCurrent && observedCurrent.conditionText ? observedCurrent.conditionText : w.text;
 
-    const nightMode = isNightTime(current.time, data.daily.sunrise ? data.daily.sunrise[todayDailyIndex] : null, data.daily.sunset ? data.daily.sunset[todayDailyIndex] : null);
+    const nightMode = modernCurrent.is_day === 0
+      ? true
+      : (modernCurrent.is_day === 1 ? false : isNightTime(currentTime, data.daily.sunrise ? data.daily.sunrise[todayDailyIndex] : null, data.daily.sunset ? data.daily.sunset[todayDailyIndex] : null));
+
     setWeatherMood(w.type, { intensity:w.intensity, isNight:nightMode });
 
     document.getElementById("locationTitle").innerText = label;
     document.getElementById("weatherIcon").innerText = w.icon;
-    document.getElementById("conditionText").innerText = w.text;
+    document.getElementById("conditionText").innerText = conditionText;
     document.getElementById("tempMain").innerText = fmtTemp(currentTemp);
     document.getElementById("feelsLikeMain").innerText = "Feels Like " + fmtTemp(feelsLike);
+
+    console.info("CGN Weather current conditions", {
+      label: label,
+      condition: conditionText,
+      visualMood: w.type,
+      source: observedCurrent ? observedCurrent.source : "Open-Meteo current weather code",
+      openMeteoWeatherCode: activeWeatherCode
+    });
 
     const todayMax = data.daily.temperature_2m_max ? data.daily.temperature_2m_max[todayDailyIndex] : null;
     const todayMin = data.daily.temperature_2m_min ? data.daily.temperature_2m_min[todayDailyIndex] : null;
@@ -2335,7 +2751,7 @@ async function loadWeather(lat,lon,label){
     const todayWind = data.daily.windspeed_10m_max ? data.daily.windspeed_10m_max[todayDailyIndex] : windSpeed;
 
     document.getElementById("todaySummary").innerText =
-      `Today: ${w.text}. High ${fmtTemp(todayMax)} / Low ${fmtTemp(todayMin)}. Wind ${windDirectionText(windDirection)} at ${fmtWind(todayWind)}. Chance of rain ${fmtPercent(todayRainChance)}.`;
+      `Currently: ${conditionText}. Today: High ${fmtTemp(todayMax)} / Low ${fmtTemp(todayMin)}. Wind ${windDirectionText(windDirection)} at ${fmtWind(todayWind)}. Chance of rain ${fmtPercent(todayRainChance)}.`;
 
     const stats = document.getElementById("weatherStats");
     stats.innerHTML =
@@ -2354,13 +2770,17 @@ async function loadWeather(lat,lon,label){
       renderStat("Sunrise", data.daily.sunrise ? fmtTime(data.daily.sunrise[todayDailyIndex]) : "--") +
       renderStat("Sunset", data.daily.sunset ? fmtTime(data.daily.sunset[todayDailyIndex]) : "--");
 
+    if(requestId === currentWeatherRequestId){
+      loadNWSAlerts(lat, lon, label);
+    }
+
     document.getElementById("updated").innerText =
       "Last Updated: " + formatCGNDate(new Date());
 
     const hourly = document.getElementById("hourly");
     hourly.innerHTML = "";
 
-    const hourlyStartIndex = currentHourlyStartIndex(data.hourly.time, current.time);
+    const hourlyStartIndex = currentHourlyStartIndex(data.hourly.time, currentTime);
     const hourlyTimes = data.hourly.time.slice(hourlyStartIndex, hourlyStartIndex + 12);
 
     hourlyTimes.forEach((t,offset)=>{
@@ -2419,6 +2839,8 @@ async function loadWeather(lat,lon,label){
     setActiveButton();
 
   } catch(err){
+
+    if(err && err.name === "AbortError") return;
 
     console.error("WEATHER LOAD ERROR:", err);
     setError("Weather data is temporarily unavailable. Please check your connection and try again.");
