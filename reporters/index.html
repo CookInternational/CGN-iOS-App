@@ -1,36 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
 <title>Reporters | CGN News</title>
-<meta content="Meet the CGN News reporting team. Browse reporter bios, beats, titles, social links, and profile pages for Cook Global News Network." name="description"/>
-<meta content="index, follow, max-image-preview:large" name="robots"/>
-<meta content="CGN News" name="author"/>
-<link href="https://ios.cgnnews.net/reporters/" rel="canonical"/>
+<meta name="description" content="Meet the CGN News reporting team, organized by bureau and affiliate market. Browse reporter bios, beats, titles, social links, and profile pages for Cook Global News Network.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="CGN News">
+<link rel="canonical" href="https://ios.cgnnews.net/reporters/">
+
+<link rel="icon" type="image/png" href="/CGNFavicon.png">
+<link rel="apple-touch-icon" href="/CGNFavicon.png">
+<meta name="theme-color" content="#07111f">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CGN News">
+<meta property="og:title" content="Reporters | CGN News">
+<meta property="og:description" content="Meet the CGN News reporting team, organized by bureau and affiliate market. Browse reporter bios, beats, titles, social links, and profile pages.">
+<meta property="og:url" content="https://ios.cgnnews.net/reporters/">
+<meta property="og:image" content="https://www.cgnnews.net/CGNNewsLogo01.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reporters | CGN News">
+<meta name="twitter:description" content="Meet the CGN News reporting team, organized by bureau and affiliate market. Browse reporter bios, beats, titles, social links, and profile pages.">
+<meta name="twitter:image" content="https://www.cgnnews.net/CGNNewsLogo01.png">
 
 
-
-<meta content="website" property="og:type"/>
-<meta content="CGN News" property="og:site_name"/>
-<meta content="Reporters | CGN News" property="og:title"/>
-<meta content="Meet the CGN News reporting team. Browse reporter bios, beats, titles, social links, and profile pages." property="og:description"/>
-<meta content="https://ios.cgnnews.net/reporters/" property="og:url"/>
-<meta content="https://www.cgnnews.net/CGNNewsLogo01.png" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Reporters | CGN News" name="twitter:title"/>
-<meta content="Meet the CGN News reporting team. Browse reporter bios, beats, titles, social links, and profile pages." name="twitter:description"/>
-<meta content="https://www.cgnnews.net/CGNNewsLogo01.png" name="twitter:image"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "CollectionPage",
-      "@id": "https://www.cgnnews.net/reporters#webpage",
-      "url": "https://www.cgnnews.net/reporters",
+      "@id": "https://ios.cgnnews.net/reporters/#webpage",
+      "url": "https://ios.cgnnews.net/reporters/",
       "name": "Reporters | CGN News",
-      "description": "Meet the CGN News reporting team. Browse reporter bios, beats, titles, social links, and profile pages.",
+      "description": "Meet the CGN News reporting team, organized by bureau and affiliate market. Browse reporter bios, beats, titles, social links, and profile pages.",
       "isPartOf": {
         "@id": "https://www.cgnnews.net/#website"
       },
@@ -48,7 +55,7 @@
       },
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://www.cgnnews.net/reporters?q={search_term_string}",
+        "target": "https://ios.cgnnews.net/reporters/?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },
@@ -81,6 +88,7 @@
   ]
 }
 </script>
+
 <style>
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -378,12 +386,122 @@ body {
   text-decoration:underline;
 }
 
+.reporters-grid.reporters-grouped {
+  display:block;
+}
+
+.reporter-bureau-section {
+  margin:0 0 34px;
+}
+
+.reporter-bureau-section:last-child {
+  margin-bottom:0;
+}
+
+.reporter-bureau-header {
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  align-items:flex-end;
+  margin:0 0 14px;
+  padding:16px 18px;
+  border:1px solid #d8dce4;
+  background:linear-gradient(135deg,#07111f,#102848);
+  color:#fff;
+}
+
+.reporter-bureau-header.has-bureau-banner {
+  min-height:190px;
+  align-items:flex-start;
+  background-size:cover, cover;
+  background-position:center, var(--bureau-pos, center bottom);
+  background-repeat:no-repeat;
+  box-shadow:0 12px 26px rgba(7,17,31,.10);
+}
+
+.reporter-bureau-header h3 a {
+  color:#fff;
+  text-decoration:none;
+}
+
+.reporter-bureau-header h3 a:hover {
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+
+.reporter-bureau-label {
+  display:block;
+  margin:0 0 5px;
+  color:#ff4242;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+
+.reporter-bureau-header h3 {
+  margin:0;
+  font-size:26px;
+  line-height:1.1;
+  letter-spacing:-.02em;
+}
+
+.reporter-bureau-header p {
+  margin:7px 0 0;
+  color:#e8edf5;
+  line-height:1.45;
+  font-size:13px;
+  max-width:780px;
+}
+
+.reporter-bureau-count {
+  flex:0 0 auto;
+  padding:8px 10px;
+  border:1px solid rgba(255,255,255,.32);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.reporter-bureau-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:18px;
+}
+
+.reporter-card[data-bureau="indy-chicago"]::before { background:#c40000; }
+.reporter-card[data-bureau="st-louis"]::before { background:#214e8a; }
+.reporter-card[data-bureau="philadelphia"]::before { background:#5f2a84; }
+.reporter-card[data-bureau="new-york"]::before { background:#111827; }
+.reporter-card[data-bureau="los-angeles"]::before { background:#f59e0b; }
+.reporter-card[data-bureau="miami"]::before { background:#0f766e; }
+.reporter-card[data-bureau="baton-rouge"]::before { background:#7c2d12; }
+.reporter-card[data-bureau^="international"]::before { background:#0f3b66; }
+
+
 .reporters-empty {
   border:1px solid #ddd;
   background:#f7f7f7;
   padding:16px;
   color:#555;
   line-height:1.5;
+}
+
+.cgn-bottom-ad {
+  max-width:1180px;
+  margin:26px auto 34px;
+  padding:0 20px;
+}
+
+.cgn-bottom-ad-inner {
+  border-top:1px solid #d8dce4;
+  border-bottom:1px solid #d8dce4;
+  padding:18px 0;
+  text-align:center;
+  background:#fff;
 }
 
 .cgn-ad-label {
@@ -431,65 +549,98 @@ body {
     grid-template-columns:1fr;
   }
 
+  .reporter-bureau-header {
+    flex-direction:column;
+    align-items:flex-start;
+    padding:15px;
+  }
+
+  .reporter-bureau-header.has-bureau-banner {
+    min-height:170px;
+  }
+
+  .reporter-bureau-header h3 {
+    font-size:22px;
+  }
+
+  .reporter-bureau-count {
+    white-space:normal;
+  }
+
+  .reporter-bureau-grid {
+    grid-template-columns:1fr;
+  }
+
+
   .reporter-photo-wrap {
     height:260px;
+  }
+
+  .cgn-bottom-ad {
+    padding:0 16px;
+    margin:22px auto 30px;
   }
 }
 </style>
 
 
-
-
-
-
-
-
-<link href="/favicon.ico" rel="icon" sizes="any"/>
-<link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/>
-<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
-<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="/site.webmanifest" rel="manifest"/>
-<meta content="#07111f" name="theme-color"/>
-<meta content="CGN NOW" name="apple-mobile-web-app-title"/>
-<meta content="CGN NOW" name="application-name"/>
-<meta content="yes" name="apple-mobile-web-app-capable"/>
-<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<link href="/assets/cgn-now.css" rel="stylesheet"/>
-<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#07172f">
+
+
+<meta name="apple-mobile-web-app-title" content="CGN NOW">
+<meta name="application-name" content="CGN NOW">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="stylesheet" href="/assets/cgn-now.css">
 </head>
+
 <body>
+
 <div id="cgn-site-header"></div>
+
 <main class="reporters-page">
-<section aria-label="CGN News reporters" class="reporters-hero has-banner">
-<img alt="CGN Reporters" class="reporters-hero-banner" decoding="async" loading="eager" src="https://www.cgnnews.net/reporters/CGNReportersBanner01.png"/>
-<div class="reporters-hero-content">
-<div class="reporters-kicker"><span aria-hidden="true"></span> CGN Reporters</div>
-<h1>Meet the Reporting Team</h1>
-<p>Browse CGN News reporters, beats, bios, and profile pages. Each reporter profile will support direct contact options once the newsroom email aliases are created.</p>
-</div>
+
+<section class="reporters-hero has-banner" aria-label="CGN News reporters">
+  <img class="reporters-hero-banner" src="https://www.cgnnews.net/reporters/CGNReportersBanner01.png" alt="CGN Reporters" loading="eager" decoding="async">
+  <div class="reporters-hero-content">
+    <div class="reporters-kicker"><span aria-hidden="true"></span> CGN Reporters</div>
+    <h1>Meet the Reporting Team</h1>
+    <p>Browse CGN News reporters by bureau and affiliate market, including the Indianapolis/Chicago bureau, U.S. affiliates, and international bureau teams.</p>
+  </div>
 </section>
-<section aria-label="Search reporters" class="reporters-search-panel">
-<div class="reporters-search-row">
-<input autocomplete="off" id="reporterSearchInput" oninput="handleReporterSearch()" placeholder="Search by reporter name, title, beat, bio, or social profile..." type="search"/>
-<button onclick="clearReporterSearch()" type="button">Clear</button>
-</div>
-<div class="reporters-search-note">
+
+<section class="reporters-search-panel" aria-label="Search reporters">
+  <div class="reporters-search-row">
+    <input id="reporterSearchInput" type="search" placeholder="Search by reporter name, title, beat, bio, or social profile..." autocomplete="off" oninput="handleReporterSearch()">
+    <button type="button" onclick="clearReporterSearch()">Clear</button>
+  </div>
+  <div class="reporters-search-note">
     Search covers reporter name, title/category, bio, slug, and social links.
   </div>
 </section>
+
 <section aria-labelledby="reporters-title">
-<div class="reporters-section-title">
-<h2 id="reporters-title">Reporter Directory</h2>
-<span id="reportersCount">Loading reporters...</span>
-</div>
-<div class="reporters-grid" id="reportersGrid">
-<div class="reporters-empty">Loading CGN News reporters...</div>
-</div>
+  <div class="reporters-section-title">
+    <h2 id="reporters-title">Reporter Directory by Bureau</h2>
+    <span id="reportersCount">Loading reporters...</span>
+  </div>
+
+  <div id="reportersGrid" class="reporters-grid">
+    <div class="reporters-empty">Loading CGN News reporters...</div>
+  </div>
 </section>
+
 </main>
+
 <div id="cgn-site-footer"></div>
+
 <script src="/assets/cgn-now-shell.js"></script>
+
 <script>
 
 const CGN_API_FALLBACK = "https://script.google.com/macros/s/AKfycbx41mQg-Ine3XZ-VrMI_SaQn4_K6cDQHA0cBFyGPgupu_edNFoNRjSLv2hoSe_bOytt/exec";
@@ -498,11 +649,284 @@ const CGN_API_BASE = window.CGN_API_BASE || window.CGN_API_URL || CGN_API_FALLBA
 let allReporters = [];
 let filteredReporters = [];
 
+const REPORTER_BUREAU_GROUPS = [
+  {
+    key:"indy-chicago",
+    title:"Indianapolis / Chicago Bureau",
+    label:"Global Headquarters",
+    description:"Core CGN News leadership, Indianapolis, Chicago, special publications, investigations, weather, sports, and national desk reporters."
+  },
+  {
+    key:"st-louis",
+    title:"St. Louis Affiliate",
+    label:"U.S. Affiliate",
+    description:"St. Louis local, weather, sports, civic and regional coverage."
+  },
+  {
+    key:"philadelphia",
+    title:"Philadelphia Affiliate",
+    label:"U.S. Affiliate",
+    description:"Philadelphia local, weather, sports, civic and regional coverage."
+  },
+  {
+    key:"new-york",
+    title:"New York City Affiliate",
+    label:"U.S. Affiliate",
+    description:"New York City local, weather, sports, transit, courts and regional coverage."
+  },
+  {
+    key:"los-angeles",
+    title:"Los Angeles Affiliate",
+    label:"U.S. Affiliate",
+    description:"Los Angeles local, weather, sports, entertainment-economy and regional coverage."
+  },
+  {
+    key:"miami",
+    title:"Miami Affiliate",
+    label:"U.S. Affiliate",
+    description:"Miami local, weather, sports, development, tourism and resilience coverage."
+  },
+  {
+    key:"baton-rouge",
+    title:"Baton Rouge Affiliate",
+    label:"U.S. Affiliate",
+    description:"Baton Rouge local, weather, sports, state government, energy and regional coverage."
+  },
+  {
+    key:"international-london",
+    title:"London Bureau",
+    label:"International Bureau",
+    description:"London, United Kingdom, Europe, markets, politics, technology, environment, weather and sports coverage."
+  },
+  {
+    key:"international-sydney",
+    title:"Sydney Bureau",
+    label:"International Bureau",
+    description:"Sydney, Australia, NSW, Indo-Pacific, business, weather, sports and regional coverage."
+  },
+  {
+    key:"international-rio",
+    title:"Rio de Janeiro Bureau",
+    label:"International Bureau",
+    description:"Rio de Janeiro, Brazil, South America, environment, energy, sports and regional coverage."
+  },
+  {
+    key:"international-hong-kong",
+    title:"Hong Kong Bureau",
+    label:"International Bureau",
+    description:"Hong Kong, East Asia, finance, business, technology, weather and regional coverage."
+  },
+  {
+    key:"international-manila",
+    title:"Manila Bureau",
+    label:"International Bureau",
+    description:"Manila, the Philippines, Southeast Asia, maritime security, business, weather and regional coverage."
+  },
+  {
+    key:"international-mumbai",
+    title:"Mumbai Bureau",
+    label:"International Bureau",
+    description:"Mumbai, India, South Asia, business, technology, monsoon, sports and regional coverage."
+  },
+  {
+    key:"cgn-newsroom",
+    title:"CGN Newsroom",
+    label:"Newsroom Desk",
+    description:"Additional CGN News reporters, editors and contributors."
+  }
+];
+
+const REPORTER_GROUP_INDEX = REPORTER_BUREAU_GROUPS.reduce(function(map, group, index){
+  map[group.key] = index;
+  return map;
+}, {});
+
+const REPORTER_BUREAU_VISUALS = {
+  "indy-chicago":{
+    image:"https://www.cgnnews.net/category/local/CGNLocalBanner01.png",
+    url:"https://www.cgnnews.net/category/local/",
+    position:"center center"
+  },
+  "st-louis":{
+    image:"https://media.cgnnews.net/affiliates/St-Louis.png",
+    url:"https://www.cgnnews.net/st-louis/",
+    position:"center center"
+  },
+  "philadelphia":{
+    image:"https://media.cgnnews.net/affiliates/Philadelphia.png",
+    url:"https://www.cgnnews.net/philadelphia/",
+    position:"center center"
+  },
+  "new-york":{
+    image:"https://media.cgnnews.net/affiliates/New-York.png",
+    url:"https://www.cgnnews.net/new-york/",
+    position:"center center"
+  },
+  "los-angeles":{
+    image:"https://media.cgnnews.net/affiliates/Los-Angeles.png",
+    url:"https://www.cgnnews.net/los-angeles/",
+    position:"center center"
+  },
+  "miami":{
+    image:"https://media.cgnnews.net/affiliates/Miami.png",
+    url:"https://www.cgnnews.net/miami/",
+    position:"center center"
+  },
+  "baton-rouge":{
+    image:"https://media.cgnnews.net/affiliates/Baton-Rouge.png",
+    url:"https://www.cgnnews.net/baton-rouge/",
+    position:"center center"
+  },
+  "international-london":{
+    image:"https://london.cgnnews.net/assets/category/CGNLocal01.png",
+    url:"https://london.cgnnews.net/",
+    position:"center center"
+  },
+  "international-sydney":{
+    image:"https://sydney.cgnnews.net/assets/category/CGNLocal01.png",
+    url:"https://sydney.cgnnews.net/",
+    position:"center center"
+  },
+  "international-rio":{
+    image:"https://rio.cgnnews.net/assets/category/CGNLocal01.png",
+    url:"https://rio.cgnnews.net/",
+    position:"center center"
+  },
+  "international-hong-kong":{
+    image:"https://hongkong.cgnnews.net/assets/category/CGNLocal01.png",
+    url:"https://hongkong.cgnnews.net/",
+    position:"center center"
+  },
+  "international-manila":{
+    image:"https://manila.cgnnews.net/assets/category/CGNLocal01.png",
+    url:"https://manila.cgnnews.net/",
+    position:"center center"
+  },
+  "international-mumbai":{
+    image:"https://mumbai.cgnnews.net/assets/category/CGNLocal01.png",
+    url:"https://mumbai.cgnnews.net/",
+    position:"center center"
+  }
+};
+
+const REPORTER_SLUG_GROUP = {
+  "michael-a-cook":"indy-chicago",
+  "michael-cook":"indy-chicago",
+  "michael-trent":"indy-chicago",
+  "cgn-news-staff":"indy-chicago",
+  "sophie-keller":"indy-chicago",
+  "amara-okafor":"indy-chicago",
+  "daniel-cho":"indy-chicago",
+  "derek-gearhardt":"indy-chicago",
+  "elena-vasquez":"indy-chicago",
+  "james-holloway":"indy-chicago",
+  "jessica-storm":"indy-chicago",
+  "monica-steele":"indy-chicago",
+  "rick-ellis":"indy-chicago",
+  "serena-tao":"indy-chicago",
+  "natalie-ward":"indy-chicago",
+
+  "jordan-whitaker":"st-louis",
+  "elise-navarro":"st-louis",
+  "marcus-bell":"st-louis",
+
+  "claire-donnelly":"philadelphia",
+  "malik-harris":"philadelphia",
+  "hannah-stein":"philadelphia",
+
+  "avery-coleman":"new-york",
+  "sofia-kaplan":"new-york",
+  "devon-rios":"new-york",
+
+  "elena-park":"los-angeles",
+  "mateo-reyes":"los-angeles",
+  "tasha-moreno":"los-angeles",
+
+  "isabella-cruz":"miami",
+  "noah-bennett":"miami",
+  "julian-mercado":"miami",
+
+  "renee-landry":"baton-rouge",
+  "mason-thibodeaux":"baton-rouge",
+  "camille-brooks":"baton-rouge",
+
+  "helena-price":"international-london",
+  "priya-ashford":"international-london",
+  "thomas-hale":"international-london",
+  "charlotte-ward":"international-london",
+  "elliot-brooks":"international-london",
+  "maya-collins":"international-london",
+  "grace-whitmore":"international-london",
+  "henry-shaw":"international-london",
+  "nadia-clarke":"international-london",
+
+  "claire-bennett":"international-sydney",
+  "amelia-reed":"international-sydney",
+  "noah-campbell":"international-sydney",
+  "matilda-brooks":"international-sydney",
+  "liam-hart":"international-sydney",
+  "sienna-walsh":"international-sydney",
+  "grace-taylor":"international-sydney",
+  "cooper-flynn":"international-sydney",
+  "isla-morgan":"international-sydney",
+
+  "marina-costa":"international-rio",
+  "camila-rocha":"international-rio",
+  "rafael-costa":"international-rio",
+  "ana-ribeiro":"international-rio",
+  "mateus-silva":"international-rio",
+  "mariana-duarte":"international-rio",
+  "bruno-almeida":"international-rio",
+  "thiago-moreira":"international-rio",
+  "sofia-carvalho":"international-rio",
+  "joao-pereira":"international-rio",
+  "beatriz-gomes":"international-rio",
+  "thiago-martins":"international-rio",
+
+  "vivian-lau":"international-hong-kong",
+  "mei-chan":"international-hong-kong",
+  "jonathan-ho":"international-hong-kong",
+  "clara-wong":"international-hong-kong",
+  "victor-ng":"international-hong-kong",
+  "elaine-tsang":"international-hong-kong",
+  "adrian-leung":"international-hong-kong",
+  "jason-yip":"international-hong-kong",
+  "fiona-cheung":"international-hong-kong",
+  "rachel-lee":"international-hong-kong",
+  "marcus-yuen":"international-hong-kong",
+  "iris-cheung":"international-hong-kong",
+
+  "isabel-reyes":"international-manila",
+  "maya-reyes":"international-manila",
+  "daniel-cruz":"international-manila",
+  "leah-bautista":"international-manila",
+  "miguel-torres":"international-manila",
+  "carla-mendoza":"international-manila",
+  "diego-ramos":"international-manila",
+  "rafael-santos":"international-manila",
+  "carmen-villanueva":"international-manila",
+  "isabel-navarro":"international-manila",
+  "angela-ramos":"international-manila",
+  "paolo-garcia":"international-manila",
+
+  "arjun-mehta":"international-mumbai",
+  "nisha-rao":"international-mumbai",
+  "priya-deshmukh":"international-mumbai",
+  "karan-malhotra":"international-mumbai",
+  "meera-iyer":"international-mumbai",
+  "asha-kulkarni":"international-mumbai",
+  "rohan-shah":"international-mumbai",
+  "ananya-patil":"international-mumbai",
+  "farah-khan":"international-mumbai"
+};
+
 const REPORTER_ORDER = [
   "michael-a-cook",
   "michael-cook",
+  "cgn-news-staff",
   "sophie-keller",
-  "michael-trent"
+  "michael-trent",
+  "natalie-ward"
 ];
 
 function safeText(value){
@@ -519,7 +943,10 @@ function safeText(value){
 
 function slugify(value){
   return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
+    .replace(/&/g, "and")
     .replace(/[^a-z0-9\s-]/g, "")
     .replace(/\s+/g, "-")
     .replace(/-+/g, "-")
@@ -545,7 +972,19 @@ function getReporterSlug(reporter){
     return slugify(reporter[1] || reporter[0] || "cgn-news-staff");
   }
 
-  return slugify(reporter.slug || reporter.name || "cgn-news-staff");
+  return slugify(
+    reporter.slug ||
+    reporter.reporter_slug ||
+    reporter.reporterSlug ||
+    reporter.author_slug ||
+    reporter.authorSlug ||
+    reporter.profile_slug ||
+    reporter.profileSlug ||
+    reporter.name ||
+    reporter.reporter ||
+    reporter.full_name ||
+    "cgn-news-staff"
+  );
 }
 
 function getReporterName(reporter){
@@ -626,6 +1065,140 @@ function getReporterProfileUrl(reporter){
   return "/reporters/" + getReporterSlug(reporter) + "/";
 }
 
+function normalizeReporterSearchText(value){
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function getReporterBureauFieldText(reporter){
+  if(Array.isArray(reporter)){
+    return normalizeReporterSearchText(reporter.join(" "));
+  }
+
+  return normalizeReporterSearchText([
+    objectFirstValue(reporter, ["bureau", "Bureau", "market", "Market", "city", "City", "location", "Location", "office", "Office", "team", "Team", "affiliate", "Affiliate"]),
+    getReporterName(reporter),
+    getReporterTitle(reporter),
+    getReporterBio(reporter),
+    reporter && JSON.stringify(reporter)
+  ].join(" "));
+}
+
+function getReporterBureauKey(reporter){
+  const slug = getReporterSlug(reporter);
+
+  if(REPORTER_SLUG_GROUP[slug]){
+    return REPORTER_SLUG_GROUP[slug];
+  }
+
+  const text = getReporterBureauFieldText(reporter);
+
+  if(/st\.?\s*louis|missouri|metro east|cardinals|blues|city sc|battlehawks/.test(text)) return "st-louis";
+  if(/philadelphia|philly|pennsylvania|schuylkill|sixers|eagles|flyers|phillies|union/.test(text)) return "philadelphia";
+  if(/new york|nyc|manhattan|brooklyn|queens|bronx|staten island|yankees|mets|knicks|nets|rangers|islanders|giants|jets/.test(text)) return "new-york";
+  if(/los angeles|southern california|california|dodgers|lakers|clippers|rams|chargers|kings|lafc|galaxy/.test(text)) return "los-angeles";
+  if(/miami|south florida|miami-dade|florida|dolphins|heat|marlins|panthers|inter miami/.test(text)) return "miami";
+  if(/baton rouge|louisiana|east baton rouge|lsu|southern university|zydeco/.test(text)) return "baton-rouge";
+
+  if(/london|united kingdom|uk bureau|britain|europe|westminster/.test(text)) return "international-london";
+  if(/sydney|australia|new south wales|nsw|indo-pacific/.test(text)) return "international-sydney";
+  if(/rio|rio de janeiro|brazil|south america|petrobras|amazon/.test(text)) return "international-rio";
+  if(/hong kong|east asia|china|asian markets|shipping/.test(text)) return "international-hong-kong";
+  if(/manila|philippines|southeast asia|maritime security/.test(text)) return "international-manila";
+  if(/mumbai|india|south asia|rbi|sebi|monsoon/.test(text)) return "international-mumbai";
+
+  return "indy-chicago";
+}
+
+function getReporterBureauGroup(key){
+  return REPORTER_BUREAU_GROUPS.find(function(group){ return group.key === key; }) || REPORTER_BUREAU_GROUPS[0];
+}
+
+function groupReportersByBureau(list){
+  return list.reduce(function(map, reporter){
+    const key = getReporterBureauKey(reporter);
+    if(!map[key]) map[key] = [];
+    map[key].push(reporter);
+    return map;
+  }, {});
+}
+
+function renderReporterCard(reporter){
+  const nameRaw = getReporterName(reporter);
+  const slug = getReporterSlug(reporter);
+  const name = safeText(nameRaw);
+  const title = safeText(getReporterTitle(reporter));
+  const bio = safeText(getReporterBio(reporter));
+  const image = safeText(getReporterImage(reporter));
+  const profileUrl = getReporterProfileUrl(reporter);
+  const socials = getSocialLinks(reporter);
+  const bureauKey = getReporterBureauKey(reporter);
+  const featuredClass = reporterPriority(reporter) < 3 ? " featured-reporter" : "";
+
+  const socialsHtml = socials.length
+    ? `<div class="reporter-socials">${socials.map(function(link){
+        return `<a href="${safeText(link.url)}" target="_blank" rel="noopener">${safeText(link.label)}</a>`;
+      }).join("")}</div>`
+    : "";
+
+  return `
+    <article class="reporter-card${featuredClass}" data-bureau="${safeText(bureauKey)}" itemscope itemtype="https://schema.org/Person">
+      <a class="reporter-photo-wrap" href="${profileUrl}" aria-label="Open ${name} reporter profile">
+        <img class="reporter-photo" src="${image}" alt="${name}" loading="lazy" itemprop="image" onerror="this.src='/CGNFavicon.png';">
+      </a>
+
+      <div class="reporter-body">
+        <h3 itemprop="name">
+          <a href="${profileUrl}">${name}</a>
+        </h3>
+
+        ${title ? `<span class="reporter-title" itemprop="jobTitle">${title}</span>` : `<span class="reporter-title" itemprop="jobTitle">CGN News Reporter</span>`}
+
+        <p class="reporter-bio" itemprop="description">${bio}</p>
+
+        <div class="reporter-actions">
+          <a href="${profileUrl}">View Profile</a>
+          <a class="secondary" href="${safeText(getReporterMailto(reporter))}" title="${safeText(getReporterEmail(reporter))}">Email</a>
+        </div>
+
+        ${socialsHtml}
+      </div>
+    </article>
+  `;
+}
+
+function renderReporterBureauSection(group, reporters){
+  const sorted = sortReporters(reporters);
+  const countText = `${sorted.length} reporter${sorted.length === 1 ? "" : "s"}`;
+  const visual = REPORTER_BUREAU_VISUALS[group.key] || {};
+  const headerClass = visual.image ? "reporter-bureau-header has-bureau-banner" : "reporter-bureau-header";
+  const headerStyle = visual.image
+    ? ` style="background-image:linear-gradient(180deg, rgba(7,17,31,.84), rgba(7,17,31,.34) 52%, rgba(7,17,31,.06)), url('${safeText(visual.image)}'); --bureau-pos:${safeText(visual.position || "center bottom")};"`
+    : "";
+  const titleText = safeText(group.title);
+  const titleHtml = visual.url
+    ? `<a href="${safeText(visual.url)}" target="_blank" rel="noopener">${titleText}</a>`
+    : titleText;
+
+  return `
+    <section class="reporter-bureau-section" data-bureau-section="${safeText(group.key)}" aria-labelledby="reporter-bureau-${safeText(group.key)}">
+      <div class="${headerClass}"${headerStyle}>
+        <div>
+          <span class="reporter-bureau-label">${safeText(group.label || "CGN Bureau")}</span>
+          <h3 id="reporter-bureau-${safeText(group.key)}">${titleHtml}</h3>
+          ${group.description ? `<p>${safeText(group.description)}</p>` : ""}
+        </div>
+        <span class="reporter-bureau-count">${safeText(countText)}</span>
+      </div>
+      <div class="reporter-bureau-grid">
+        ${sorted.map(renderReporterCard).join("")}
+      </div>
+    </section>
+  `;
+}
+
 function getSocialLinks(reporter){
   if(Array.isArray(reporter)){
     return [];
@@ -681,15 +1254,19 @@ function getReporterMailto(reporter){
 function reporterMatchesSearch(reporter, query){
   if(!query) return true;
 
-  const haystack = [
+  const bureauGroup = getReporterBureauGroup(getReporterBureauKey(reporter));
+  const haystack = normalizeReporterSearchText([
     getReporterName(reporter),
     getReporterSlug(reporter),
     getReporterBio(reporter),
     getReporterTitle(reporter),
+    bureauGroup.title,
+    bureauGroup.label,
+    bureauGroup.description,
     Array.isArray(reporter) ? reporter.join(" ") : JSON.stringify(reporter)
-  ].join(" ").toLowerCase();
+  ].join(" "));
 
-  return haystack.indexOf(query) !== -1;
+  return haystack.indexOf(normalizeReporterSearchText(query)) !== -1;
 }
 
 function reporterPriority(reporter){
@@ -704,6 +1281,13 @@ function reporterPriority(reporter){
 
 function sortReporters(list){
   return [...list].sort(function(a,b){
+    const aGroup = REPORTER_GROUP_INDEX[getReporterBureauKey(a)] ?? 999;
+    const bGroup = REPORTER_GROUP_INDEX[getReporterBureauKey(b)] ?? 999;
+
+    if(aGroup !== bGroup){
+      return aGroup - bGroup;
+    }
+
     const aPriority = reporterPriority(a);
     const bPriority = reporterPriority(b);
 
@@ -744,6 +1328,8 @@ function renderReporters(){
 
   if(!grid) return;
 
+  grid.className = "reporters-grid reporters-grouped";
+
   if(count){
     count.innerText = `${filteredReporters.length} reporter${filteredReporters.length === 1 ? "" : "s"}`;
   }
@@ -753,52 +1339,13 @@ function renderReporters(){
     return;
   }
 
-  grid.innerHTML = "";
+  const grouped = groupReportersByBureau(filteredReporters);
+  const sections = REPORTER_BUREAU_GROUPS
+    .filter(function(group){ return grouped[group.key] && grouped[group.key].length; })
+    .map(function(group){ return renderReporterBureauSection(group, grouped[group.key]); });
 
-  filteredReporters.forEach(function(reporter){
-    const nameRaw = getReporterName(reporter);
-    const slug = getReporterSlug(reporter);
-    const name = safeText(nameRaw);
-    const title = safeText(getReporterTitle(reporter));
-    const bio = safeText(getReporterBio(reporter));
-    const image = safeText(getReporterImage(reporter));
-    const profileUrl = getReporterProfileUrl(reporter);
-    const socials = getSocialLinks(reporter);
-    const featuredClass = reporterPriority(reporter) < 3 ? " featured-reporter" : "";
-
-    const socialsHtml = socials.length
-      ? `<div class="reporter-socials">${socials.map(function(link){
-          return `<a href="${safeText(link.url)}" target="_blank" rel="noopener">${safeText(link.label)}</a>`;
-        }).join("")}</div>`
-      : "";
-
-    grid.insertAdjacentHTML("beforeend", `
-      <article class="reporter-card${featuredClass}" itemscope itemtype="https://schema.org/Person">
-        <a class="reporter-photo-wrap" href="${profileUrl}" aria-label="Open ${name} reporter profile">
-          <img class="reporter-photo" src="${image}" alt="${name}" loading="lazy" itemprop="image" onerror="this.src='/CGNFavicon.png';">
-        </a>
-
-        <div class="reporter-body">
-          <h3 itemprop="name">
-            <a href="${profileUrl}">${name}</a>
-          </h3>
-
-          ${title ? `<span class="reporter-title" itemprop="jobTitle">${title}</span>` : `<span class="reporter-title" itemprop="jobTitle">CGN News Reporter</span>`}
-
-          <p class="reporter-bio" itemprop="description">${bio}</p>
-
-          <div class="reporter-actions">
-            <a href="${profileUrl}">View Profile</a>
-            <a class="secondary" href="${safeText(getReporterMailto(reporter))}" title="${safeText(getReporterEmail(reporter))}">Email</a>
-          </div>
-
-          ${socialsHtml}
-        </div>
-      </article>
-    `);
-  });
+  grid.innerHTML = sections.join("");
 }
-
 function applyReporterSearch(){
   const input = document.getElementById("reporterSearchInput");
   const query = input ? input.value.trim().toLowerCase() : "";
@@ -858,6 +1405,7 @@ async function loadReporters(){
 loadReporters();
 
 </script>
+
 
 <script>
 if('serviceWorker' in navigator){
